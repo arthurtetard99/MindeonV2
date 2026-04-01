@@ -1,11 +1,55 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import Badge from '../components/ui/Badge.astro';
 import { formatDate } from '../utils/helpers';
 
 const articles = await getCollection('articles');
 const sorted = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// Cycle through 3 visual styles
+const styles = [
+  {
+    bg: '#004ac6',
+    bgStyle: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)',
+    bgSize: '24px 24px',
+    accent: '#004ac6',
+    tagColor: 'text-blue-700 bg-blue-50',
+    linkColor: 'text-blue-700',
+  },
+  {
+    bg: '#712ae2',
+    bgStyle: 'linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent)',
+    bgSize: '40px 40px',
+    accent: '#712ae2',
+    tagColor: 'text-violet-700 bg-violet-50',
+    linkColor: 'text-violet-700',
+  },
+  {
+    bg: '#233144',
+    bgStyle: 'repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(255,255,255,0.05) 19px, rgba(255,255,255,0.05) 20px), repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(255,255,255,0.05) 19px, rgba(255,255,255,0.05) 20px)',
+    bgSize: '20px 20px',
+    accent: '#4d556b',
+    tagColor: 'text-slate-600 bg-slate-100',
+    linkColor: 'text-slate-600',
+  },
+];
+
+// Pick icon SVG based on tags
+function getIcon(tags: string[]): string {
+  const all = (tags ?? []).map(t => t.toLowerCase()).join(' ');
+  if (all.includes('voice') || all.includes('vapi') || all.includes('retell'))
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.82 5.82l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>`;
+  if (all.includes('rag') || all.includes('chatbot') || all.includes('agent'))
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"><rect width="18" height="10" x="3" y="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" x2="8" y1="16" y2="16"/><line x1="16" x2="16" y1="16" y2="16"/></svg>`;
+  if (all.includes('n8n') || all.includes('make') || all.includes('zapier') || all.includes('workflow'))
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><path d="m11 18-3-3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6"/></svg>`;
+  if (all.includes('roi') || all.includes('calcul') || all.includes('stratégi'))
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`;
+  if (all.includes('mcp') || all.includes('gemini') || all.includes('gpt'))
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`;
+  // default
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>`;
+}
 ---
 
 <BaseLayout
@@ -13,49 +57,68 @@ const sorted = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTi
   description="Analyses, comparatifs et guides pratiques sur l'IA, l'automatisation et les agents intelligents pour les entreprises."
   pathname="/articles/"
 >
-  <!-- Header -->
-  <section class="bg-slate-50 border-b border-slate-200 pt-16 pb-20 text-center">
-    <div class="max-w-3xl mx-auto px-6">
-      <Badge>Blog</Badge>
-      <h1 class="mt-4 text-5xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
-        Nos analyses IA
-      </h1>
-      <p class="text-xl text-slate-600">
-        Veille technologique, comparatifs d'outils et guides pratiques pour comprendre l'IA.
-      </p>
-    </div>
-  </section>
+  <main class="pt-28 pb-20">
 
-  <!-- Articles grid -->
-  <section class="py-24">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {sorted.map(article => (
-          <article class="relative group bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
-            <!-- Color accent -->
-            <div class="h-1.5 bg-gradient-to-r from-secondary to-primary"></div>
-            <div class="p-8">
-              {article.data.tags && article.data.tags[0] && (
-                <span class="text-xs font-bold text-secondary uppercase tracking-widest">{article.data.tags[0]}</span>
-              )}
-              <h2 class="text-lg font-bold text-slate-900 leading-tight mt-3 mb-3 group-hover:text-primary transition-colors">
-                <a href={`/${article.slug}/`} class="after:absolute after:inset-0">
-                  {article.data.title}
-                </a>
-              </h2>
-              <p class="text-sm text-slate-600 leading-relaxed line-clamp-3 mb-6">
-                {article.data.description}
-              </p>
-              <div class="flex items-center justify-between pt-4 border-t border-slate-100">
-                <time class="text-xs text-slate-400" datetime={article.data.date.toISOString()}>
-                  {formatDate(article.data.date)}
-                </time>
-                <span class="text-primary text-xs font-semibold">Lire →</span>
-              </div>
-            </div>
-          </article>
-        ))}
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-8 mb-20">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4 block">Editorial Intelligence</span>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1]">
+          Nos analyses IA
+        </h1>
+        <p class="text-xl text-slate-500 leading-relaxed">
+          Décryptage des avancées technologiques, veille stratégique et guides pratiques pour naviguer dans l'ère de l'intelligence artificielle générative.
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Articles grid -->
+    <section class="max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sorted.map((article, i) => {
+          const s = styles[i % 3];
+          const icon = getIcon(article.data.tags ?? []);
+          const tag = article.data.tags?.[0] ?? 'IA';
+          return (
+            <article class="relative group flex flex-col bg-white rounded-[1.5rem] overflow-hidden transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_24px_rgba(13,28,47,0.06)] hover:shadow-[0_12px_40px_rgba(13,28,47,0.12)]">
+
+              <!-- Banner -->
+              <div
+                class="h-48 relative overflow-hidden flex items-center justify-center"
+                style={`background-color: ${s.bg}; background-image: ${s.bgStyle}; background-size: ${s.bgSize};`}
+              >
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <Fragment set:html={icon} />
+              </div>
+
+              <!-- Body -->
+              <div class="p-8 flex flex-col flex-1">
+                <div class="mb-4">
+                  <span class={`text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full ${s.tagColor}`}>
+                    {tag}
+                  </span>
+                </div>
+                <h2 class="text-xl font-extrabold text-slate-900 mb-4 leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                  <a href={`/${article.slug}/`} class="after:absolute after:inset-0">
+                    {article.data.title}
+                  </a>
+                </h2>
+                <p class="text-sm text-slate-500 leading-relaxed line-clamp-3 mb-8 flex-1">
+                  {article.data.description}
+                </p>
+                <div class="mt-auto">
+                  <span class={`inline-flex items-center gap-1 font-bold text-sm ${s.linkColor} group-hover:gap-3 transition-all duration-300`}>
+                    Lire l'article
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                </div>
+              </div>
+
+            </article>
+          );
+        })}
+      </div>
+    </section>
+
+  </main>
 </BaseLayout>
