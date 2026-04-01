@@ -11,6 +11,7 @@ const projets = defineCollection({
     featured: z.boolean().default(false),
     image: z.string().optional(),
     results: z.array(z.string()).optional(),
+    architectureType: z.string().optional(),
   }),
 });
 
