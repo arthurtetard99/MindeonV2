@@ -80,8 +80,11 @@ function getIcon(tags: string[]): string {
           const icon = getIcon(article.data.tags ?? []);
           const tag = article.data.tags?.[0] ?? 'IA';
           return (
-            <article class="relative group flex flex-col bg-white rounded-[1.5rem] overflow-hidden transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_24px_rgba(13,28,47,0.06)] hover:shadow-[0_12px_40px_rgba(13,28,47,0.12)]">
-
+            <a
+              href={`/${article.slug}/`}
+              class="group flex flex-col bg-white rounded-[1.5rem] overflow-hidden transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_24px_rgba(13,28,47,0.06)] hover:shadow-[0_12px_40px_rgba(13,28,47,0.12)]"
+              aria-label={article.data.title}
+            >
               <!-- Banner -->
               <div
                 class="h-48 relative overflow-hidden flex items-center justify-center"
@@ -99,9 +102,7 @@ function getIcon(tags: string[]): string {
                   </span>
                 </div>
                 <h2 class="text-xl font-extrabold text-slate-900 mb-4 leading-snug group-hover:text-primary transition-colors line-clamp-2">
-                  <a href={`/${article.slug}/`} class="after:absolute after:inset-0">
-                    {article.data.title}
-                  </a>
+                  {article.data.title}
                 </h2>
                 <p class="text-sm text-slate-500 leading-relaxed line-clamp-3 mb-8 flex-1">
                   {article.data.description}
@@ -114,7 +115,7 @@ function getIcon(tags: string[]): string {
                 </div>
               </div>
 
-            </article>
+            </a>
           );
         })}
       </div>
