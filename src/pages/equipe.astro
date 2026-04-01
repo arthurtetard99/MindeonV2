@@ -65,9 +65,10 @@ const values = [
                 ? <Image
                     src={getEquipePhoto(member.photo)!}
                     alt={`Portrait de ${member.name}`}
-                    width={128}
-                    height={160}
+                    width={256}
+                    height={320}
                     format="webp"
+                    quality={95}
                     class={`w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105${member.id === 'arthur' ? ' scale-110' : ''}`}
                     loading="lazy"
                   />

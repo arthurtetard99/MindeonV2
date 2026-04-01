@@ -7,20 +7,36 @@ export async function getStaticPaths() {
   const projets = await getCollection('projets');
   const articles = await getCollection('articles');
 
+  function getSimilar(current: any, all: any[], n = 3) {
+    const currentTags = new Set((current.data.tags ?? []).map((t: string) => t.toLowerCase()));
+    return all
+      .filter(e => e.slug !== current.slug)
+      .map(e => ({
+        score: (e.data.tags ?? []).filter((t: string) => currentTags.has(t.toLowerCase())).length,
+        slug: e.slug,
+        title: e.data.title,
+        description: e.data.description,
+        tags: e.data.tags ?? [],
+      }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, n)
+      .map(({ slug, title, description, tags }) => ({ slug, title, description, tags }));
+  }
+
   const projetPaths = projets.map(entry => ({
     params: { slug: entry.slug },
-    props: { entry, type: 'projet' as const },
+    props: { entry, type: 'projet' as const, related: getSimilar(entry, projets) },
   }));
 
   const articlePaths = articles.map(entry => ({
     params: { slug: entry.slug },
-    props: { entry, type: 'article' as const },
+    props: { entry, type: 'article' as const, related: getSimilar(entry, articles) },
   }));
 
   return [...projetPaths, ...articlePaths];
 }
 
-const { entry, type } = Astro.props;
+const { entry, type, related } = Astro.props;
 const { Content } = await entry.render();
 const pathname = `/${entry.slug}/`;
 ---
@@ -35,6 +51,7 @@ const pathname = `/${entry.slug}/`;
     tags={entry.data.tags}
     results={entry.data.results}
     architectureType={entry.data.architectureType}
+    related={related}
   >
     <Content />
   </ProjectLayout>
@@ -46,6 +63,7 @@ const pathname = `/${entry.slug}/`;
     author={entry.data.author}
     date={entry.data.date}
     tags={entry.data.tags}
+    related={related}
   >
     <Content />
   </ArticleLayout>
