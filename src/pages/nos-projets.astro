@@ -49,13 +49,14 @@ function getBanner(tags: string[]): { gradient: string; label: string; pattern: 
         const { gradient, label, accent } = getBanner(projet.data.tags ?? []);
         const results = projet.data.results ?? [];
         return (
-          <article class="group bg-white rounded-3xl overflow-hidden flex flex-col shadow-[0_20px_40px_rgba(13,28,47,0.04)] hover:shadow-[0_20px_48px_rgba(13,28,47,0.10)] transition-all duration-500">
-
+          <a
+            href={`/${projet.slug}/`}
+            class="group bg-white rounded-3xl overflow-hidden flex flex-col shadow-[0_20px_40px_rgba(13,28,47,0.04)] hover:shadow-[0_20px_48px_rgba(13,28,47,0.10)] transition-all duration-500"
+            aria-label={projet.data.title}
+          >
             <!-- Colored banner -->
             <div class={`h-64 bg-gradient-to-br ${gradient} relative overflow-hidden flex items-center justify-center`}>
-              <!-- Dot pattern -->
               <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
-              <!-- Pill tag -->
               <div class="absolute top-6 left-6 px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-white text-xs font-bold tracking-wider uppercase">
                 {label}
               </div>
@@ -84,17 +85,14 @@ function getBanner(tags: string[]): { gradient: string; label: string; pattern: 
 
               <!-- Link -->
               <div class="mt-auto">
-                <a
-                  href={`/${projet.slug}/`}
-                  class={`inline-flex items-center gap-2 ${accent} font-bold hover:gap-4 transition-all duration-300`}
-                >
+                <span class={`inline-flex items-center gap-2 ${accent} font-bold group-hover:gap-4 transition-all duration-300`}>
                   Voir le projet
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
+                </span>
               </div>
             </div>
 
-          </article>
+          </a>
         );
       })}
     </div>
