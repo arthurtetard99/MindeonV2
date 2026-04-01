@@ -11,10 +11,24 @@ import CTASection from '../components/home/CTASection.astro';
 ---
 
 <BaseLayout
-  title="Mindeon.ai — Agence d'agents IA & automatisation pour PME et startups"
-  description="3 ingénieurs, 15+ projets livrés. Agents vocaux, chatbots IA, automatisations CRM et workflows n8n sur-mesure. Consultation gratuite."
+  title="Mindeon.ai — Agence d'agents IA & automatisation pour PME"
+  description="Agence IA pour PME : voice bots, chatbots et automatisation CRM sur-mesure. 3 ingénieurs, 15+ projets livrés. Consultation gratuite."
   pathname="/"
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mindeon.ai",
+    "url": "https://mindeon.ai",
+    "telephone": "+33667699490",
+    "email": "contact@mindeon.ai",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Paris",
+      "addressCountry": "FR"
+    },
+    "description": "Agence IA pour PME : voice bots, chatbots et automatisation CRM sur-mesure."
+  })} />
   <Hero />
   <LogoBanner />
   <Solutions />
