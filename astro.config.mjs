@@ -19,6 +19,11 @@ export default defineConfig({
     keystatic(),
     sitemap(),
   ],
+  markdown: {
+    remarkRehype: {
+      allowDangerousHtml: true,
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },
