@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vercel/
+.cloudflare/
+.astro/
+*.log
+.env
+.env.*
+!.env.example
