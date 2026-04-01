@@ -4,17 +4,17 @@ import TestimonialCard from '../ui/TestimonialCard.astro';
 import testimonials from '../../data/testimonials.json';
 ---
 
-<section class="bg-slate-50 py-24" aria-labelledby="testimonials-heading">
-  <div class="max-w-7xl mx-auto px-6">
+<section class="bg-[#f0f4ff] py-24" aria-labelledby="testimonials-heading">
+  <div class="max-w-6xl mx-auto px-6">
     <SectionHeading
-      badge="Témoignages"
+      badge="Wall of trust"
       title="Ce que disent nos clients"
-      subtitle="5/5 sur Malt — 5 avis vérifiés de clients qui ont déployé des agents IA avec nous."
+      subtitle="Découvrez comment Mindeon.ai transforme les opérations de nos clients grâce à des agents IA sur-mesure."
       center
     />
 
-    <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {testimonials.map((t) => (
+    <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {testimonials.slice(0, 3).map((t) => (
         <TestimonialCard
           name={t.name}
           company={t.company}
@@ -32,20 +32,14 @@ import testimonials from '../../data/testimonials.json';
         href="https://www.malt.fr"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-3 bg-white border border-slate-200 rounded-xl px-6 py-4 hover:shadow-md transition-all duration-200 group"
+        class="inline-flex items-center gap-3 bg-white rounded-full px-5 py-3 shadow-sm hover:shadow-md transition-shadow duration-200"
         aria-label="Voir nos avis sur Malt (nouvelle fenêtre)"
       >
-        <div class="flex gap-0.5" aria-hidden="true">
-          {[1,2,3,4,5].map(() => (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1" aria-hidden="true">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-            </svg>
-          ))}
+        <!-- Malt M logo -->
+        <div class="w-6 h-6 rounded-md bg-[#FC4F37] flex items-center justify-center shrink-0" aria-hidden="true">
+          <span class="text-white font-extrabold text-xs leading-none">M</span>
         </div>
-        <span class="font-bold text-slate-900 text-sm">5/5</span>
-        <span class="text-slate-400 text-sm">·</span>
-        <span class="text-slate-600 text-sm">5 avis vérifiés sur Malt</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 group-hover:text-primary transition-colors" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        <span class="text-slate-700 text-sm font-medium">5/5 sur Malt — 5 avis vérifiés</span>
       </a>
     </div>
   </div>
