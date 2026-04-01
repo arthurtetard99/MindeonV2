@@ -101,10 +101,17 @@ import Badge from '../ui/Badge.astro';
           <!-- Mock chart -->
           <div class="bg-white rounded-xl p-4 border border-slate-100">
             <div class="flex items-end gap-2 h-20">
-              {[40, 65, 45, 80, 60, 90, 75].map((h, i) => (
+              {[
+                { h: 'h-[40%]', color: 'bg-[#EFF6FF]' },
+                { h: 'h-[65%]', color: 'bg-[#EFF6FF]' },
+                { h: 'h-[45%]', color: 'bg-[#EFF6FF]' },
+                { h: 'h-[80%]', color: 'bg-[#EFF6FF]' },
+                { h: 'h-[60%]', color: 'bg-[#EFF6FF]' },
+                { h: 'h-[90%]', color: 'bg-primary' },
+                { h: 'h-[75%]', color: 'bg-[#EFF6FF]' },
+              ].map((bar) => (
                 <div
-                  class="flex-1 rounded-t-sm transition-all"
-                  style={`height: ${h}%; background: ${i === 5 ? '#2563EB' : '#EFF6FF'};`}
+                  class={`flex-1 rounded-t-sm transition-all ${bar.h} ${bar.color}`}
                   aria-hidden="true"
                 ></div>
               ))}

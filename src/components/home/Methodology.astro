@@ -38,9 +38,9 @@ const steps = [
       <!-- Desktop connecting line -->
       <div class="hidden md:block absolute top-12 left-[calc(12.5%)] right-[calc(12.5%)] h-0.5 bg-slate-100 z-0" aria-hidden="true"></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        {steps.map((step, i) => (
-          <div class="relative z-10 text-center flex flex-col items-center" style={`transition-delay: ${i * 100}ms`}>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 stagger-100">
+        {steps.map((step) => (
+          <div class="reveal relative z-10 text-center flex flex-col items-center">
             <!-- Number circle -->
             <div class="w-24 h-24 rounded-full bg-primary text-white text-2xl font-extrabold flex items-center justify-center mb-6 shadow-[0_8px_24px_rgba(37,99,235,0.3)] shrink-0">
               {step.number}

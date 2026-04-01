@@ -55,3 +55,57 @@
 /* Scrollbar hidden for marquee */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Dot patterns (replaces inline background-image styles) */
+.dot-pattern-sm {
+  background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0);
+  background-size: 24px 24px;
+}
+.dot-pattern-lg {
+  background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* Article banner backgrounds */
+.article-banner-blue {
+  background-color: #004ac6;
+  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+.article-banner-violet {
+  background-color: #712ae2;
+  background-image: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.article-banner-slate {
+  background-color: #233144;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(255,255,255,0.05) 19px, rgba(255,255,255,0.05) 20px),
+    repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(255,255,255,0.05) 19px, rgba(255,255,255,0.05) 20px);
+  background-size: 20px 20px;
+}
+
+/* Architecture diagram container */
+.arch-container {
+  background: #0d1c2f;
+  padding: 2.5rem 1.5rem;
+}
+.arch-blob {
+  background: rgba(37, 99, 235, 0.2);
+  filter: blur(60px);
+  transform: translate(30%, 30%);
+  pointer-events: none;
+}
+
+/* Stagger reveal delays */
+.stagger-60 > .reveal:nth-child(1) { transition-delay: 0ms; }
+.stagger-60 > .reveal:nth-child(2) { transition-delay: 60ms; }
+.stagger-60 > .reveal:nth-child(3) { transition-delay: 120ms; }
+.stagger-60 > .reveal:nth-child(4) { transition-delay: 180ms; }
+.stagger-60 > .reveal:nth-child(5) { transition-delay: 240ms; }
+.stagger-60 > .reveal:nth-child(6) { transition-delay: 300ms; }
+
+.stagger-100 > .reveal:nth-child(1) { transition-delay: 0ms; }
+.stagger-100 > .reveal:nth-child(2) { transition-delay: 100ms; }
+.stagger-100 > .reveal:nth-child(3) { transition-delay: 200ms; }
+.stagger-100 > .reveal:nth-child(4) { transition-delay: 300ms; }

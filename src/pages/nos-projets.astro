@@ -56,7 +56,7 @@ function getBanner(tags: string[]): { gradient: string; label: string; pattern: 
           >
             <!-- Colored banner -->
             <div class={`h-64 bg-gradient-to-br ${gradient} relative overflow-hidden flex items-center justify-center`}>
-              <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+              <div class="absolute inset-0 opacity-20 dot-pattern-sm"></div>
               <div class="absolute top-6 left-6 px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-white text-xs font-bold tracking-wider uppercase">
                 {label}
               </div>

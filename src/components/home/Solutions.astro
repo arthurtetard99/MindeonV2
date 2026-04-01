@@ -21,11 +21,10 @@ const icons: Record<string, string> = {
       center
     />
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-      {solutions.map((solution, i) => (
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 stagger-60">
+      {solutions.map((solution) => (
         <div
           class="reveal flex flex-col bg-slate-50 rounded-3xl p-8"
-          style={`transition-delay: ${i * 60}ms`}
         >
           <!-- Icon -->
           <div class="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-8 shrink-0 text-primary">
