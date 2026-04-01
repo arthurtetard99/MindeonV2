@@ -1,0 +1,120 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pathname: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+  schemaType?: 'organization' | 'article' | 'blogposting';
+  datePublished?: string;
+  author?: string;
+}
+
+const {
+  title,
+  description,
+  pathname,
+  ogImage = '/images/og/default.jpg',
+  type = 'website',
+  schemaType = 'organization',
+  datePublished,
+  author = 'Mindeon.ai',
+} = Astro.props;
+
+const siteUrl = 'https://mindeon.ai';
+const canonicalUrl = `${siteUrl}${pathname}`;
+const ogImageUrl = `${siteUrl}${ogImage}`;
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'Mindeon.ai',
+      url: siteUrl,
+      logo: `${siteUrl}/images/logo.svg`,
+      description: "Agence d'automatisation et d'agents IA pour PME et startups",
+      email: 'contact@mindeon.ai',
+      telephone: '+33667699490',
+      founders: [
+        { '@type': 'Person', name: 'David Manscour' },
+        { '@type': 'Person', name: 'Cambyse Daghigh' },
+      ],
+      sameAs: ['https://www.linkedin.com/company/mindeon'],
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5',
+        reviewCount: '5',
+        bestRating: '5',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      name: 'Mindeon.ai',
+      url: siteUrl,
+    },
+  ],
+};
+
+const articleSchema = schemaType === 'article' || schemaType === 'blogposting'
+  ? {
+      '@context': 'https://schema.org',
+      '@type': schemaType === 'blogposting' ? 'BlogPosting' : 'Article',
+      headline: title,
+      author: { '@type': 'Person', name: author },
+      datePublished: datePublished ?? new Date().toISOString(),
+      dateModified: datePublished ?? new Date().toISOString(),
+      publisher: {
+        '@type': 'Organization',
+        name: 'Mindeon.ai',
+        logo: { '@type': 'ImageObject', url: `${siteUrl}/images/logo.svg` },
+      },
+    }
+  : null;
+
+const schema = articleSchema ?? orgSchema;
+---
+
+<!-- Charset & viewport -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Primary -->
+<title>{title} | Mindeon.ai</title>
+<meta name="description" content={description} />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:site_name" content="Mindeon.ai" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<!-- Favicon (data URI pour éviter les conflits Vite/Keystatic en dev) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'%3E%3Crect width='32' height='32' rx='8' fill='%232563EB'/%3E%3Ctext x='16' y='23' font-family='system-ui,sans-serif' font-size='17' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+
+<!-- Fonts: preload + load -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+/>
+
+<!-- JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

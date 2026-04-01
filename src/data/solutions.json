@@ -1,0 +1,38 @@
+[
+  {
+    "id": "voice-bots",
+    "title": "Voice Bots",
+    "icon": "phone",
+    "description": "Vos commerciaux passent des heures à qualifier par téléphone ? Notre voice bot le fait 24/7 avec une voix naturelle et une latence quasi nulle."
+  },
+  {
+    "id": "agents-conversationnels",
+    "title": "Agents Conversationnels",
+    "icon": "message-square",
+    "description": "Un assistant IA qui comprend le contexte, gère les conversations complexes et s'adapte en temps réel à vos utilisateurs."
+  },
+  {
+    "id": "automatisation-crm",
+    "title": "Automatisation CRM",
+    "icon": "zap",
+    "description": "Enrichissement de contacts, suivi de prospects, synchronisation entre outils — votre CRM tourne tout seul, sans intervention humaine."
+  },
+  {
+    "id": "workflows-n8n",
+    "title": "Workflows n8n",
+    "icon": "git-branch",
+    "description": "On connecte vos apps entre elles avec des workflows intelligents qui intègrent l'IA dans vos opérations quotidiennes."
+  },
+  {
+    "id": "agents-specialises",
+    "title": "Agents Spécialisés",
+    "icon": "bot",
+    "description": "Support client, vente, RH, finance — un agent IA sur-mesure, entraîné sur vos données, pour chaque besoin métier."
+  },
+  {
+    "id": "integrations-api",
+    "title": "Intégrations API",
+    "icon": "plug",
+    "description": "Déploiement dans votre infra existante avec des APIs robustes, une documentation complète et un monitoring en temps réel."
+  }
+]

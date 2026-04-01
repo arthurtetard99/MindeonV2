@@ -1,0 +1,15 @@
+[
+  { "name": "VAPI",             "logo": "/images/tools/vapi.png" },
+  { "name": "Retell AI",        "logo": "/images/tools/retell.png" },
+  { "name": "Claude",           "logo": "/images/tools/claude.png" },
+  { "name": "n8n",              "logo": "/images/tools/n8n.png" },
+  { "name": "Mistral AI",       "logo": "/images/tools/mistral.png" },
+  { "name": "Power Automate",   "logo": "/images/tools/powerautomate.png" },
+  { "name": "Microsoft Azure",  "logo": "/images/tools/azure.png" },
+  { "name": "Supabase",         "logo": "/images/tools/supabase.png" },
+  { "name": "HubSpot",          "logo": "/images/tools/hubspot.png" },
+  { "name": "Airtable",         "logo": "/images/tools/airtable.png" },
+  { "name": "GitHub",           "logo": "/images/tools/github.png" },
+  { "name": "Cloudflare",       "logo": "/images/tools/cloudflarev2.png" },
+  { "name": "Cognigy",          "logo": "/images/tools/cognigy.png" }
+]

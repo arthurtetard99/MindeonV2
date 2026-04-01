@@ -1,0 +1,701 @@
+---
+/**
+ * Renders a themed SVG illustration based on a topic key.
+ * Topics: "voice" | "chatbot" | "workflow" | "webapp" | "ai" | "comparison"
+ */
+interface Props {
+  topic: string;
+  class?: string;
+}
+const { topic, class: className = '' } = Astro.props;
+---
+
+<div class={`w-full h-full ${className}`} aria-hidden="true">
+
+  {topic === 'voice' && (
+    <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <defs>
+        <radialGradient id="v-bg" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#dbeafe"/>
+          <stop offset="100%" stop-color="#eff6ff"/>
+        </radialGradient>
+      </defs>
+      <rect width="560" height="320" fill="url(#v-bg)" rx="20"/>
+      <!-- Waveform rings -->
+      {[130,105,80,55].map((r, i) => (
+        <circle cx="280" cy="160" r={r} fill="none" stroke="#93c5fd" stroke-width={i === 0 ? 1 : 1.5} opacity={1 - i * 0.2}/>
+      ))}
+      <!-- Central circle -->
+      <circle cx="280" cy="160" r="42" fill="#2563EB"/>
+      <!-- Phone icon -->
+      <path d="M272 145 c0-2 1.5-3.5 3.5-3.5h9c2 0 3.5 1.5 3.5 3.5v30c0 2-1.5 3.5-3.5 3.5h-9c-2 0-3.5-1.5-3.5-3.5v-30z" fill="white" opacity="0.9"/>
+      <rect x="275" y="170" width="10" height="2" rx="1" fill="#2563EB"/>
+      <!-- Audio waveform bars -->
+      {[
+        [200,160,3,24],[212,160,3,36],[224,160,3,16],[236,160,3,42],[248,160,3,20],
+        [312,160,3,20],[324,160,3,42],[336,160,3,16],[348,160,3,36],[360,160,3,24]
+      ].map(([x, cy, w, h]) => (
+        <rect x={x} y={cy - h/2} width={w} height={h} rx="1.5" fill="#3b82f6" opacity="0.7"/>
+      ))}
+      <!-- Chat bubbles -->
+      <rect x="60" y="90" width="100" height="40" rx="12" fill="white" opacity="0.9"/>
+      <rect x="66" y="103" width="60" height="6" rx="3" fill="#94a3b8"/>
+      <rect x="66" y="114" width="40" height="6" rx="3" fill="#cbd5e1"/>
+      <polygon points="80,130 92,130 86,142" fill="white" opacity="0.9"/>
+
+      <rect x="400" y="80" width="108" height="52" rx="12" fill="#2563EB"/>
+      <rect x="408" y="93" width="65" height="6" rx="3" fill="white" opacity="0.7"/>
+      <rect x="408" y="104" width="45" height="6" rx="3" fill="white" opacity="0.5"/>
+      <rect x="408" y="115" width="80" height="6" rx="3" fill="white" opacity="0.7"/>
+      <polygon points="420,132 432,132 426,144" fill="#2563EB"/>
+
+      <rect x="55" y="195" width="115" height="52" rx="12" fill="white" opacity="0.9"/>
+      <rect x="63" y="208" width="70" height="6" rx="3" fill="#94a3b8"/>
+      <rect x="63" y="219" width="90" height="6" rx="3" fill="#cbd5e1"/>
+      <rect x="63" y="230" width="50" height="6" rx="3" fill="#cbd5e1"/>
+      <polygon points="75,247 87,247 81,259" fill="white" opacity="0.9"/>
+
+      <!-- Success badge -->
+      <circle cx="430" cy="210" r="24" fill="#16a34a"/>
+      <path d="M420 210 l8 8 l12-14" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  )}
+
+  {topic === 'chatbot' && (
+    <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <defs>
+        <linearGradient id="c-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f0fdf4"/>
+          <stop offset="100%" stop-color="#eff6ff"/>
+        </linearGradient>
+      </defs>
+      <rect width="560" height="320" fill="url(#c-bg)" rx="20"/>
+      <!-- Document/KB icon background -->
+      <rect x="390" y="60" width="120" height="150" rx="10" fill="white" opacity="0.7"/>
+      <rect x="402" y="80" width="75" height="7" rx="3.5" fill="#cbd5e1"/>
+      <rect x="402" y="95" width="96" height="7" rx="3.5" fill="#e2e8f0"/>
+      <rect x="402" y="110" width="60" height="7" rx="3.5" fill="#e2e8f0"/>
+      <rect x="402" y="130" width="96" height="7" rx="3.5" fill="#e2e8f0"/>
+      <rect x="402" y="145" width="80" height="7" rx="3.5" fill="#e2e8f0"/>
+      <rect x="402" y="160" width="96" height="7" rx="3.5" fill="#e2e8f0"/>
+      <rect x="402" y="175" width="50" height="7" rx="3.5" fill="#e2e8f0"/>
+      <text x="450" y="228" font-family="sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Base de connaissances</text>
+
+      <!-- Conversation flow -->
+      <!-- User messages (right) -->
+      <rect x="230" y="50" width="140" height="46" rx="14" rx="14" fill="#e2e8f0"/>
+      <rect x="240" y="63" width="90" height="7" rx="3.5" fill="#94a3b8"/>
+      <rect x="240" y="75" width="70" height="7" rx="3.5" fill="#cbd5e1"/>
+      <polygon points="350,96 362,96 356,108" fill="#e2e8f0"/>
+
+      <!-- AI messages (left) -->
+      <rect x="50" y="115" width="160" height="60" rx="14" fill="#2563EB"/>
+      <rect x="62" y="128" width="100" height="7" rx="3.5" fill="white" opacity="0.8"/>
+      <rect x="62" y="140" width="130" height="7" rx="3.5" fill="white" opacity="0.6"/>
+      <rect x="62" y="152" width="80" height="7" rx="3.5" fill="white" opacity="0.6"/>
+      <polygon points="62,175 50,175 56,187" fill="#2563EB"/>
+      <!-- AI badge -->
+      <circle cx="70" cy="105" r="14" fill="#2563EB"/>
+      <text x="70" y="109" font-family="sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">IA</text>
+
+      <!-- User message 2 -->
+      <rect x="230" y="130" width="130" height="46" rx="14" fill="#e2e8f0"/>
+      <rect x="240" y="143" width="85" height="7" rx="3.5" fill="#94a3b8"/>
+      <rect x="240" y="155" width="105" height="7" rx="3.5" fill="#cbd5e1"/>
+      <polygon points="340,176 352,176 346,188" fill="#e2e8f0"/>
+
+      <!-- AI message 2 -->
+      <rect x="50" y="200" width="170" height="72" rx="14" fill="#2563EB"/>
+      <rect x="62" y="213" width="140" height="7" rx="3.5" fill="white" opacity="0.8"/>
+      <rect x="62" y="225" width="100" height="7" rx="3.5" fill="white" opacity="0.6"/>
+      <rect x="62" y="237" width="130" height="7" rx="3.5" fill="white" opacity="0.6"/>
+      <rect x="62" y="249" width="70" height="7" rx="3.5" fill="white" opacity="0.5"/>
+
+      <!-- RAG connection arrow -->
+      <path d="M380 155 Q340 155 300 185" stroke="#2563EB" stroke-width="2" fill="none" stroke-dasharray="5,4" opacity="0.5"/>
+      <polygon points="297,190 308,184 304,196" fill="#2563EB" opacity="0.5"/>
+
+      <!-- Resolution badge -->
+      <rect x="380" y="230" width="130" height="36" rx="18" fill="#16a34a"/>
+      <text x="445" y="252" font-family="sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">85% résolu IA</text>
+    </svg>
+  )}
+
+  {topic === 'workflow' && (
+    <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <defs>
+        <linearGradient id="w-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#faf5ff"/>
+          <stop offset="100%" stop-color="#eff6ff"/>
+        </linearGradient>
+      </defs>
+      <rect width="560" height="320" fill="url(#w-bg)" rx="20"/>
+
+      <!-- Workflow nodes + connectors -->
+      <!-- Node positions: 5 nodes across -->
+      {[
+        { cx: 72,  label: 'Déclencheur', icon: 'bolt',   color: '#f59e0b' },
+        { cx: 184, label: 'Filtre',      icon: 'filter', color: '#2563EB' },
+        { cx: 296, label: 'IA Agent',    icon: 'brain',  color: '#7c3aed' },
+        { cx: 408, label: 'CRM',         icon: 'db',     color: '#2563EB' },
+        { cx: 488, label: 'Email',       icon: 'mail',   color: '#16a34a' },
+      ].map((node, i) => (
+        <>
+          <!-- Connector line -->
+          {i < 4 && (
+            <line
+              x1={node.cx + 28} y1="160"
+              x2={[184,296,408,488][i] - 28} y2="160"
+              stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,4"
+            />
+          )}
+          <!-- Arrow -->
+          {i < 4 && (
+            <polygon
+              points={`${[184,296,408,488][i]-32},156 ${[184,296,408,488][i]-32},164 ${[184,296,408,488][i]-24},160`}
+              fill="#94a3b8"
+            />
+          )}
+          <!-- Node circle -->
+          <circle cx={node.cx} cy="160" r="28" fill="white" stroke={node.color} stroke-width="2.5"/>
+          <!-- Mini icon inside -->
+          {node.icon === 'bolt' && (
+            <polygon points={`${node.cx-7},148 ${node.cx+3},148 ${node.cx-3},162 ${node.cx+8},162 ${node.cx-2},175 ${node.cx+2},162 ${node.cx-6},162`} fill={node.color}/>
+          )}
+          {node.icon === 'filter' && (
+            <>
+              <line x1={node.cx-8} y1={148} x2={node.cx+8} y2={148} stroke={node.color} stroke-width="2" stroke-linecap="round"/>
+              <line x1={node.cx-5} y1={155} x2={node.cx+5} y2={155} stroke={node.color} stroke-width="2" stroke-linecap="round"/>
+              <line x1={node.cx-2} y1={162} x2={node.cx+2} y2={162} stroke={node.color} stroke-width="2" stroke-linecap="round"/>
+            </>
+          )}
+          {node.icon === 'brain' && (
+            <circle cx={node.cx} cy="160" r="12" fill={node.color} opacity="0.2"/>
+          )}
+          {node.icon === 'db' && (
+            <>
+              <ellipse cx={node.cx} cy={149} rx={10} ry={4} fill={node.color} opacity="0.8"/>
+              <rect x={node.cx-10} y={149} width={20} height={12} fill={node.color} opacity="0.5"/>
+              <ellipse cx={node.cx} cy={161} rx={10} ry={4} fill={node.color} opacity="0.8"/>
+            </>
+          )}
+          {node.icon === 'mail' && (
+            <>
+              <rect x={node.cx-10} y={151} width={20} height={16} rx="2" fill="none" stroke={node.color} stroke-width="1.5"/>
+              <polyline points={`${node.cx-10},153 ${node.cx},162 ${node.cx+10},153`} fill="none" stroke={node.color} stroke-width="1.5"/>
+            </>
+          )}
+          <!-- Label -->
+          <text x={node.cx} y="204" font-family="sans-serif" font-size="10" fill="#64748b" text-anchor="middle">{node.label}</text>
+        </>
+      ))}
+
+      <!-- Status bubbles -->
+      <rect x="50" y="60" width="90" height="28" rx="14" fill="#fef3c7"/>
+      <text x="95" y="78" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">Nouvelle demande</text>
+
+      <rect x="260" y="60" width="80" height="28" rx="14" fill="#ede9fe"/>
+      <text x="300" y="78" font-family="sans-serif" font-size="10" fill="#5b21b6" text-anchor="middle">Claude 3.5</text>
+
+      <rect x="370" y="60" width="90" height="28" rx="14" fill="#dcfce7"/>
+      <text x="415" y="78" font-family="sans-serif" font-size="10" fill="#166534" text-anchor="middle">✓ Envoyé</text>
+
+      <!-- Vertical connections to bubbles -->
+      <line x1="296" y1="132" x2="296" y2="88" stroke="#c4b5fd" stroke-width="1.5" stroke-dasharray="3,3"/>
+      <line x1="408" y1="132" x2="415" y2="88" stroke="#86efac" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+      <!-- Stats row -->
+      <rect x="80" y="245" width="390" height="46" rx="10" fill="white" opacity="0.8"/>
+      <text x="165" y="264" font-family="sans-serif" font-size="10" font-weight="bold" fill="#2563EB" text-anchor="middle">1 247 exécutions</text>
+      <text x="165" y="278" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">ce mois</text>
+      <line x1="230" y1="252" x2="230" y2="282" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="310" y="264" font-family="sans-serif" font-size="10" font-weight="bold" fill="#16a34a" text-anchor="middle">98.7% succès</text>
+      <text x="310" y="278" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">taux de réussite</text>
+      <line x1="380" y1="252" x2="380" y2="282" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="435" y="264" font-family="sans-serif" font-size="10" font-weight="bold" fill="#f59e0b" text-anchor="middle">1.2s</text>
+      <text x="435" y="278" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">temps moyen</text>
+    </svg>
+  )}
+
+  {topic === 'webapp' && (
+    <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <defs>
+        <linearGradient id="app-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f0f9ff"/>
+          <stop offset="100%" stop-color="#f8fafc"/>
+        </linearGradient>
+      </defs>
+      <rect width="560" height="320" fill="url(#app-bg)" rx="20"/>
+
+      <!-- Browser window -->
+      <rect x="60" y="30" width="440" height="260" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <!-- Browser bar -->
+      <rect x="60" y="30" width="440" height="36" rx="14" fill="#f8fafc"/>
+      <rect x="60" y="52" width="440" height="14" fill="#f8fafc"/>
+      <!-- Dots -->
+      <circle cx="85" cy="48" r="5" fill="#fca5a5"/>
+      <circle cx="101" cy="48" r="5" fill="#fcd34d"/>
+      <circle cx="117" cy="48" r="5" fill="#86efac"/>
+      <!-- URL bar -->
+      <rect x="140" y="40" width="240" height="16" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="260" y="52" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">app.mindeon.ai/commandes</text>
+
+      <!-- Dashboard content -->
+      <!-- Top stats row -->
+      {[
+        { x: 80,  label: 'Commandes', value: '1 247', color: '#2563EB' },
+        { x: 210, label: 'En cours',  value: '34',    color: '#f59e0b' },
+        { x: 340, label: 'Traitées',  value: '1 213', color: '#16a34a' },
+        { x: 425, label: 'Alertes',   value: '2',     color: '#dc2626' },
+      ].map(s => (
+        <rect x={s.x} y="80" width="110" height="55" rx="8" fill={s.color} opacity="0.08" stroke={s.color} stroke-width="1" stroke-opacity="0.2"/>
+      ))}
+      <text x="135" y="102" font-family="sans-serif" font-size="18" font-weight="800" fill="#2563EB" text-anchor="middle">1 247</text>
+      <text x="135" y="118" font-family="sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Commandes</text>
+      <text x="265" y="102" font-family="sans-serif" font-size="18" font-weight="800" fill="#f59e0b" text-anchor="middle">34</text>
+      <text x="265" y="118" font-family="sans-serif" font-size="9" fill="#64748b" text-anchor="middle">En cours</text>
+      <text x="395" y="102" font-family="sans-serif" font-size="18" font-weight="800" fill="#16a34a" text-anchor="middle">1 213</text>
+      <text x="395" y="118" font-family="sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Traitées</text>
+      <text x="480" y="102" font-family="sans-serif" font-size="18" font-weight="800" fill="#dc2626" text-anchor="middle">2</text>
+      <text x="480" y="118" font-family="sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Alertes</text>
+
+      <!-- Chart -->
+      <rect x="80" y="148" width="230" height="120" rx="8" fill="white" stroke="#f1f5f9" stroke-width="1"/>
+      <text x="92" y="164" font-family="sans-serif" font-size="9" font-weight="600" fill="#334155">Volume / 7 jours</text>
+      {[40,65,45,80,60,90,75].map((h, i) => (
+        <rect x={96 + i*28} y={248 - h*0.7} width="18" height={h*0.7} rx="3" fill={i === 5 ? '#2563EB' : '#dbeafe'}/>
+      ))}
+
+      <!-- List -->
+      <rect x="322" y="148" width="178" height="120" rx="8" fill="white" stroke="#f1f5f9" stroke-width="1"/>
+      <text x="334" y="164" font-family="sans-serif" font-size="9" font-weight="600" fill="#334155">Dernières commandes</text>
+      {[0,1,2,3].map(i => (
+        <>
+          <circle cx="342" cy={184 + i*23} r="5" fill={['#16a34a','#f59e0b','#16a34a','#16a34a'][i]} opacity="0.8"/>
+          <rect x="355" y={179 + i*23} width="90" height="6" rx="3" fill="#e2e8f0"/>
+          <rect x="355" y={189 + i*23} width="60" height="5" rx="2.5" fill="#f1f5f9"/>
+        </>
+      ))}
+    </svg>
+  )}
+
+  {topic === 'ai' && (
+    <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <defs>
+        <radialGradient id="ai-bg" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#ede9fe"/>
+          <stop offset="100%" stop-color="#eff6ff"/>
+        </radialGradient>
+      </defs>
+      <rect width="560" height="320" fill="url(#ai-bg)" rx="20"/>
+
+      <!-- Neural network nodes -->
+      <!-- Layer 1 (input) -->
+      {[80,130,180,230].map(y => (
+        <>
+          <circle cx="110" cy={y} r="16" fill="white" stroke="#c4b5fd" stroke-width="2"/>
+          <circle cx="110" cy={y} r="8" fill="#7c3aed" opacity="0.4"/>
+        </>
+      ))}
+      <!-- Layer 2 (hidden) -->
+      {[100,155,210].map(y => (
+        <>
+          <circle cx="230" cy={y} r="18" fill="white" stroke="#93c5fd" stroke-width="2"/>
+          <circle cx="230" cy={y} r="9" fill="#2563EB" opacity="0.5"/>
+        </>
+      ))}
+      <!-- Layer 3 (hidden) -->
+      {[100,155,210].map(y => (
+        <>
+          <circle cx="350" cy={y} r="18" fill="white" stroke="#93c5fd" stroke-width="2"/>
+          <circle cx="350" cy={y} r="9" fill="#2563EB" opacity="0.5"/>
+        </>
+      ))}
+      <!-- Layer 4 (output) -->
+      {[130,180].map(y => (
+        <>
+          <circle cx="460" cy={y} r="22" fill="#2563EB"/>
+          <circle cx="460" cy={y} r="10" fill="white" opacity="0.3"/>
+        </>
+      ))}
+
+      <!-- Connections L1→L2 -->
+      {[80,130,180,230].flatMap(y1 => [100,155,210].map(y2 => (
+        <line x1="126" y1={y1} x2="212" y2={y2} stroke="#c4b5fd" stroke-width="0.8" opacity="0.5"/>
+      )))}
+      <!-- Connections L2→L3 -->
+      {[100,155,210].flatMap(y1 => [100,155,210].map(y2 => (
+        <line x1="248" y1={y1} x2="332" y2={y2} stroke="#93c5fd" stroke-width="0.8" opacity="0.5"/>
+      )))}
+      <!-- Connections L3→L4 -->
+      {[100,155,210].flatMap(y1 => [130,180].map(y2 => (
+        <line x1="368" y1={y1} x2="438" y2={y2} stroke="#60a5fa" stroke-width="1" opacity="0.6"/>
+      )))}
+
+      <!-- Output labels -->
+      <rect x="490" y="116" width="55" height="26" rx="8" fill="white" opacity="0.9"/>
+      <text x="517" y="133" font-family="sans-serif" font-size="10" fill="#16a34a" font-weight="600" text-anchor="middle">Action</text>
+      <rect x="490" y="166" width="55" height="26" rx="8" fill="white" opacity="0.9"/>
+      <text x="517" y="183" font-family="sans-serif" font-size="10" fill="#2563EB" font-weight="600" text-anchor="middle">Réponse</text>
+
+      <!-- Input labels -->
+      <rect x="30" y="68" width="60" height="22" rx="6" fill="white" opacity="0.8"/>
+      <text x="60" y="83" font-family="sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">Contexte</text>
+      <rect x="30" y="118" width="60" height="22" rx="6" fill="white" opacity="0.8"/>
+      <text x="60" y="133" font-family="sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">Outils</text>
+      <rect x="30" y="168" width="60" height="22" rx="6" fill="white" opacity="0.8"/>
+      <text x="60" y="183" font-family="sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">Données</text>
+      <rect x="30" y="218" width="60" height="22" rx="6" fill="white" opacity="0.8"/>
+      <text x="60" y="233" font-family="sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">Prompt</text>
+
+      <!-- Labels -->
+      <text x="110" y="258" font-family="sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Entrée</text>
+      <text x="290" y="240" font-family="sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Traitement</text>
+      <text x="460" y="218" font-family="sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Sortie</text>
+
+      <!-- Floating badge -->
+      <rect x="160" y="268" width="240" height="34" rx="17" fill="white" opacity="0.9"/>
+      <text x="280" y="289" font-family="sans-serif" font-size="11" font-weight="600" fill="#2563EB" text-anchor="middle">Model Context Protocol (MCP)</text>
+    </svg>
+  )}
+
+  {topic === 'devis' && (
+    <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <defs>
+        <linearGradient id="dv-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f8fafc"/>
+          <stop offset="100%" stop-color="#eff6ff"/>
+        </linearGradient>
+      </defs>
+      <rect width="560" height="320" fill="url(#dv-bg)" rx="20"/>
+
+      <!-- Left: incoming data / conversation -->
+      <rect x="30" y="50" width="160" height="220" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect x="30" y="50" width="160" height="38" rx="14" fill="#0f172a"/>
+      <rect x="30" y="74" width="160" height="14" fill="#0f172a"/>
+      <text x="110" y="73" font-family="sans-serif" font-size="10" font-weight="700" fill="white" text-anchor="middle">Informations client</text>
+      <!-- Input rows -->
+      {[
+        ['Nom', 'Entreprise ABC'],
+        ['Service', 'Maintenance x3'],
+        ['Surface', '1 200 m²'],
+        ['Fréquence', 'Hebdomadaire'],
+        ['Délai', 'Début janvier'],
+      ].map(([label, val], i) => (
+        <>
+          <text x="44" y={110 + i * 34} font-family="sans-serif" font-size="8" fill="#94a3b8">{label}</text>
+          <rect x="44" y={116 + i * 34} width="132" height="14" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="50" y={127 + i * 34} font-family="sans-serif" font-size="9" font-weight="600" fill="#334155">{val}</text>
+        </>
+      ))}
+
+      <!-- Arrow + AI badge -->
+      <line x1="190" y1="160" x2="230" y2="160" stroke="#2563EB" stroke-width="2" stroke-dasharray="4,3"/>
+      <polygon points="226,155 238,160 226,165" fill="#2563EB"/>
+      <circle cx="214" cy="130" r="18" fill="#2563EB"/>
+      <text x="214" y="126" font-family="sans-serif" font-size="8" font-weight="700" fill="white" text-anchor="middle">Claude</text>
+      <text x="214" y="137" font-family="sans-serif" font-size="8" fill="#bfdbfe" text-anchor="middle">3.5</text>
+
+      <!-- Right: PDF document -->
+      <rect x="240" y="30" width="200" height="260" rx="14" fill="white" stroke="#2563EB" stroke-width="2"/>
+      <!-- PDF fold corner -->
+      <polygon points="400,30 440,30 440,68" fill="#dbeafe"/>
+      <polygon points="400,30 440,68 400,68" fill="#bfdbfe"/>
+      <!-- PDF header -->
+      <rect x="260" y="50" width="80" height="8" rx="4" fill="#2563EB" opacity="0.8"/>
+      <text x="260" y="76" font-family="sans-serif" font-size="9" fill="#94a3b8">DEVIS N° 2024-089</text>
+      <rect x="260" y="81" width="160" height="1" fill="#e2e8f0"/>
+      <!-- Client block -->
+      <text x="260" y="97" font-family="sans-serif" font-size="8" fill="#94a3b8">CLIENT</text>
+      <text x="260" y="109" font-family="sans-serif" font-size="10" font-weight="700" fill="#0f172a">Entreprise ABC</text>
+      <text x="260" y="120" font-family="sans-serif" font-size="9" fill="#64748b">Maintenance hebdomadaire</text>
+      <!-- Line items -->
+      <rect x="260" y="134" width="160" height="1" fill="#f1f5f9"/>
+      {[
+        ['Prestation maintenance', '× 3', '1 200 €'],
+        ['Déplacement (km)', '× 12', '360 €'],
+        ['Produits consommables', 'forfait', '240 €'],
+      ].map(([desc, qty, price], i) => (
+        <>
+          <text x="260" y={152 + i * 24} font-family="sans-serif" font-size="9" fill="#334155">{desc}</text>
+          <text x="350" y={152 + i * 24} font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">{qty}</text>
+          <text x="415" y={152 + i * 24} font-family="sans-serif" font-size="9" font-weight="600" fill="#0f172a" text-anchor="end">{price}</text>
+          <rect x="260" y={156 + i * 24} width="160" height="1" fill="#f8fafc"/>
+        </>
+      ))}
+      <!-- Total -->
+      <rect x="300" y="228" width="120" height="28" rx="8" fill="#2563EB"/>
+      <text x="360" y="242" font-family="sans-serif" font-size="10" font-weight="700" fill="white" text-anchor="middle">TOTAL : 1 800 €</text>
+      <text x="310" y="256" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="start">HT · valable 30 jours</text>
+
+      <!-- Speed badge -->
+      <rect x="30" y="278" width="380" height="28" rx="14" fill="#16a34a"/>
+      <text x="220" y="296" font-family="sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">⚡ Devis généré et envoyé en 4 minutes</text>
+    </svg>
+  )}
+
+  {topic === 'crm' && (
+    <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <defs>
+        <linearGradient id="crm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#faf5ff"/>
+          <stop offset="100%" stop-color="#f0f9ff"/>
+        </linearGradient>
+      </defs>
+      <rect width="560" height="320" fill="url(#crm-bg)" rx="20"/>
+
+      <!-- Central node: n8n -->
+      <circle cx="280" cy="160" r="40" fill="#2563EB"/>
+      <text x="280" y="156" font-family="sans-serif" font-size="13" font-weight="800" fill="white" text-anchor="middle">n8n</text>
+      <text x="280" y="170" font-family="sans-serif" font-size="9" fill="#bfdbfe" text-anchor="middle">orchestration</text>
+
+      <!-- Surrounding tool nodes -->
+      <!-- Top: Email (source) -->
+      <circle cx="280" cy="55" r="28" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="280" y="50" font-family="sans-serif" font-size="9" font-weight="700" fill="#334155" text-anchor="middle">Devis</text>
+      <text x="280" y="62" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">entrant</text>
+      <line x1="280" y1="83" x2="280" y2="120" stroke="#c4b5fd" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="276,116 284,116 280,124" fill="#c4b5fd"/>
+
+      <!-- Left: Axonaut CRM -->
+      <circle cx="100" cy="120" r="28" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="100" y="115" font-family="sans-serif" font-size="9" font-weight="700" fill="#7c3aed" text-anchor="middle">Axonaut</text>
+      <text x="100" y="127" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">CRM</text>
+      <line x1="128" y1="131" x2="242" y2="150" stroke="#c4b5fd" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="238,147 246,153 240,158" fill="#c4b5fd"/>
+
+      <!-- Left bottom: Trello -->
+      <circle cx="100" cy="210" r="28" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="100" y="205" font-family="sans-serif" font-size="9" font-weight="700" fill="#0052cc" text-anchor="middle">Trello</text>
+      <text x="100" y="217" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">Planning</text>
+      <line x1="128" y1="199" x2="242" y2="172" stroke="#93c5fd" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="238,169 246,174 240,179" fill="#93c5fd"/>
+
+      <!-- Right: Email notif -->
+      <circle cx="460" cy="120" r="28" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="460" y="115" font-family="sans-serif" font-size="9" font-weight="700" fill="#16a34a" text-anchor="middle">Email</text>
+      <text x="460" y="127" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">client</text>
+      <line x1="318" y1="148" x2="432" y2="129" stroke="#86efac" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="432,125 440,130 434,135" fill="#86efac"/>
+
+      <!-- Right bottom: Slack -->
+      <circle cx="460" cy="210" r="28" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="460" y="205" font-family="sans-serif" font-size="9" font-weight="700" fill="#4a154b" text-anchor="middle">Slack</text>
+      <text x="460" y="217" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">équipe</text>
+      <line x1="318" y1="170" x2="432" y2="199" stroke="#86efac" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <polygon points="428,198 436,203 430,208" fill="#86efac"/>
+
+      <!-- Bottom: Stats bar -->
+      <rect x="80" y="258" width="400" height="46" rx="12" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="175" y="276" font-family="sans-serif" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">100%</text>
+      <text x="175" y="291" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">sans double saisie</text>
+      <line x1="240" y1="265" x2="240" y2="295" stroke="#f1f5f9" stroke-width="1"/>
+      <text x="290" y="276" font-family="sans-serif" font-size="10" font-weight="700" fill="#16a34a" text-anchor="middle">−85%</text>
+      <text x="290" y="291" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">d'erreurs fabrication</text>
+      <line x1="345" y1="265" x2="345" y2="295" stroke="#f1f5f9" stroke-width="1"/>
+      <text x="405" y="276" font-family="sans-serif" font-size="10" font-weight="700" fill="#2563EB" text-anchor="middle">Temps réel</text>
+      <text x="405" y="291" font-family="sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">planning visible</text>
+    </svg>
+  )}
+
+  {topic === 'lead' && (
+    <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <defs>
+        <linearGradient id="lead-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f0fdf4"/>
+          <stop offset="100%" stop-color="#eff6ff"/>
+        </linearGradient>
+      </defs>
+      <rect width="560" height="320" fill="url(#lead-bg)" rx="20"/>
+
+      <!-- Funnel shape -->
+      <polygon points="160,50 400,50 360,140 200,140" fill="#dbeafe" opacity="0.8"/>
+      <polygon points="200,148 360,148 330,220 230,220" fill="#bfdbfe" opacity="0.9"/>
+      <polygon points="230,228 330,228 310,290 250,290" fill="#2563EB" opacity="0.85"/>
+
+      <!-- Funnel labels -->
+      <text x="280" y="102" font-family="sans-serif" font-size="11" font-weight="700" fill="#1e3a8a" text-anchor="middle">Leads entrants</text>
+      <text x="280" y="91" font-family="sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">200 / mois</text>
+      <text x="280" y="188" font-family="sans-serif" font-size="11" font-weight="700" fill="#1e3a8a" text-anchor="middle">Qualifiés</text>
+      <text x="280" y="177" font-family="sans-serif" font-size="9" fill="#2563EB" text-anchor="middle">82 leads</text>
+      <text x="280" y="262" font-family="sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">Chauds →</text>
+      <text x="280" y="275" font-family="sans-serif" font-size="9" fill="#bfdbfe" text-anchor="middle">34 RDV</text>
+
+      <!-- Score cards on the right -->
+      <rect x="400" y="60" width="130" height="55" rx="10" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <circle cx="420" cy="87" r="10" fill="#16a34a"/>
+      <text x="420" y="91" font-family="sans-serif" font-size="9" font-weight="800" fill="white" text-anchor="middle">3</text>
+      <text x="455" y="80" font-family="sans-serif" font-size="10" font-weight="700" fill="#16a34a">Lead chaud</text>
+      <text x="414" y="98" font-family="sans-serif" font-size="8" fill="#64748b">Budget + délai + décision</text>
+      <text x="414" y="108" font-family="sans-serif" font-size="8" fill="#94a3b8">→ transfert commercial</text>
+
+      <rect x="400" y="127" width="130" height="55" rx="10" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <circle cx="420" cy="154" r="10" fill="#f59e0b"/>
+      <text x="420" y="158" font-family="sans-serif" font-size="9" font-weight="800" fill="white" text-anchor="middle">2</text>
+      <text x="455" y="147" font-family="sans-serif" font-size="10" font-weight="700" fill="#f59e0b">Lead tiède</text>
+      <text x="414" y="165" font-family="sans-serif" font-size="8" fill="#64748b">Intérêt sans budget</text>
+      <text x="414" y="175" font-family="sans-serif" font-size="8" fill="#94a3b8">→ nurturing auto</text>
+
+      <rect x="400" y="194" width="130" height="55" rx="10" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <circle cx="420" cy="221" r="10" fill="#94a3b8"/>
+      <text x="420" y="225" font-family="sans-serif" font-size="9" font-weight="800" fill="white" text-anchor="middle">1</text>
+      <text x="455" y="214" font-family="sans-serif" font-size="10" font-weight="700" fill="#64748b">Lead froid</text>
+      <text x="414" y="232" font-family="sans-serif" font-size="8" fill="#64748b">Curieux, pas de projet</text>
+      <text x="414" y="242" font-family="sans-serif" font-size="8" fill="#94a3b8">→ newsletter</text>
+
+      <!-- AI agent bubble -->
+      <rect x="30" y="130" width="118" height="60" rx="14" fill="#2563EB"/>
+      <text x="89" y="152" font-family="sans-serif" font-size="9" font-weight="700" fill="white" text-anchor="middle">Agent IA — Alex</text>
+      <text x="89" y="164" font-family="sans-serif" font-size="8" fill="#bfdbfe" text-anchor="middle">5 questions max</text>
+      <text x="89" y="176" font-family="sans-serif" font-size="8" fill="#93c5fd" text-anchor="middle">Réponse &lt; 2 min</text>
+      <polygon points="88,190 100,190 94,202" fill="#2563EB"/>
+
+      <!-- Clock badge -->
+      <rect x="30" y="240" width="118" height="32" rx="16" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="89" y="261" font-family="sans-serif" font-size="10" font-weight="700" fill="#16a34a" text-anchor="middle">24h/7 — 0 min d'attente</text>
+    </svg>
+  )}
+
+  {topic === 'roi' && (
+    <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <defs>
+        <linearGradient id="roi-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f8fafc"/>
+          <stop offset="100%" stop-color="#f0fdf4"/>
+        </linearGradient>
+        <linearGradient id="roi-bar" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#2563EB"/>
+          <stop offset="100%" stop-color="#16a34a"/>
+        </linearGradient>
+      </defs>
+      <rect width="560" height="320" fill="url(#roi-bg)" rx="20"/>
+
+      <!-- Left panel — formula -->
+      <rect x="30" y="40" width="220" height="240" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect x="30" y="40" width="220" height="42" rx="14" fill="#0f172a"/>
+      <rect x="30" y="68" width="220" height="14" fill="#0f172a"/>
+      <text x="140" y="67" font-family="monospace" font-size="12" font-weight="700" fill="white" text-anchor="middle">Calcul ROI</text>
+
+      <!-- Formula lines -->
+      <text x="50" y="105" font-family="monospace" font-size="10" fill="#94a3b8">Gains annuels</text>
+      <rect x="50" y="112" width="180" height="2" rx="1" fill="#f1f5f9"/>
+      <text x="50" y="128" font-family="monospace" font-size="10" fill="#64748b">Heures/sem ×  52</text>
+      <text x="50" y="142" font-family="monospace" font-size="10" fill="#64748b">× coût/h × 0.7</text>
+      <rect x="50" y="155" width="180" height="24" rx="6" fill="#dcfce7"/>
+      <text x="140" y="171" font-family="monospace" font-size="11" font-weight="700" fill="#16a34a" text-anchor="middle">= 4 457 €/an</text>
+
+      <text x="50" y="202" font-family="monospace" font-size="10" fill="#94a3b8">Payback period</text>
+      <rect x="50" y="208" width="180" height="2" rx="1" fill="#f1f5f9"/>
+      <text x="50" y="224" font-family="monospace" font-size="10" fill="#64748b">Coût initial</text>
+      <text x="50" y="238" font-family="monospace" font-size="10" fill="#64748b">÷ gains mensuels</text>
+      <rect x="50" y="250" width="180" height="24" rx="6" fill="#dbeafe"/>
+      <text x="140" y="266" font-family="monospace" font-size="11" font-weight="700" fill="#2563EB" text-anchor="middle">= 16 mois</text>
+
+      <!-- Right panel — bar chart 3-year ROI -->
+      <rect x="270" y="40" width="260" height="240" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="290" y="68" font-family="sans-serif" font-size="11" font-weight="700" fill="#334155">ROI cumulé sur 3 ans</text>
+
+      <!-- Y-axis labels -->
+      <text x="295" y="100" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="end">15k€</text>
+      <text x="295" y="145" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="end">10k€</text>
+      <text x="295" y="190" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="end">5k€</text>
+      <text x="295" y="235" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="end">0</text>
+
+      <!-- Grid lines -->
+      {[100, 145, 190, 235].map(y => (
+        <line x1="300" y1={y} x2="510" y2={y} stroke="#f1f5f9" stroke-width="1"/>
+      ))}
+
+      <!-- Investment bar (cost, red) -->
+      <rect x="315" y="160" width="48" height="75" rx="4" fill="#fca5a5"/>
+      <text x="339" y="250" font-family="sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Invest.</text>
+      <text x="339" y="152" font-family="sans-serif" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">−5 100€</text>
+
+      <!-- Year 1 bar (break-even) -->
+      <rect x="385" y="155" width="48" height="80" rx="4" fill="url(#roi-bar)" opacity="0.6"/>
+      <text x="409" y="250" font-family="sans-serif" font-size="9" fill="#64748b" text-anchor="middle">An 1</text>
+      <text x="409" y="148" font-family="sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle">−643€</text>
+
+      <!-- Year 3 bar (positive ROI) -->
+      <rect x="448" y="96" width="48" height="139" rx="4" fill="url(#roi-bar)"/>
+      <text x="472" y="250" font-family="sans-serif" font-size="9" fill="#64748b" text-anchor="middle">An 3</text>
+      <text x="472" y="88" font-family="sans-serif" font-size="10" font-weight="800" fill="#16a34a" text-anchor="middle">+6 671€</text>
+
+      <!-- ROI badge -->
+      <rect x="310" y="262" width="190" height="28" rx="14" fill="#16a34a"/>
+      <text x="405" y="280" font-family="sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">ROI 3 ans : +27% ✓</text>
+    </svg>
+  )}
+
+  {topic === 'comparison' && (
+    <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <defs>
+        <linearGradient id="cmp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f8fafc"/>
+          <stop offset="100%" stop-color="#eff6ff"/>
+        </linearGradient>
+      </defs>
+      <rect width="560" height="320" fill="url(#cmp-bg)" rx="20"/>
+
+      <!-- 3 columns -->
+      <!-- Zapier -->
+      <rect x="70" y="60" width="130" height="200" rx="12" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect x="70" y="60" width="130" height="44" rx="12" fill="#ff4a00" opacity="0.1"/>
+      <rect x="70" y="90" width="130" height="14" fill="#ff4a00" opacity="0.1"/>
+      <text x="135" y="87" font-family="sans-serif" font-size="13" font-weight="700" fill="#ff4a00" text-anchor="middle">Zapier</text>
+      <!-- Bars -->
+      {[
+        { label: 'Facilité', v: 92, color: '#ff4a00' },
+        { label: 'Intégrations', v: 98, color: '#ff4a00' },
+        { label: 'Prix', v: 35, color: '#dc2626' },
+        { label: 'Flexibilité', v: 40, color: '#dc2626' },
+      ].map((b, i) => (
+        <>
+          <text x="82" y={125 + i*36} font-family="sans-serif" font-size="9" fill="#64748b">{b.label}</text>
+          <rect x="82" y={130 + i*36} width="106" height="8" rx="4" fill="#f1f5f9"/>
+          <rect x="82" y={130 + i*36} width={106 * b.v / 100} height="8" rx="4" fill={b.color} opacity="0.7"/>
+        </>
+      ))}
+
+      <!-- Make -->
+      <rect x="215" y="60" width="130" height="200" rx="12" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect x="215" y="60" width="130" height="44" rx="12" fill="#6d28d9" opacity="0.1"/>
+      <rect x="215" y="90" width="130" height="14" fill="#6d28d9" opacity="0.1"/>
+      <text x="280" y="87" font-family="sans-serif" font-size="13" font-weight="700" fill="#6d28d9" text-anchor="middle">Make</text>
+      {[
+        { label: 'Facilité', v: 68, color: '#6d28d9' },
+        { label: 'Intégrations', v: 75, color: '#6d28d9' },
+        { label: 'Prix', v: 75, color: '#16a34a' },
+        { label: 'Flexibilité', v: 72, color: '#6d28d9' },
+      ].map((b, i) => (
+        <>
+          <text x="227" y={125 + i*36} font-family="sans-serif" font-size="9" fill="#64748b">{b.label}</text>
+          <rect x="227" y={130 + i*36} width="106" height="8" rx="4" fill="#f1f5f9"/>
+          <rect x="227" y={130 + i*36} width={106 * b.v / 100} height="8" rx="4" fill={b.color} opacity="0.7"/>
+        </>
+      ))}
+
+      <!-- n8n — WINNER -->
+      <rect x="360" y="40" width="140" height="230" rx="12" fill="#eff6ff" stroke="#2563EB" stroke-width="2"/>
+      <rect x="360" y="40" width="140" height="48" rx="12" fill="#2563EB"/>
+      <rect x="360" y="74" width="140" height="14" fill="#2563EB"/>
+      <text x="430" y="69" font-family="sans-serif" font-size="14" font-weight="800" fill="white" text-anchor="middle">n8n</text>
+      <rect x="390" y="25" width="80" height="22" rx="11" fill="#2563EB"/>
+      <text x="430" y="40" font-family="sans-serif" font-size="10" font-weight="700" fill="white" text-anchor="middle">⭐ Notre choix</text>
+      {[
+        { label: 'Facilité', v: 55, color: '#2563EB' },
+        { label: 'Intégrations', v: 70, color: '#2563EB' },
+        { label: 'Prix', v: 96, color: '#16a34a' },
+        { label: 'Flexibilité', v: 99, color: '#16a34a' },
+        { label: 'IA Native', v: 98, color: '#7c3aed' },
+      ].map((b, i) => (
+        <>
+          <text x="374" y={115 + i*33} font-family="sans-serif" font-size="9" fill="#334155">{b.label}</text>
+          <rect x="374" y={120 + i*33} width="114" height="9" rx="4.5" fill="#dbeafe"/>
+          <rect x="374" y={120 + i*33} width={114 * b.v / 100} height="9" rx="4.5" fill={b.color}/>
+        </>
+      ))}
+    </svg>
+  )}
+
+</div>

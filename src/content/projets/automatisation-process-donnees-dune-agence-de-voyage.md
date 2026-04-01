@@ -1,0 +1,38 @@
+---
+title: "Automatisation des process et données d'une agence de voyage"
+description: "Refonte complète des processus opérationnels d'une agence de voyage : centralisation des données fournisseurs, automatisation des devis voyages et synchronisation CRM — une transformation digitale en 6 semaines."
+date: 2024-08-05
+client: "Agence de voyage premium"
+tags: ["Automatisation", "n8n", "Data Pipeline", "CRM", "Tourisme"]
+featured: false
+results:
+  - "70% de réduction du temps de création des devis voyages"
+  - "Données fournisseurs centralisées en temps réel (5 sources)"
+  - "Zéro saisie manuelle dans le CRM"
+---
+
+## Contexte
+
+L'agence gérait ses données fournisseurs dans 5 systèmes différents (emails, Excel, portails B2B), ce qui rendait la création de devis voyages très chronophage (2-3h par devis complexe).
+
+## Solution mise en place
+
+### Pipeline de données centralisé
+
+Un workflow n8n collecte automatiquement les disponibilités et tarifs de chaque fournisseur toutes les heures, les normalise et les stocke dans une base Airtable centralisée.
+
+### Automatisation des devis
+
+Quand un conseiller crée un devis, il sélectionne simplement les composants (vol, hôtel, transfert, activités). n8n :
+1. Récupère les tarifs à jour depuis Airtable
+2. Calcule automatiquement les marges et taxes
+3. Génère le document devis en PDF avec le branding agence
+4. L'envoie au client et archive dans le CRM
+
+### Synchronisation CRM
+
+Chaque interaction client (email, devis envoyé, paiement) est automatiquement enregistrée dans HubSpot, sans aucune saisie manuelle.
+
+## Résultats
+
+6 semaines après le déploiement, l'équipe (4 conseillers) économise en moyenne **14 heures par semaine** de travail administratif.

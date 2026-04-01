@@ -1,0 +1,40 @@
+---
+interface Props {
+  name: string;
+  company: string;
+  role: string;
+  rating: number;
+  text: string;
+  initials: string;
+}
+
+const { name, company, role, rating, text, initials } = Astro.props;
+---
+
+<article class="bg-white border border-slate-200 rounded-xl p-8 flex flex-col gap-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+  <!-- Quote mark -->
+  <div class="text-5xl font-extrabold text-primary-light leading-none select-none" aria-hidden="true">"</div>
+
+  <!-- Stars -->
+  <div class="flex gap-0.5 -mt-4" aria-label={`Note : ${rating} étoiles sur 5`}>
+    {Array.from({ length: rating }).map(() => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1" aria-hidden="true">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+    ))}
+  </div>
+
+  <!-- Text -->
+  <p class="text-slate-600 text-sm leading-relaxed flex-1">{text}</p>
+
+  <!-- Author -->
+  <div class="flex items-center gap-3 pt-2 border-t border-slate-100">
+    <div class="w-10 h-10 rounded-full bg-primary-light text-primary font-bold text-sm flex items-center justify-center shrink-0" aria-hidden="true">
+      {initials}
+    </div>
+    <div>
+      <p class="font-bold text-slate-900 text-sm">{name}</p>
+      <p class="text-xs text-slate-500">{role}, {company}</p>
+    </div>
+  </div>
+</article>

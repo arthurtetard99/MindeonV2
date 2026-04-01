@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectLayout from '../layouts/ProjectLayout.astro';
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const projets = await getCollection('projets');
+  const articles = await getCollection('articles');
+
+  const projetPaths = projets.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry, type: 'projet' as const },
+  }));
+
+  const articlePaths = articles.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry, type: 'article' as const },
+  }));
+
+  return [...projetPaths, ...articlePaths];
+}
+
+const { entry, type } = Astro.props;
+const { Content } = await entry.render();
+const pathname = `/${entry.slug}/`;
+---
+
+{type === 'projet' ? (
+  <ProjectLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    pathname={pathname}
+    client={entry.data.client}
+    date={entry.data.date}
+    tags={entry.data.tags}
+    results={entry.data.results}
+  >
+    <Content />
+  </ProjectLayout>
+) : (
+  <ArticleLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    pathname={pathname}
+    author={entry.data.author}
+    date={entry.data.date}
+    tags={entry.data.tags}
+  >
+    <Content />
+  </ArticleLayout>
+)}

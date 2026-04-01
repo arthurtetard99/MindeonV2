@@ -1,0 +1,272 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Badge from '../components/ui/Badge.astro';
+import Illustration from '../components/ui/Illustration.astro';
+import { formatDate } from '../utils/helpers';
+
+interface Props {
+  title: string;
+  description: string;
+  pathname: string;
+  client?: string;
+  date?: Date;
+  tags?: string[];
+  results?: string[];
+}
+
+const { title, description, pathname, client, date, tags = [], results = [] } = Astro.props;
+
+function getIllustrationTopic(tags: string[]): string {
+  const all = tags.map(t => t.toLowerCase()).join(' ');
+  if (all.includes('voice') || all.includes('vapi') || all.includes('retell') || all.includes('vocal')) return 'voice';
+  if (all.includes('whatsapp') || all.includes('chatbot') || all.includes('conversationnel') || all.includes('rag')) return 'chatbot';
+  if (all.includes('webapp') || all.includes('full-stack') || all.includes('gestion commandes')) return 'webapp';
+  if (all.includes('devis') || all.includes('pdf') || all.includes('pipeline b2b') || all.includes('qualification')) return 'devis';
+  if (all.includes('crm') || all.includes('axonaut') || all.includes('fabrication') || all.includes('trello')) return 'crm';
+  return 'workflow';
+}
+const illustrationTopic = getIllustrationTopic(tags);
+
+const resultIcons = ['📞', '💰', '⭐', '⚡'];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  pathname={pathname}
+  schemaType="article"
+  datePublished={date?.toISOString()}
+>
+  <!-- Hero — two column -->
+  <section class="bg-white border-b border-slate-100 pt-14 pb-0 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Left: text -->
+        <div class="pb-16 pt-4">
+          <a
+            href="/nos-projets/"
+            class="inline-flex items-center gap-2 text-slate-500 hover:text-primary text-sm font-medium mb-6 transition-colors group"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-0.5 transition-transform" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            Tous les projets
+          </a>
+
+          <Badge>Cas client</Badge>
+
+          <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight mt-5 mb-5">
+            {title}
+          </h1>
+          <p class="text-lg text-slate-600 leading-relaxed mb-8">{description}</p>
+
+          <!-- Meta row -->
+          <div class="flex flex-wrap items-center gap-5 text-sm text-slate-500 mb-6">
+            {client && (
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                </div>
+                <span class="font-medium text-slate-700">{client}</span>
+              </div>
+            )}
+            {date && (
+              <div class="flex items-center gap-2">
+                <div class="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                </div>
+                <time datetime={date.toISOString()}>{formatDate(date)}</time>
+              </div>
+            )}
+          </div>
+
+          <!-- Tags -->
+          {tags.length > 0 && (
+            <div class="flex flex-wrap gap-2">
+              {tags.map(tag => (
+                <span class="bg-primary-light text-primary text-xs font-semibold px-3 py-1.5 rounded-full">{tag}</span>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <!-- Right: illustration -->
+        <div class="relative hidden lg:block self-stretch">
+          <div class="absolute inset-0 rounded-tl-3xl overflow-hidden bg-slate-50">
+            <Illustration topic={illustrationTopic} class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Results — metric cards -->
+  {results.length > 0 && (
+    <section class="bg-slate-50 border-b border-slate-200 py-10" aria-label="Résultats obtenus">
+      <div class="max-w-7xl mx-auto px-6">
+        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Résultats obtenus</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {results.map((result, i) => (
+            <div class="bg-white border border-slate-200 rounded-xl px-5 py-4 flex items-start gap-4 shadow-sm">
+              <div class="w-9 h-9 rounded-xl bg-green-50 text-green-600 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p class="text-sm font-medium text-slate-700 leading-snug pt-1">{result}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Content -->
+  <div class="max-w-7xl mx-auto px-6 py-16 lg:py-20 grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-16 items-start">
+
+    <article class="project-content min-w-0">
+      <slot />
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="hidden lg:block">
+      <div class="sticky top-28 space-y-6">
+        <!-- Quick facts -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">En résumé</h2>
+          <div class="space-y-3 text-sm">
+            {client && (
+              <div>
+                <span class="font-semibold text-slate-900">Client</span>
+                <p class="text-slate-600">{client}</p>
+              </div>
+            )}
+            {date && (
+              <div>
+                <span class="font-semibold text-slate-900">Date</span>
+                <p class="text-slate-600"><time datetime={date.toISOString()}>{formatDate(date)}</time></p>
+              </div>
+            )}
+            {tags.length > 0 && (
+              <div>
+                <span class="font-semibold text-slate-900">Technologies</span>
+                <div class="flex flex-wrap gap-1.5 mt-1.5">
+                  {tags.map(tag => (
+                    <span class="bg-white text-slate-600 text-xs border border-slate-200 px-2 py-0.5 rounded-full">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-primary rounded-2xl p-6 text-white text-center">
+          <p class="font-bold mb-2 text-sm">Un projet similaire ?</p>
+          <p class="text-blue-100 text-xs mb-4 leading-relaxed">Parlons de votre cas d'usage en 30 min.</p>
+          <a
+            href="/contact/"
+            class="block bg-white text-primary font-bold text-sm px-4 py-2.5 rounded-xl hover:bg-blue-50 transition-colors"
+          >
+            Réserver un appel →
+          </a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Back CTA mobile -->
+  <section class="border-t border-slate-100 bg-slate-50 py-14">
+    <div class="max-w-xl mx-auto px-6 text-center">
+      <h2 class="text-2xl font-bold text-slate-900 mb-3">Un projet similaire en tête ?</h2>
+      <p class="text-slate-600 mb-8 text-sm">30 minutes, gratuit, sans engagement. On évalue ensemble votre cas d'usage.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-7 py-3.5 rounded-xl transition-all duration-200 shadow-[0_4px_14px_rgba(37,99,235,0.3)] hover:scale-[1.02] active:scale-95 text-sm">
+          Réserver une consultation →
+        </a>
+        <a href="/nos-projets/" class="inline-flex items-center justify-center gap-2 border border-slate-200 text-slate-700 hover:border-primary hover:text-primary font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 text-sm">
+          Voir tous les projets
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Custom prose styles for project content */
+  .project-content :global(h2) {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .project-content :global(h3) {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .project-content :global(p) {
+    color: #475569;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+  }
+  .project-content :global(ul), .project-content :global(ol) {
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+    color: #475569;
+  }
+  .project-content :global(li) {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+  }
+  .project-content :global(ul > li) {
+    list-style-type: disc;
+  }
+  .project-content :global(ol > li) {
+    list-style-type: decimal;
+  }
+  .project-content :global(strong) {
+    color: #0f172a;
+    font-weight: 700;
+  }
+  .project-content :global(a) {
+    color: #2563EB;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .project-content :global(pre) {
+    background: #0f172a;
+    color: #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    border: 1px solid #1e293b;
+  }
+  .project-content :global(code:not(pre code)) {
+    background: #f1f5f9;
+    color: #2563EB;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.875em;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .project-content :global(blockquote) {
+    border-left: 3px solid #2563EB;
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    color: #64748b;
+    font-style: italic;
+  }
+  .project-content :global(hr) {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 2rem 0;
+  }
+</style>

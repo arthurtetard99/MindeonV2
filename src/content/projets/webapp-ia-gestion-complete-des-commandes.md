@@ -1,0 +1,48 @@
+---
+title: "Webapp IA — Gestion complète des commandes"
+description: "Développement d'une application web intégrant l'IA pour automatiser l'ensemble du cycle de vie des commandes : réception, traitement, suivi et facturation — une solution full-stack livrée en 8 semaines."
+date: 2024-05-10
+client: "Distributeur industriel"
+tags: ["Webapp", "IA", "Gestion commandes", "Full-stack"]
+featured: true
+results:
+  - "Traitement des commandes 10x plus rapide"
+  - "Zéro erreur de saisie grâce à l'extraction IA des données"
+  - "Tableau de bord temps réel pour le management"
+---
+
+## Contexte
+
+Ce distributeur industriel recevait ses commandes par email, fax et portail web. Le traitement manuel était source d'erreurs, de retards et de frustration pour les clients.
+
+## Solution : Webapp IA de bout en bout
+
+### Interface de réception intelligente
+
+Une webapp Next.js centralise toutes les commandes entrantes. Un modèle d'IA (Claude) extrait automatiquement les données structurées depuis n'importe quel format (email, PDF, image de bon de commande) et les intègre dans le système.
+
+### Workflow de traitement automatisé
+
+- **Validation automatique** : vérification des stocks, prix et conditions client
+- **Routing intelligent** : attribution automatique au bon responsable selon les règles métier
+- **Notifications proactives** : alertes client à chaque étape (confirmation, expédition, livraison)
+- **Gestion des exceptions** : flagging automatique des anomalies pour traitement humain
+
+### Dashboard de pilotage
+
+Un tableau de bord temps réel permet au management de suivre :
+- Volume et statut de toutes les commandes
+- Performance par commercial et par produit
+- Délais moyens et taux d'erreur
+- Alertes sur les commandes à risque
+
+## Stack technique
+
+- **Frontend** : Next.js 14, TypeScript, Tailwind CSS
+- **Backend** : Node.js, Prisma, PostgreSQL
+- **IA** : Claude API pour extraction et classification
+- **Infrastructure** : Vercel + Railway
+
+## Résultats
+
+La webapp traite désormais **200+ commandes par jour** avec un taux d'erreur proche de zéro (0,3% vs 4,2% avant).

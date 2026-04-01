@@ -1,0 +1,135 @@
+---
+import Badge from '../ui/Badge.astro';
+---
+
+<section
+  class="relative overflow-hidden bg-white pt-12 pb-24 md:pt-20 md:pb-32"
+  aria-labelledby="hero-heading"
+>
+  <!-- Background decorative blobs -->
+  <div class="absolute -top-24 -right-24 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute top-1/2 -left-32 w-80 h-80 bg-primary/3 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+    <!-- Left: copy -->
+    <div class="z-10">
+      <div class="hero-badge">
+        <Badge>Agence IA &amp; Automatisation</Badge>
+      </div>
+
+      <h1
+        id="hero-heading"
+        class="hero-title mt-6 text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-[1.08] tracking-tight"
+      >
+        Vos process automatisés par des agents IA qui <span class="text-primary">livrent</span>
+      </h1>
+
+      <p class="hero-sub mt-6 text-lg md:text-xl text-slate-600 leading-relaxed max-w-lg">
+        3 ingénieurs, 15+ projets déployés. On construit des agents vocaux, chatbots et automatisations sur-mesure pour les PME et startups.
+      </p>
+
+      <div class="hero-ctas mt-8 flex flex-wrap gap-4">
+        <a
+          href="/contact/"
+          class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 shadow-[0_4px_14px_rgba(37,99,235,0.3)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.4)] hover:scale-[1.02] active:scale-95 text-base"
+        >
+          Réserver un appel
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a
+          href="/nos-projets/"
+          class="inline-flex items-center gap-2 border border-slate-200 text-slate-700 hover:border-primary hover:text-primary font-bold px-8 py-4 rounded-xl transition-all duration-200 hover:bg-primary-light text-base"
+        >
+          Voir nos projets
+        </a>
+      </div>
+
+      <!-- Trust indicators -->
+      <div class="hero-trust mt-8 flex flex-wrap items-center gap-6 text-sm text-slate-500">
+        <div class="flex items-center gap-2">
+          <div class="flex">
+            {[1,2,3,4,5].map(() => (
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            ))}
+          </div>
+          <span><strong class="text-slate-900">5/5</strong> sur Malt</span>
+        </div>
+        <div class="w-px h-4 bg-slate-200" aria-hidden="true"></div>
+        <div>
+          <strong class="text-primary">15+</strong> projets déployés
+        </div>
+        <div class="w-px h-4 bg-slate-200" aria-hidden="true"></div>
+        <div>
+          <strong class="text-slate-900">3</strong> ingénieurs dédiés
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: mockup -->
+    <div class="hero-image relative">
+      <!-- Decorative ring -->
+      <div class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/10 to-primary/5 blur-xl" aria-hidden="true"></div>
+
+      <div class="relative bg-white rounded-2xl shadow-2xl border border-slate-200/60 overflow-hidden">
+        <!-- Mock browser bar -->
+        <div class="flex items-center gap-2 px-4 py-3 border-b border-slate-100 bg-slate-50">
+          <div class="flex gap-1.5" aria-hidden="true">
+            <div class="w-3 h-3 rounded-full bg-red-300"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-300"></div>
+            <div class="w-3 h-3 rounded-full bg-green-300"></div>
+          </div>
+          <div class="flex-1 h-6 bg-slate-200 rounded-md mx-4"></div>
+        </div>
+        <!-- Mock dashboard content -->
+        <div class="p-6 bg-slate-50 space-y-4" aria-label="Aperçu du tableau de bord d'automatisation">
+          <!-- Stats row -->
+          <div class="grid grid-cols-3 gap-3">
+            {[
+              { label: 'Appels traités', value: '1 247', color: 'text-primary' },
+              { label: 'Leads qualifiés', value: '342', color: 'text-green-600' },
+              { label: 'Taux de succès', value: '94%', color: 'text-primary' },
+            ].map(stat => (
+              <div class="bg-white rounded-xl p-4 border border-slate-100">
+                <p class={`text-xl font-extrabold ${stat.color}`}>{stat.value}</p>
+                <p class="text-xs text-slate-500 mt-0.5">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+          <!-- Mock chart -->
+          <div class="bg-white rounded-xl p-4 border border-slate-100">
+            <div class="flex items-end gap-2 h-20">
+              {[40, 65, 45, 80, 60, 90, 75].map((h, i) => (
+                <div
+                  class="flex-1 rounded-t-sm transition-all"
+                  style={`height: ${h}%; background: ${i === 5 ? '#2563EB' : '#EFF6FF'};`}
+                  aria-hidden="true"
+                ></div>
+              ))}
+            </div>
+            <p class="text-xs text-slate-400 mt-2">Performance agent — 7 derniers jours</p>
+          </div>
+          <!-- Mock conversation -->
+          <div class="bg-white rounded-xl p-4 border border-slate-100 space-y-2">
+            <div class="flex gap-2">
+              <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center shrink-0" aria-hidden="true">
+                <span class="text-white text-xs font-bold">IA</span>
+              </div>
+              <div class="bg-primary-light rounded-lg px-3 py-2 text-xs text-primary max-w-[80%]">
+                Bonjour, je suis l'agent Mindeon. Comment puis-je vous aider ?
+              </div>
+            </div>
+            <div class="flex gap-2 justify-end">
+              <div class="bg-slate-100 rounded-lg px-3 py-2 text-xs text-slate-700 max-w-[80%]">
+                J'aimerais obtenir un devis pour mon entreprise.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

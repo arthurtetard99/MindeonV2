@@ -1,0 +1,101 @@
+import 'piccolore';
+import { k as decodeKey } from './chunks/astro/server_DVjlkBp2.mjs';
+import 'clsx';
+import { N as NOOP_MIDDLEWARE_FN } from './chunks/astro-designed-error-pages_CxbQ5iqS.mjs';
+import 'es-module-lexer';
+
+function sanitizeParams(params) {
+  return Object.fromEntries(
+    Object.entries(params).map(([key, value]) => {
+      if (typeof value === "string") {
+        return [key, value.normalize().replace(/#/g, "%23").replace(/\?/g, "%3F")];
+      }
+      return [key, value];
+    })
+  );
+}
+function getParameter(part, params) {
+  if (part.spread) {
+    return params[part.content.slice(3)] || "";
+  }
+  if (part.dynamic) {
+    if (!params[part.content]) {
+      throw new TypeError(`Missing parameter: ${part.content}`);
+    }
+    return params[part.content];
+  }
+  return part.content.normalize().replace(/\?/g, "%3F").replace(/#/g, "%23").replace(/%5B/g, "[").replace(/%5D/g, "]");
+}
+function getSegment(segment, params) {
+  const segmentPath = segment.map((part) => getParameter(part, params)).join("");
+  return segmentPath ? "/" + segmentPath : "";
+}
+function getRouteGenerator(segments, addTrailingSlash) {
+  return (params) => {
+    const sanitizedParams = sanitizeParams(params);
+    let trailing = "";
+    if (addTrailingSlash === "always" && segments.length) {
+      trailing = "/";
+    }
+    const path = segments.map((segment) => getSegment(segment, sanitizedParams)).join("") + trailing;
+    return path || "/";
+  };
+}
+
+function deserializeRouteData(rawRouteData) {
+  return {
+    route: rawRouteData.route,
+    type: rawRouteData.type,
+    pattern: new RegExp(rawRouteData.pattern),
+    params: rawRouteData.params,
+    component: rawRouteData.component,
+    generate: getRouteGenerator(rawRouteData.segments, rawRouteData._meta.trailingSlash),
+    pathname: rawRouteData.pathname || void 0,
+    segments: rawRouteData.segments,
+    prerender: rawRouteData.prerender,
+    redirect: rawRouteData.redirect,
+    redirectRoute: rawRouteData.redirectRoute ? deserializeRouteData(rawRouteData.redirectRoute) : void 0,
+    fallbackRoutes: rawRouteData.fallbackRoutes.map((fallback) => {
+      return deserializeRouteData(fallback);
+    }),
+    isIndex: rawRouteData.isIndex,
+    origin: rawRouteData.origin
+  };
+}
+
+function deserializeManifest(serializedManifest) {
+  const routes = [];
+  for (const serializedRoute of serializedManifest.routes) {
+    routes.push({
+      ...serializedRoute,
+      routeData: deserializeRouteData(serializedRoute.routeData)
+    });
+    const route = serializedRoute;
+    route.routeData = deserializeRouteData(serializedRoute.routeData);
+  }
+  const assets = new Set(serializedManifest.assets);
+  const componentMetadata = new Map(serializedManifest.componentMetadata);
+  const inlinedScripts = new Map(serializedManifest.inlinedScripts);
+  const clientDirectives = new Map(serializedManifest.clientDirectives);
+  const serverIslandNameMap = new Map(serializedManifest.serverIslandNameMap);
+  const key = decodeKey(serializedManifest.key);
+  return {
+    // in case user middleware exists, this no-op middleware will be reassigned (see plugin-ssr.ts)
+    middleware() {
+      return { onRequest: NOOP_MIDDLEWARE_FN };
+    },
+    ...serializedManifest,
+    assets,
+    componentMetadata,
+    inlinedScripts,
+    clientDirectives,
+    routes,
+    serverIslandNameMap,
+    key
+  };
+}
+
+const manifest = deserializeManifest({"hrefRoot":"file:///Users/arthurtetard/Downloads/Mindeon%20V2/mindeon-site/","cacheDir":"file:///Users/arthurtetard/Downloads/Mindeon%20V2/mindeon-site/node_modules/.astro/","outDir":"file:///Users/arthurtetard/Downloads/Mindeon%20V2/mindeon-site/dist/","srcDir":"file:///Users/arthurtetard/Downloads/Mindeon%20V2/mindeon-site/src/","publicDir":"file:///Users/arthurtetard/Downloads/Mindeon%20V2/mindeon-site/public/","buildClientDir":"file:///Users/arthurtetard/Downloads/Mindeon%20V2/mindeon-site/dist/client/","buildServerDir":"file:///Users/arthurtetard/Downloads/Mindeon%20V2/mindeon-site/dist/server/","adapterName":"@astrojs/vercel","routes":[{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"type":"page","component":"_server-islands.astro","params":["name"],"segments":[[{"content":"_server-islands","dynamic":false,"spread":false}],[{"content":"name","dynamic":true,"spread":false}]],"pattern":"^\\/_server-islands\\/([^/]+?)\\/$","prerender":false,"isIndex":false,"fallbackRoutes":[],"route":"/_server-islands/[name]","origin":"internal","_meta":{"trailingSlash":"always"}}},{"file":"articles/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/articles","isIndex":false,"type":"page","pattern":"^\\/articles\\/$","segments":[[{"content":"articles","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/articles.astro","pathname":"/articles","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"always"}}},{"file":"cgu/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/cgu","isIndex":false,"type":"page","pattern":"^\\/cgu\\/$","segments":[[{"content":"cgu","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/cgu.astro","pathname":"/cgu","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"always"}}},{"file":"cgv/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/cgv","isIndex":false,"type":"page","pattern":"^\\/cgv\\/$","segments":[[{"content":"cgv","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/cgv.astro","pathname":"/cgv","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"always"}}},{"file":"contact/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/contact","isIndex":false,"type":"page","pattern":"^\\/contact\\/$","segments":[[{"content":"contact","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/contact.astro","pathname":"/contact","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"always"}}},{"file":"equipe/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/equipe","isIndex":false,"type":"page","pattern":"^\\/equipe\\/$","segments":[[{"content":"equipe","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/equipe.astro","pathname":"/equipe","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"always"}}},{"file":"mentions-legales/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/mentions-legales","isIndex":false,"type":"page","pattern":"^\\/mentions-legales\\/$","segments":[[{"content":"mentions-legales","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/mentions-legales.astro","pathname":"/mentions-legales","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"always"}}},{"file":"nos-projets/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/nos-projets","isIndex":false,"type":"page","pattern":"^\\/nos-projets\\/$","segments":[[{"content":"nos-projets","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/nos-projets.astro","pathname":"/nos-projets","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"always"}}},{"file":"politique-de-confidentialite/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/politique-de-confidentialite","isIndex":false,"type":"page","pattern":"^\\/politique-de-confidentialite\\/$","segments":[[{"content":"politique-de-confidentialite","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/politique-de-confidentialite.astro","pathname":"/politique-de-confidentialite","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"always"}}},{"file":"ressources/index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/ressources","isIndex":false,"type":"page","pattern":"^\\/ressources\\/$","segments":[[{"content":"ressources","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/ressources.astro","pathname":"/ressources","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"always"}}},{"file":"index.html","links":[],"scripts":[],"styles":[],"routeData":{"route":"/","isIndex":true,"type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"always"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"type":"endpoint","isIndex":false,"route":"/_image/","pattern":"^\\/_image\\/$","segments":[[{"content":"_image","dynamic":false,"spread":false}]],"params":[],"component":"node_modules/astro/dist/assets/endpoint/generic.js","pathname":"/_image/","prerender":false,"fallbackRoutes":[],"origin":"internal","_meta":{"trailingSlash":"always"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"type":"endpoint","isIndex":false,"route":"/api/keystatic/[...params]","pattern":"^\\/api\\/keystatic(?:\\/(.*?))?\\/$","segments":[[{"content":"api","dynamic":false,"spread":false}],[{"content":"keystatic","dynamic":false,"spread":false}],[{"content":"...params","dynamic":true,"spread":true}]],"params":["...params"],"component":"node_modules/@keystatic/astro/internal/keystatic-api.js","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"external","_meta":{"trailingSlash":"always"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"type":"page","isIndex":false,"route":"/keystatic/[...params]","pattern":"^\\/keystatic(?:\\/(.*?))?\\/$","segments":[[{"content":"keystatic","dynamic":false,"spread":false}],[{"content":"...params","dynamic":true,"spread":true}]],"params":["...params"],"component":"node_modules/@keystatic/astro/internal/keystatic-astro-page.astro","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"external","_meta":{"trailingSlash":"always"}}}],"site":"https://mindeon.ai","base":"/","trailingSlash":"always","compressHTML":true,"componentMetadata":[["\u0000astro:content",{"propagation":"in-tree","containsHead":false}],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/pages/[...slug].astro",{"propagation":"in-tree","containsHead":true}],["\u0000@astro-page:src/pages/[...slug]@_@astro",{"propagation":"in-tree","containsHead":false}],["\u0000@astrojs-ssr-virtual-entry",{"propagation":"in-tree","containsHead":false}],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/pages/articles.astro",{"propagation":"in-tree","containsHead":true}],["\u0000@astro-page:src/pages/articles@_@astro",{"propagation":"in-tree","containsHead":false}],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/pages/nos-projets.astro",{"propagation":"in-tree","containsHead":true}],["\u0000@astro-page:src/pages/nos-projets@_@astro",{"propagation":"in-tree","containsHead":false}],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/pages/ressources.astro",{"propagation":"in-tree","containsHead":true}],["\u0000@astro-page:src/pages/ressources@_@astro",{"propagation":"in-tree","containsHead":false}],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/pages/cgu.astro",{"propagation":"none","containsHead":true}],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/pages/cgv.astro",{"propagation":"none","containsHead":true}],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/pages/contact.astro",{"propagation":"none","containsHead":true}],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/pages/equipe.astro",{"propagation":"none","containsHead":true}],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/pages/index.astro",{"propagation":"none","containsHead":true}],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/pages/mentions-legales.astro",{"propagation":"none","containsHead":true}],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/pages/politique-de-confidentialite.astro",{"propagation":"none","containsHead":true}]],"renderers":[],"clientDirectives":[["idle","(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value==\"object\"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};\"requestIdleCallback\"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event(\"astro:idle\"));})();"],["load","(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event(\"astro:load\"));})();"],["media","(()=>{var n=(a,t)=>{let i=async()=>{await(await a())()};if(t.value){let e=matchMedia(t.value);e.matches?i():e.addEventListener(\"change\",i,{once:!0})}};(self.Astro||(self.Astro={})).media=n;window.dispatchEvent(new Event(\"astro:media\"));})();"],["only","(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event(\"astro:only\"));})();"],["visible","(()=>{var a=(s,i,o)=>{let r=async()=>{await(await s())()},t=typeof i.value==\"object\"?i.value:void 0,c={rootMargin:t==null?void 0:t.rootMargin},n=new IntersectionObserver(e=>{for(let l of e)if(l.isIntersecting){n.disconnect(),r();break}},c);for(let e of o.children)n.observe(e)};(self.Astro||(self.Astro={})).visible=a;window.dispatchEvent(new Event(\"astro:visible\"));})();"]],"entryModules":{"\u0000noop-middleware":"_noop-middleware.mjs","\u0000virtual:astro:actions/noop-entrypoint":"noop-entrypoint.mjs","\u0000@astro-page:node_modules/astro/dist/assets/endpoint/generic@_@js":"pages/_image/index.astro.mjs","\u0000@astro-page:node_modules/@keystatic/astro/internal/keystatic-api@_@js":"pages/api/keystatic/_---params_.astro.mjs","\u0000@astro-page:src/pages/articles@_@astro":"pages/articles.astro.mjs","\u0000@astro-page:src/pages/cgu@_@astro":"pages/cgu.astro.mjs","\u0000@astro-page:src/pages/cgv@_@astro":"pages/cgv.astro.mjs","\u0000@astro-page:src/pages/contact@_@astro":"pages/contact.astro.mjs","\u0000@astro-page:src/pages/equipe@_@astro":"pages/equipe.astro.mjs","\u0000@astro-page:node_modules/@keystatic/astro/internal/keystatic-astro-page@_@astro":"pages/keystatic/_---params_.astro.mjs","\u0000@astro-page:src/pages/mentions-legales@_@astro":"pages/mentions-legales.astro.mjs","\u0000@astro-page:src/pages/nos-projets@_@astro":"pages/nos-projets.astro.mjs","\u0000@astro-page:src/pages/politique-de-confidentialite@_@astro":"pages/politique-de-confidentialite.astro.mjs","\u0000@astro-page:src/pages/ressources@_@astro":"pages/ressources.astro.mjs","\u0000@astro-page:src/pages/index@_@astro":"pages/index.astro.mjs","\u0000@astro-page:src/pages/[...slug]@_@astro":"pages/_---slug_.astro.mjs","\u0000@astrojs-ssr-virtual-entry":"entry.mjs","\u0000@astro-renderers":"renderers.mjs","\u0000@astrojs-ssr-adapter":"_@astrojs-ssr-adapter.mjs","\u0000@astrojs-manifest":"manifest_CBsdjqLE.mjs","/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/node_modules/astro/dist/assets/services/sharp.js":"chunks/sharp_l-40Uuwb.mjs","/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/.astro/content-assets.mjs":"chunks/content-assets_DleWbedO.mjs","/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/.astro/content-modules.mjs":"chunks/content-modules_Dz-S_Wwv.mjs","\u0000astro:data-layer-content":"chunks/_astro_data-layer-content_BeT2ev27.mjs","/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/node_modules/@keystatic/astro/internal/keystatic-page.js":"_astro/keystatic-page.D7Sqf1QM.js","@astrojs/react/client.js":"_astro/client.Bdtyuut-.js","/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/layouts/BaseLayout.astro?astro&type=script&index=0&lang.ts":"_astro/BaseLayout.astro_astro_type_script_index_0_lang.BRuK38p0.js","/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/components/home/SocialProof.astro?astro&type=script&index=0&lang.ts":"_astro/SocialProof.astro_astro_type_script_index_0_lang.YOVY42gl.js","/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/components/layout/Navbar.astro?astro&type=script&index=0&lang.ts":"_astro/Navbar.astro_astro_type_script_index_0_lang.Cdy1cvVK.js","astro:scripts/before-hydration.js":""},"inlinedScripts":[["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/layouts/BaseLayout.astro?astro&type=script&index=0&lang.ts","const s=new IntersectionObserver(e=>{e.forEach(r=>{r.isIntersecting&&(r.target.classList.add(\"visible\"),s.unobserve(r.target))})},{threshold:.1,rootMargin:\"0px 0px -40px 0px\"});document.querySelectorAll(\".reveal\").forEach(e=>{s.observe(e)});"],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/components/home/SocialProof.astro?astro&type=script&index=0&lang.ts","const l=document.querySelectorAll(\".counter\"),a=new IntersectionObserver(e=>{e.forEach(o=>{if(!o.isIntersecting)return;const r=o.target,s=parseInt(r.dataset.target??\"0\",10),c=s<0,n=Math.abs(s);let t=0;const i=Math.max(1,Math.floor(n/40)),h=setInterval(()=>{t=Math.min(t+i,n),r.textContent=(c?\"-\":\"\")+t.toString(),t>=n&&clearInterval(h)},30);a.unobserve(r)})},{threshold:.5});window.matchMedia(\"(prefers-reduced-motion: reduce)\").matches||l.forEach(e=>a.observe(e));"],["/Users/arthurtetard/Downloads/Mindeon V2/mindeon-site/src/components/layout/Navbar.astro?astro&type=script&index=0&lang.ts","const t=document.getElementById(\"menu-toggle\"),n=document.getElementById(\"mobile-menu\"),d=document.getElementById(\"icon-menu\"),s=document.getElementById(\"icon-close\");t?.addEventListener(\"click\",()=>{const e=n?.classList.toggle(\"hidden\")===!1;t.setAttribute(\"aria-expanded\",String(!e)),d?.classList.toggle(\"hidden\",!e),s?.classList.toggle(\"hidden\",e)});document.querySelectorAll(\"#mobile-menu a\").forEach(e=>{e.addEventListener(\"click\",()=>{n?.classList.add(\"hidden\"),t?.setAttribute(\"aria-expanded\",\"false\"),d?.classList.remove(\"hidden\"),s?.classList.add(\"hidden\")})});"]],"assets":["/_astro/_slug_.BY1XWby_.css","/favicon.svg","/robots.txt","/_astro/client.Bdtyuut-.js","/_astro/index.DwQBafx9.js","/_astro/keystatic-page.D7Sqf1QM.js","/images/equipe/arthur.jpeg","/images/equipe/cambyse.png","/images/equipe/david.jpg","/images/tools/airtable.png","/images/tools/azure.png","/images/tools/claude.png","/images/tools/cloudflare.png","/images/tools/cloudflarev2.png","/images/tools/cognigy.png","/images/tools/github.png","/images/tools/hubspot.png","/images/tools/microsoft-azure.jpeg","/images/tools/mistral.png","/images/tools/n8n.png","/images/tools/powerautomate.png","/images/tools/retell.png","/images/tools/supabase.jpeg","/images/tools/supabase.png","/images/tools/téléchargement (1).jpeg","/images/tools/téléchargement (1).png","/images/tools/téléchargement (2).png","/images/tools/téléchargement (3).png","/images/tools/téléchargement (4).png","/images/tools/téléchargement.jpeg","/images/tools/téléchargement.png","/images/tools/vapi.png","/articles/index.html","/cgu/index.html","/cgv/index.html","/contact/index.html","/equipe/index.html","/mentions-legales/index.html","/nos-projets/index.html","/politique-de-confidentialite/index.html","/ressources/index.html","/index.html"],"buildFormat":"directory","checkOrigin":true,"allowedDomains":[],"actionBodySizeLimit":1048576,"serverIslandNameMap":[],"key":"RY7znKgIj67HG4okigc62ZzoNJuX8LaC+WAT2WqWVIk="});
+if (manifest.sessionConfig) manifest.sessionConfig.driverModule = null;
+
+export { manifest };

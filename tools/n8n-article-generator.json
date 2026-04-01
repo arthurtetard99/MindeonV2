@@ -1,0 +1,221 @@
+{
+  "name": "Mindeon — Génération automatique d'articles",
+  "nodes": [
+    {
+      "id": "aa111111-0000-0000-0000-000000000001",
+      "name": "Déclencheur manuel",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [200, 300],
+      "parameters": {}
+    },
+    {
+      "id": "aa111111-0000-0000-0000-000000000002",
+      "name": "Planification hebdomadaire",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [200, 460],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "weeksInterval": 1,
+              "triggerAtDay": [1],
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "aa111111-0000-0000-0000-000000000003",
+      "name": "Définir le sujet",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [440, 300],
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "topic-1",
+              "name": "topic",
+              "type": "string",
+              "value": "Les 5 automatisations n8n indispensables pour une PME en 2025"
+            },
+            {
+              "id": "topic-2",
+              "name": "tags",
+              "type": "string",
+              "value": "n8n, Automatisation, PME, Productivité"
+            },
+            {
+              "id": "topic-3",
+              "name": "author",
+              "type": "string",
+              "value": "Équipe Mindeon.ai"
+            }
+          ]
+        }
+      },
+      "notes": "Modifier 'topic' pour changer le sujet de l'article généré."
+    },
+    {
+      "id": "aa111111-0000-0000-0000-000000000004",
+      "name": "Claude API — Générer l'article",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [680, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "body": {
+          "model": "claude-opus-4-6",
+          "max_tokens": 4096,
+          "messages": [
+            {
+              "role": "user",
+              "content": "=Tu es le rédacteur de Mindeon.ai, une agence d'IA et d'automatisation française. Rédige un article de blog complet en français sur le sujet suivant :\n\n**Sujet** : {{ $json.topic }}\n\n**Consignes de style** :\n- Ton : expert, direct, concret. Pas de buzzwords vides.\n- Structure : intro qui accroche → développement en sections H2/H3 → conclusion avec CTA\n- Longueur : 800-1200 mots\n- Inclure des exemples concrets, des chiffres si possible\n- Terminer par une invitation à contacter Mindeon.ai via /contact/\n\n**Format de sortie** (IMPORTANT — respecter exactement) :\nRéponds UNIQUEMENT avec le contenu Markdown de l'article, sans aucun texte avant ou après. Commence directement par le premier paragraphe de l'article (pas de titre H1 — il est dans le frontmatter). Utilise des ## pour les sections."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "anthropic-creds",
+          "name": "Anthropic API Key"
+        }
+      },
+      "notes": "Configurer les credentials 'Anthropic API Key' : Header Name = x-api-key, Value = votre clé API."
+    },
+    {
+      "id": "aa111111-0000-0000-0000-000000000005",
+      "name": "Créer le fichier Markdown",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [920, 300],
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Récupérer les données\nconst topic = $('Définir le sujet').first().json.topic;\nconst tags = $('Définir le sujet').first().json.tags;\nconst author = $('Définir le sujet').first().json.author || 'Équipe Mindeon.ai';\nconst articleContent = $input.first().json.content[0].text;\n\n// Générer le slug à partir du titre\nfunction slugify(str) {\n  return str\n    .toLowerCase()\n    .normalize('NFD')\n    .replace(/[\\u0300-\\u036f]/g, '')\n    .replace(/[^a-z0-9\\s-]/g, '')\n    .trim()\n    .replace(/\\s+/g, '-')\n    .replace(/-+/g, '-')\n    .slice(0, 80);\n}\n\nconst slug = slugify(topic);\n\n// Date du jour\nconst today = new Date().toISOString().split('T')[0];\n\n// Tags formattés pour le frontmatter YAML\nconst tagsFormatted = tags\n  .split(',')\n  .map(t => t.trim())\n  .map(t => `  - \"${t}\"`)\n  .join('\\n');\n\n// Construire le fichier markdown complet\nconst frontmatter = `---\ntitle: \"${topic}\"\ndescription: \"${topic} — analyse, conseils pratiques et retours d'expérience de l'équipe Mindeon.ai.\"\ndate: ${today}\nauthor: \"${author}\"\ntags:\n${tagsFormatted}\n---`;\n\nconst fullMarkdown = `${frontmatter}\\n\\n${articleContent}`;\n\n// Encoder en base64 pour l'API GitHub\nconst base64Content = Buffer.from(fullMarkdown).toString('base64');\n\nreturn [{\n  json: {\n    slug,\n    filename: `${slug}.md`,\n    path: `src/content/articles/${slug}.md`,\n    content: base64Content,\n    raw: fullMarkdown,\n    commitMessage: `feat(articles): add \"${topic}\"`\n  }\n}];"
+      }
+    },
+    {
+      "id": "aa111111-0000-0000-0000-000000000006",
+      "name": "GitHub — Créer le fichier",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1160, 300],
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/{{ $vars.GITHUB_REPO_OWNER }}/{{ $vars.GITHUB_REPO_NAME }}/contents/{{ $json.path }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Accept", "value": "application/vnd.github.v3+json" },
+            { "name": "X-GitHub-Api-Version", "value": "2022-11-28" }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "body": {
+          "message": "={{ $json.commitMessage }}",
+          "content": "={{ $json.content }}",
+          "branch": "main"
+        },
+        "options": {}
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "github-creds",
+          "name": "GitHub Token"
+        }
+      },
+      "notes": "Configurer les credentials 'GitHub Token' : Header Name = Authorization, Value = Bearer ghp_VOTRE_TOKEN\nVariables n8n requises : GITHUB_REPO_OWNER (ex: mindeon) et GITHUB_REPO_NAME (ex: mindeon-site)"
+    },
+    {
+      "id": "aa111111-0000-0000-0000-000000000007",
+      "name": "Vercel — Redéployer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1160, 460],
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.vercel.com/v1/integrations/deploy/{{ $vars.VERCEL_DEPLOY_HOOK_ID }}",
+        "options": {}
+      },
+      "notes": "Optionnel. Récupérer l'URL du deploy hook dans Vercel → Settings → Git → Deploy Hooks.\nStocker l'ID dans la variable n8n VERCEL_DEPLOY_HOOK_ID."
+    },
+    {
+      "id": "aa111111-0000-0000-0000-000000000008",
+      "name": "Slack — Notifier l'équipe",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [1400, 300],
+      "parameters": {
+        "resource": "message",
+        "operation": "post",
+        "channel": "#content",
+        "text": "=✅ Nouvel article généré et publié !\n\n*{{ $('Définir le sujet').first().json.topic }}*\n\nhttps://mindeon.ai/{{ $('Créer le fichier Markdown').first().json.slug }}/",
+        "otherOptions": {}
+      },
+      "credentials": {
+        "slackApi": {
+          "id": "slack-creds",
+          "name": "Slack Bot Token"
+        }
+      },
+      "notes": "Optionnel. Configurer le Slack Bot Token dans les credentials n8n."
+    }
+  ],
+  "connections": {
+    "Déclencheur manuel": {
+      "main": [[{ "node": "Définir le sujet", "type": "main", "index": 0 }]]
+    },
+    "Planification hebdomadaire": {
+      "main": [[{ "node": "Définir le sujet", "type": "main", "index": 0 }]]
+    },
+    "Définir le sujet": {
+      "main": [[{ "node": "Claude API — Générer l'article", "type": "main", "index": 0 }]]
+    },
+    "Claude API — Générer l'article": {
+      "main": [[{ "node": "Créer le fichier Markdown", "type": "main", "index": 0 }]]
+    },
+    "Créer le fichier Markdown": {
+      "main": [[{ "node": "GitHub — Créer le fichier", "type": "main", "index": 0 }]]
+    },
+    "GitHub — Créer le fichier": {
+      "main": [
+        [
+          { "node": "Vercel — Redéployer", "type": "main", "index": 0 },
+          { "node": "Slack — Notifier l'équipe", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": "mindeon-article-generator"
+  }
+}

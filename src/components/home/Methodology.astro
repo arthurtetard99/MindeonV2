@@ -1,0 +1,66 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Audit & Analyse',
+    description: "Analyse de vos processus actuels et identification des leviers d'automatisation à fort ROI. On cartographie ce qui peut être délégué à l'IA.",
+  },
+  {
+    number: '02',
+    title: 'Conception & Architecture',
+    description: "Design de l'architecture technique et choix des modèles d'IA les mieux adaptés à votre cas d'usage. Zéro sur-ingénierie.",
+  },
+  {
+    number: '03',
+    title: 'Développement Agile',
+    description: "Construction itérative des agents avec des sprints courts et des démos hebdomadaires. Vous voyez le progrès à chaque étape.",
+  },
+  {
+    number: '04',
+    title: 'Déploiement & Scale',
+    description: "Mise en production, formation de vos équipes et monitoring continu des performances. On reste disponibles après livraison.",
+  },
+];
+---
+
+<section class="py-24 bg-white" aria-labelledby="methodology-heading">
+  <div class="max-w-7xl mx-auto px-6">
+    <SectionHeading
+      badge="Méthodologie"
+      title="Notre process, du brief au déploiement"
+      subtitle="Un accompagnement structuré pour garantir le succès de votre projet d'automatisation."
+      center
+    />
+
+    <div class="reveal relative">
+      <!-- Desktop connecting line -->
+      <div class="hidden md:block absolute top-12 left-[calc(12.5%)] right-[calc(12.5%)] h-0.5 bg-slate-100 z-0" aria-hidden="true"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {steps.map((step, i) => (
+          <div class="relative z-10 text-center flex flex-col items-center" style={`transition-delay: ${i * 100}ms`}>
+            <!-- Number circle -->
+            <div class="w-24 h-24 rounded-full bg-primary text-white text-2xl font-extrabold flex items-center justify-center mb-6 shadow-[0_8px_24px_rgba(37,99,235,0.3)] shrink-0">
+              {step.number}
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-3">{step.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-14 text-center">
+      <a
+        href="/contact/"
+        class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 shadow-[0_4px_14px_rgba(37,99,235,0.3)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.4)] hover:scale-[1.02] active:scale-95"
+      >
+        Démarrer votre audit gratuit
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

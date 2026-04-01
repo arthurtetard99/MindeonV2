@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import LogoBanner from '../components/home/LogoBanner.astro';
+import Solutions from '../components/home/Solutions.astro';
+import SocialProof from '../components/home/SocialProof.astro';
+import FeaturedProject from '../components/home/FeaturedProject.astro';
+import Testimonials from '../components/home/Testimonials.astro';
+import Methodology from '../components/home/Methodology.astro';
+import CTASection from '../components/home/CTASection.astro';
+---
+
+<BaseLayout
+  title="Mindeon.ai — Agence d'agents IA & automatisation pour PME et startups"
+  description="3 ingénieurs, 15+ projets livrés. Agents vocaux, chatbots IA, automatisations CRM et workflows n8n sur-mesure. Consultation gratuite."
+  pathname="/"
+>
+  <Hero />
+  <LogoBanner />
+  <Solutions />
+  <SocialProof />
+  <FeaturedProject />
+  <Testimonials />
+  <Methodology />
+  <CTASection />
+</BaseLayout>

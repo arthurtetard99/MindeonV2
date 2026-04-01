@@ -1,0 +1,29 @@
+[
+  {
+    "id": "david",
+    "name": "David Manscour",
+    "role": "Co-fondateur & Lead IA",
+    "bio": "Ingénieur spécialisé en IA et machine learning. Ancien de Renault et Soprasteria, il pilote l'architecture des agents et des modèles de langage.",
+    "linkedin": "https://www.linkedin.com/in/david-manscour",
+    "initials": "DM",
+    "photo": "/images/equipe/david.jpg"
+  },
+  {
+    "id": "cambyse",
+    "name": "Cambyse Daghigh",
+    "role": "Co-fondateur & Développeur Full-Stack",
+    "bio": "Développeur passionné par l'automatisation et les intégrations. Ancien de l'APHP, il conçoit les architectures techniques et les pipelines de données.",
+    "linkedin": "https://www.linkedin.com/in/cambyse-daghigh-6a33b4163",
+    "initials": "CD",
+    "photo": "/images/equipe/cambyse.png"
+  },
+  {
+    "id": "arthur",
+    "name": "Arthur Tetard",
+    "role": "Co-fondateur & Product Manager",
+    "bio": "Expert en workflows n8n et automatisation des processus métier. Il transforme les processus manuels en systèmes intelligents et scalables.",
+    "linkedin": "https://www.linkedin.com/in/arthurtetard",
+    "initials": "AT",
+    "photo": "/images/equipe/arthur.jpeg"
+  }
+]

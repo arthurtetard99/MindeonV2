@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Jean-Luc Bonnet",
+    "company": "JLB EVENT",
+    "role": "Fondateur",
+    "rating": 5,
+    "initials": "JL",
+    "text": "L'équipe Mindeon a transformé notre processus de gestion des événements avec un agent vocal qui qualifie nos prospects 24/7. Résultat : +40% de leads qualifiés en 3 mois. Livraison dans les délais, équipe réactive."
+  },
+  {
+    "id": 2,
+    "name": "Enguerrand de Montfort",
+    "company": "Civisbot",
+    "role": "CEO",
+    "rating": 5,
+    "initials": "EM",
+    "text": "Nous avons automatisé notre pipeline de qualification avec n8n et Claude. L'expertise de Mindeon est rare sur le marché — vraiment des ingénieurs de haut niveau qui comprennent les enjeux business."
+  },
+  {
+    "id": 3,
+    "name": "Massimo Calvino",
+    "company": "JoRecord.io",
+    "role": "CTO",
+    "rating": 5,
+    "initials": "MC",
+    "text": "Le chatbot RAG qu'ils ont développé pour notre plateforme répond à 85% des questions sans intervention humaine. Intégration parfaite avec notre stack existant. Je recommande sans hésitation."
+  },
+  {
+    "id": 4,
+    "name": "Enzo Martin",
+    "company": "Wheeled",
+    "role": "Co-fondateur",
+    "rating": 5,
+    "initials": "EM",
+    "text": "Voice bot de qualification impressionnant. En 2 semaines seulement, le bot gérait nos appels entrants et transmettait des leads chauds directement dans notre CRM. ROI atteint en moins d'un mois."
+  },
+  {
+    "id": 5,
+    "name": "Lahcene Boucetta",
+    "company": "Digit-All Things",
+    "role": "Directeur",
+    "rating": 5,
+    "initials": "LB",
+    "text": "Projet livré dans les délais, communication excellente tout au long du projet, et les résultats dépassent largement nos attentes initiales. Une équipe sérieuse et passionnée par ce qu'elle fait."
+  }
+]

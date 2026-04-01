@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Badge from '../components/ui/Badge.astro';
+import { getCollection } from 'astro:content';
+import { formatDate } from '../utils/helpers';
+
+const articles = await getCollection('articles');
+const sorted = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const resources = [
+  { title: 'Guide : Démarrer avec n8n', desc: 'Les bases pour automatiser vos workflows avec n8n en moins d\'une heure.', tag: 'Guide', href: '#' },
+  { title: 'Checklist : Évaluer un cas d\'usage IA', desc: 'Les 10 questions à se poser avant de lancer un projet d\'automatisation.', tag: 'Checklist', href: '#' },
+  { title: 'Comparatif : Voice APIs 2025', desc: 'VAPI vs Retell AI vs ElevenLabs — lequel choisir pour votre projet ?', tag: 'Comparatif', href: '/mcp-comment-lia-passe-de-assistant-qui-parle-a-collaborateur-qui-agit/' },
+];
+---
+
+<BaseLayout
+  title="Ressources IA : articles, guides et outils"
+  description="Articles, tutoriels et outils gratuits pour comprendre et implémenter l'intelligence artificielle dans votre entreprise."
+  pathname="/ressources/"
+>
+  <!-- Header -->
+  <section class="bg-slate-50 border-b border-slate-200 pt-16 pb-20 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <Badge>Ressources</Badge>
+      <h1 class="mt-4 text-5xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
+        Centre de ressources IA
+      </h1>
+      <p class="text-xl text-slate-600">
+        Articles, guides et outils gratuits pour vous aider à implémenter l'IA dans votre entreprise.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-6 space-y-20">
+
+      <!-- Articles récents -->
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 mb-8">Derniers articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {sorted.map(article => (
+            <a
+              href={`/${article.slug}/`}
+              class="group bg-white border border-slate-200 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 block"
+            >
+              <p class="text-xs font-bold text-primary uppercase tracking-widest mb-3">
+                {article.data.tags?.[0] ?? 'IA'}
+              </p>
+              <h3 class="font-bold text-slate-900 leading-tight mb-2 group-hover:text-primary transition-colors">
+                {article.data.title}
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed line-clamp-2">{article.data.description}</p>
+              <time class="block mt-4 text-xs text-slate-400" datetime={article.data.date.toISOString()}>
+                {formatDate(article.data.date)}
+              </time>
+            </a>
+          ))}
+        </div>
+        <div class="mt-8">
+          <a href="/articles/" class="text-primary font-semibold text-sm hover:underline">
+            Voir tous les articles →
+          </a>
+        </div>
+      </div>
+
+      <!-- Guides & outils -->
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 mb-8">Guides et outils</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {resources.map(r => (
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+              <span class="text-xs font-bold text-secondary uppercase tracking-widest">{r.tag}</span>
+              <h3 class="font-bold text-slate-900 mt-2 mb-2">{r.title}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed mb-4">{r.desc}</p>
+              <a href={r.href} class="text-primary font-semibold text-sm hover:underline">Accéder →</a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

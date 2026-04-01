@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Badge from '../components/ui/Badge.astro';
+
+const faqs = [
+  {
+    q: "Combien coûte un projet ?",
+    a: "Chaque projet est unique. Après notre appel de découverte, nous vous envoyons un devis détaillé sous 48h. La plupart de nos projets démarrent à partir de 3 000 €."
+  },
+  {
+    q: "Combien de temps prend un déploiement ?",
+    a: "De 2 à 8 semaines selon la complexité. Un voice bot simple : 2 semaines. Un agent RAG multi-source avec intégration CRM : 6-8 semaines."
+  },
+  {
+    q: "On travaille comment ensemble ?",
+    a: "On commence par un appel de découverte gratuit, puis on vous envoie une proposition technique. Une fois validé, on démarre avec des sprints de 2 semaines et des démos régulières."
+  },
+  {
+    q: "Vous proposez une maintenance après livraison ?",
+    a: "Oui, nous proposons des contrats de maintenance mensuelle incluant monitoring, mises à jour des modèles et support prioritaire."
+  },
+];
+---
+
+<BaseLayout
+  title="Contact — Réservez votre consultation IA gratuite"
+  description="30 minutes pour décortiquer votre projet d'automatisation. Zéro engagement, 100% concret. Prenez rendez-vous avec notre équipe."
+  pathname="/contact/"
+>
+  <!-- Header -->
+  <section class="bg-slate-50 border-b border-slate-200 pt-16 pb-20 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <Badge>Consultation gratuite</Badge>
+      <h1 class="mt-4 text-5xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
+        Parlons de votre projet
+      </h1>
+      <p class="text-xl text-slate-600 leading-relaxed">
+        30 minutes pour décortiquer vos enjeux. On vous dit honnêtement si et comment l'IA peut vous aider — sans bullshit ni engagement.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Calendly embed -->
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 mb-6">Choisissez un créneau</h2>
+        <!-- Calendly inline widget -->
+        <div
+          class="calendly-inline-widget rounded-2xl overflow-hidden border border-slate-200 shadow-sm"
+          data-url="https://calendly.com/mindeon/consultation-gratuite"
+          style="min-width:320px;height:630px;"
+        ></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+
+      <!-- Info -->
+      <div class="space-y-10">
+        <!-- What to expect -->
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-6">Ce qui vous attend</h2>
+          <div class="space-y-4">
+            {[
+              { step: '1', title: 'Audit de vos processus', text: 'On identifie les tâches à fort potentiel d\'automatisation dans votre organisation.' },
+              { step: '2', title: 'Recommandations techniques', text: 'On vous présente les solutions IA adaptées à votre stack et votre budget.' },
+              { step: '3', title: 'Estimation et planning', text: 'Vous repartez avec une vision claire des délais, du coût et du ROI attendu.' },
+            ].map(item => (
+              <div class="flex gap-4">
+                <div class="w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center shrink-0">{item.step}</div>
+                <div>
+                  <h3 class="font-semibold text-slate-900 mb-1">{item.title}</h3>
+                  <p class="text-slate-600 text-sm leading-relaxed">{item.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Contact direct -->
+        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+          <h3 class="font-bold text-slate-900 mb-4">Contact direct</h3>
+          <div class="space-y-3 text-sm">
+            <a href="mailto:contact@mindeon.ai" class="flex items-center gap-3 text-slate-600 hover:text-primary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              contact@mindeon.ai
+            </a>
+            <a href="tel:+33667699490" class="flex items-center gap-3 text-slate-600 hover:text-primary transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.82 5.82l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>
+              +33 6 67 69 94 90
+            </a>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div>
+          <h3 class="font-bold text-slate-900 mb-4">Questions fréquentes</h3>
+          <div class="space-y-4">
+            {faqs.map(faq => (
+              <details class="group border border-slate-200 rounded-xl overflow-hidden">
+                <summary class="flex justify-between items-center px-5 py-4 cursor-pointer font-medium text-slate-900 text-sm hover:bg-slate-50 transition-colors list-none">
+                  {faq.q}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 transition-transform group-open:rotate-180" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </summary>
+                <p class="px-5 pb-4 text-sm text-slate-600 leading-relaxed">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
