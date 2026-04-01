@@ -6,9 +6,9 @@ client: "Distributeur industriel"
 tags: ["Webapp", "IA", "Gestion commandes", "Full-stack"]
 featured: true
 results:
-  - "Traitement des commandes 10x plus rapide"
-  - "Zéro erreur de saisie grâce à l'extraction IA des données"
-  - "Tableau de bord temps réel pour le management"
+  - "-90% temps de traitement des commandes"
+  - "0 erreur de saisie grâce à l'IA"
+  - "100% visibilité temps réel management"
 ---
 
 ## Contexte

@@ -7,9 +7,9 @@ tags: ["Voice Bot", "Retell AI", "n8n", "Devis automatisé"]
 featured: true
 architectureType: "voicebot-retell"
 results:
-  - "Temps de création d'un devis réduit de 2h à 4 minutes"
-  - "Taux de qualification des leads amélioré de 35%"
-  - "Disponibilité 24/7 sans ressource humaine supplémentaire"
+  - "-96% temps de création de devis (2h → 4 min)"
+  - "+35% de leads mieux qualifiés"
+  - "24/7 sans ressource humaine supplémentaire"
 ---
 
 ## Contexte

@@ -6,9 +6,9 @@ client: "Prestataire de services à domicile"
 tags: ["WhatsApp", "Agent conversationnel", "Devis", "Booking"]
 featured: false
 results:
-  - "80% des réservations traitées sans intervention humaine"
-  - "Génération de devis en 2 minutes vs 30 minutes manuellement"
-  - "Disponibilité 24/7 sur le canal préféré des clients"
+  - "80% des réservations traitées seul"
+  - "-93% temps de devis (30 min → 2 min)"
+  - "24/7 sur le canal WhatsApp préféré"
 ---
 
 ## Contexte

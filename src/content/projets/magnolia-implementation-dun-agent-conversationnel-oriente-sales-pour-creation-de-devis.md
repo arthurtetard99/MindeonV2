@@ -6,9 +6,9 @@ client: "Magnolia"
 tags: ["Agent conversationnel", "Sales", "Devis", "E-commerce B2B"]
 featured: false
 results:
-  - "Conversion des visiteurs en leads qualifiés x2,3"
-  - "Durée moyenne de configuration d'une commande réduite de 45min à 8min"
-  - "Disponibilité 24/7 avec réponse instantanée"
+  - "+130% conversion visiteurs en leads qualifiés"
+  - "-82% durée de configuration (45 min → 8 min)"
+  - "24/7 réponse instantanée garantie"
 ---
 
 ## Contexte client

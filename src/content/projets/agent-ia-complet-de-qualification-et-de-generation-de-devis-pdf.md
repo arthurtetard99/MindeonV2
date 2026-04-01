@@ -6,9 +6,9 @@ client: "Société de maintenance industrielle"
 tags: ["IA", "Devis PDF", "Qualification", "Pipeline B2B"]
 featured: false
 results:
-  - "Devis généré et envoyé en moins de 5 minutes"
-  - "Taux d'acceptation des devis +18% grâce à la personnalisation"
-  - "3 commerciaux libérés pour la prospection active"
+  - "-98% délai de création (2h → 5 min)"
+  - "+18% taux d'acceptation des devis"
+  - "3 commerciaux libérés pour prospecter"
 ---
 
 ## Contexte

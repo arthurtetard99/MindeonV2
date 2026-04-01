@@ -6,9 +6,9 @@ client: "Agence immobilière"
 tags: ["Voice Bot", "VAPI", "Lead qualification", "Immobilier"]
 featured: false
 results:
-  - "Rappel des leads en moins de 2 minutes (vs 4h en moyenne)"
+  - "-98% temps de rappel (4h → 2 min)"
   - "+45% de leads qualifiés pour les agents"
-  - "Planification automatique de 120+ visites par mois"
+  - "120+ visites planifiées par mois"
 ---
 
 ## Contexte

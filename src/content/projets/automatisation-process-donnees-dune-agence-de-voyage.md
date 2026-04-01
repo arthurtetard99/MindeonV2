@@ -6,9 +6,9 @@ client: "Agence de voyage premium"
 tags: ["Automatisation", "n8n", "Data Pipeline", "CRM", "Tourisme"]
 featured: false
 results:
-  - "70% de réduction du temps de création des devis voyages"
-  - "Données fournisseurs centralisées en temps réel (5 sources)"
-  - "Zéro saisie manuelle dans le CRM"
+  - "-70% temps de création des devis"
+  - "5 sources fournisseurs centralisées en temps réel"
+  - "0 saisie manuelle dans le CRM"
 ---
 
 ## Contexte

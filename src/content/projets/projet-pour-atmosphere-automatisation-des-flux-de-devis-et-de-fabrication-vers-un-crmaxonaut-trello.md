@@ -6,9 +6,9 @@ client: "Atmosphere"
 tags: ["Automatisation", "n8n", "Axonaut", "Trello", "CRM", "Fabrication"]
 featured: false
 results:
-  - "Élimination de 100% de la double saisie entre les outils"
-  - "Visibilité temps réel sur le planning de fabrication"
-  - "Réduction des erreurs de production de 85%"
+  - "100% de la double saisie éliminée"
+  - "100% visibilité sur le planning de fabrication"
+  - "-85% erreurs de production"
 ---
 
 ## Contexte
