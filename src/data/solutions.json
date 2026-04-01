@@ -15,7 +15,7 @@
     "id": "automatisation-crm",
     "title": "Automatisation CRM",
     "icon": "zap",
-    "description": "Enrichissement de contacts, suivi de prospects, synchronisation entre outils — votre CRM tourne tout seul, sans intervention humaine."
+    "description": "Enrichissement de contacts, suivi de prospects, synchronisation entre outils — votre CRM se pilote seul, en temps réel."
   },
   {
     "id": "workflows-n8n",

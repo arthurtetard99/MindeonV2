@@ -14,6 +14,9 @@ export default defineConfig({
   trailingSlash: 'always',
   output: 'static',
   adapter: isDev ? undefined : cloudflare(),
+  image: {
+    quality: 80,
+  },
   integrations: [
     react(),
     keystatic(),

@@ -48,6 +48,9 @@
             "type": "string"
           }
         },
+        "architectureType": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }

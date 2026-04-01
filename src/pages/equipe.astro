@@ -1,6 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import team from '../data/team.json';
+
+type ImageModule = { default: ImageMetadata };
+const equipeImages = import.meta.glob<ImageModule>('../assets/images/equipe/*', { eager: true });
+
+function getEquipePhoto(photoPath: string): ImageMetadata | undefined {
+  const filename = photoPath.split('/').pop() ?? '';
+  return equipeImages[`../assets/images/equipe/${filename}`]?.default;
+}
 
 const values = [
   {
@@ -52,10 +61,13 @@ const values = [
           <div class="group">
             <!-- Photo -->
             <div class="relative mb-8 rounded-2xl overflow-hidden bg-slate-200 w-32 h-40 mx-auto">
-              {member.photo
-                ? <img
-                    src={member.photo}
+              {member.photo && getEquipePhoto(member.photo)
+                ? <Image
+                    src={getEquipePhoto(member.photo)!}
                     alt={`Portrait de ${member.name}`}
+                    width={128}
+                    height={160}
+                    format="webp"
                     class={`w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105${member.id === 'arthur' ? ' scale-110' : ''}`}
                     loading="lazy"
                   />

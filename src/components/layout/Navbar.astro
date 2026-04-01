@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../../assets/images/logo.png';
+
 const navLinks = [
-  { label: 'Accueil',    href: '/' },
   { label: 'Nos projets', href: '/nos-projets/' },
   { label: 'Équipe',     href: '/equipe/' },
   { label: 'Articles',   href: '/articles/' },
@@ -16,7 +18,7 @@ const currentPath = Astro.url.pathname;
 
       <!-- Logo -->
       <a href="/" class="shrink-0" aria-label="Mindeon.ai — Accueil">
-        <span class="font-extrabold text-lg text-slate-900 tracking-tight">Mindeon.ai</span>
+        <Image src={logo} alt="Mindeon.ai" class="h-40 w-auto" format="webp" />
       </a>
 
       <!-- Desktop nav -->
