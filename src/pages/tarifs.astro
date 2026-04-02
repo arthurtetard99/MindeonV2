@@ -64,6 +64,61 @@ const packs = [
   },
 ];
 
+const appPack = {
+  id: 'webapp-ia',
+  title: 'Application Web sur-mesure',
+  tagline: 'Un produit digital complet, avec l\'IA au cœur.',
+  price: '8 000',
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="m9 8 2 2-2 2"/><path d="M13 12h2"/></svg>`,
+  features: [
+    { text: 'Conception UX & maquettes Figma', detail: 'Parcours utilisateurs, wireframes et design system avant le moindre code' },
+    { text: 'Frontend React / Next.js', detail: 'Interface moderne, responsive et performante (Core Web Vitals optimisés)' },
+    { text: 'Backend, API & base de données', detail: 'Architecture robuste, sécurisée, scalable selon votre charge' },
+    { text: 'Authentification & gestion des rôles', detail: 'Accès multi-profils, SSO, permissions granulaires' },
+    { text: 'Features IA intégrées sur-mesure', detail: 'Chatbot, voice assistant, RAG, génération de contenu, scoring IA…' },
+    { text: 'Déploiement & CI/CD inclus', detail: 'Mise en production sur votre infrastructure + pipeline automatisé' },
+    { text: '6 mois de support & évolutions', detail: 'Votre produit évolue avec vos retours utilisateurs sans coût additionnel' },
+  ],
+  results: [
+    { stat: '100%', label: 'propriétaire du produit' },
+    { stat: '8 sem.', label: 'livraison moyenne' },
+    { stat: '0€', label: 'de licence logicielle' },
+  ],
+};
+
+const aiAppFeatures = [
+  {
+    title: 'Chatbot & assistant IA',
+    description: 'Un assistant conversationnel intégré à votre app, entraîné sur vos données métier.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+  },
+  {
+    title: 'Voice assistant intégré',
+    description: 'Interaction vocale dans votre interface — VAPI ou Retell AI branché directement sur votre app.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>`,
+  },
+  {
+    title: 'Recherche sémantique (RAG)',
+    description: 'Moteur de recherche IA dans vos documents, emails ou historiques — résultats en langage naturel.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
+  },
+  {
+    title: 'Génération de contenu',
+    description: 'Rédaction automatique, résumé, reformulation — l\'IA produit du contenu utile directement dans votre interface.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>`,
+  },
+  {
+    title: 'Scoring & recommandations',
+    description: 'Modèles de scoring personnalisés pour prioriser leads, tâches ou opportunités automatiquement.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg>`,
+  },
+  {
+    title: 'Analyse de documents',
+    description: 'Extraction automatique de données depuis PDF, images ou emails — structurées et exploitables.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>`,
+  },
+];
+
 const solutions = [
   {
     title: 'Voice Bots IA',
@@ -204,6 +259,123 @@ const faqs = [
       <p class="text-center text-sm text-slate-400 mt-10">
         Tous les prix sont HT. TVA applicable selon votre situation. Paiement en 2 ou 3 fois disponible.
       </p>
+    </section>
+
+    <!-- Application Web IA — pack full-width -->
+    <section class="max-w-7xl mx-auto px-6 md:px-10 mb-12" aria-labelledby="webapp-heading">
+      <div class="relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 shadow-[0_30px_80px_rgba(13,28,47,0.2)]">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4 pointer-events-none" aria-hidden="true"></div>
+
+        <div class="relative z-10 p-10 md:p-14">
+          <!-- Header -->
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-10">
+            <div class="flex items-start gap-5">
+              <div class="text-primary bg-blue-500/10 p-4 rounded-2xl shrink-0">
+                <Fragment set:html={appPack.icon} />
+              </div>
+              <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 mb-3">
+                  <span class="text-blue-300 text-[10px] font-bold tracking-widest uppercase">Nouveau</span>
+                </div>
+                <h2 id="webapp-heading" class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-2">{appPack.title}</h2>
+                <p class="text-slate-400 text-base leading-relaxed max-w-xl">{appPack.tagline}</p>
+              </div>
+            </div>
+            <div class="shrink-0 text-right">
+              <p class="text-slate-500 text-xs font-medium mb-1">À partir de</p>
+              <p class="text-5xl font-black text-white">{appPack.price}<span class="text-2xl text-slate-400 font-bold">€</span></p>
+              <p class="text-slate-500 text-sm mt-1">HT</p>
+            </div>
+          </div>
+
+          <!-- Features + Results -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+            <!-- Features list — span 2 cols -->
+            <ul class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {appPack.features.map((f) => (
+                <li class="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-primary shrink-0 mt-1" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <div>
+                    <p class="text-sm font-semibold text-white">{f.text}</p>
+                    <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">{f.detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <!-- Results -->
+            <div class="flex flex-col gap-4 justify-center">
+              {appPack.results.map((r) => (
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-5 text-center">
+                  <p class="text-3xl font-black text-primary mb-1">{r.stat}</p>
+                  <p class="text-xs text-slate-400 leading-tight">{r.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/contact/"
+              class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary hover:bg-blue-700 text-white rounded-2xl font-bold text-sm shadow-[0_4px_20px_rgba(37,99,235,0.4)] hover:scale-[1.02] active:scale-95 transition-all duration-200"
+            >
+              Discuter de mon projet
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a
+              href="/nos-projets/"
+              class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/15 border border-white/10 text-white rounded-2xl font-bold text-sm transition-all duration-200"
+            >
+              Voir nos réalisations
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features IA intégrables dans une app -->
+    <section class="bg-[#f0f4ff] py-24 mb-32" aria-labelledby="ai-features-heading">
+      <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div class="max-w-2xl mb-14">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-blue-100 mb-6">
+            <span class="text-primary text-[10px] font-bold tracking-widest uppercase">Features IA</span>
+          </div>
+          <h2 id="ai-features-heading" class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+            L'IA que l'on peut intégrer dans votre application
+          </h2>
+          <p class="text-slate-500 leading-relaxed">
+            Chaque feature est conçue pour s'inscrire naturellement dans votre produit — pas un chatbot plaqué dessus, mais une IA native à vos flux.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {aiAppFeatures.map((f) => (
+            <div class="bg-white p-7 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+              <div class="bg-blue-50 text-primary p-3 rounded-xl w-fit mb-5">
+                <Fragment set:html={f.icon} />
+              </div>
+              <h3 class="font-extrabold text-slate-900 text-base mb-2">{f.title}</h3>
+              <p class="text-sm text-slate-500 leading-relaxed">{f.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-10 p-6 bg-white rounded-2xl border border-slate-100 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-5">
+          <p class="text-slate-600 text-sm leading-relaxed max-w-xl">
+            <span class="font-bold text-slate-900">Ces features peuvent être combinées</span> dans un seul produit. On construit l'architecture pour que chaque brique IA s'intègre sans friction avec les autres.
+          </p>
+          <a
+            href="/contact/"
+            class="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition-colors"
+          >
+            En discuter
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Ce qui est inclus dans tous les packs -->

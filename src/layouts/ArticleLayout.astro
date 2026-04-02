@@ -17,10 +17,11 @@ interface Props {
   author?: string;
   date?: Date;
   tags?: string[];
+  image?: string;
   related?: RelatedEntry[];
 }
 
-const { title, description, pathname, author = 'Mindeon.ai', date, tags = [], related = [] } = Astro.props;
+const { title, description, pathname, author = 'Mindeon.ai', date, tags = [], image, related = [] } = Astro.props;
 
 const tagColors = ['text-blue-700 bg-blue-50', 'text-violet-700 bg-violet-50', 'text-slate-600 bg-slate-100'];
 const tagAccents = ['text-blue-700', 'text-violet-700', 'text-slate-600'];
@@ -105,10 +106,13 @@ const breadcrumbSchema = {
         </div>
       </div>
 
-      <!-- Right: illustration -->
+      <!-- Right: illustration or custom image -->
       <div class="lg:w-5/12 w-full">
         <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(13,28,47,0.12)]">
-          <Illustration topic={illustrationTopic} class="w-full h-full" />
+          {image
+            ? <img src={image} alt={title} class="w-full h-full object-cover" loading="lazy" />
+            : <Illustration topic={illustrationTopic} class="w-full h-full" />
+          }
         </div>
       </div>
 
