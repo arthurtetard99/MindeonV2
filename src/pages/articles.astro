@@ -76,7 +76,7 @@ function getIcon(tags: string[]): string {
         {allTags.map(tag => (
           <button
             data-tag={tag}
-            class="tag-btn px-4 py-1.5 rounded-full text-xs font-bold border border-slate-200 text-slate-600 hover:border-primary hover:text-primary transition-all duration-200 bg-white"
+            class="tag-btn px-4 py-1.5 rounded-full text-xs font-bold border border-slate-200 text-slate-600 hover:border-primary hover:bg-primary hover:text-white transition-all duration-200 bg-white"
           >
             {tag}
           </button>
@@ -90,7 +90,7 @@ function getIcon(tags: string[]): string {
         {sorted.map((article, i) => {
           const s = styles[i % 3];
           const icon = getIcon(article.data.tags ?? []);
-          const tag = article.data.tags?.[0] ?? 'IA';
+          const tags = article.data.tags ?? ['IA'];
           return (
             <a
               href={`/${article.slug}/`}
@@ -106,10 +106,12 @@ function getIcon(tags: string[]): string {
 
               <!-- Body -->
               <div class="p-8 flex flex-col flex-1">
-                <div class="mb-4">
-                  <span class={`text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full ${s.tagColor}`}>
-                    {tag}
-                  </span>
+                <div class="mb-4 flex flex-wrap gap-1.5">
+                  {tags.map(t => (
+                    <span class={`text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full ${s.tagColor}`}>
+                      {t}
+                    </span>
+                  ))}
                 </div>
                 <h2 class="text-xl font-extrabold text-slate-900 mb-4 leading-snug group-hover:text-primary transition-colors line-clamp-2">
                   {article.data.title}
