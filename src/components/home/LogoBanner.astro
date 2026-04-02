@@ -31,17 +31,16 @@ const withLabel = new Set(['Retell AI', 'Claude', 'n8n', 'Mistral AI', 'Power Au
         const img = getToolImage(tool.logo);
         return (
           <div class="flex flex-col items-center shrink-0 opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-default select-none">
-            {img
-              ? <Image
-                  src={img}
-                  alt={tool.name}
-                  height={64}
-                  format="webp"
-                  class="h-16 w-auto"
-                  loading="lazy"
-                />
-              : tool.logo && <img src={tool.logo} alt={tool.name} height="64" class="h-16 w-auto" loading="lazy" />
-            }
+            {img && (
+              <Image
+                src={img}
+                alt={tool.name}
+                height={64}
+                format="webp"
+                class="h-16 w-auto"
+                loading="lazy"
+              />
+            )}
             {withLabel.has(tool.name) && (
               <span class="mt-2 text-xs font-semibold text-slate-400 text-center">{tool.name}</span>
             )}

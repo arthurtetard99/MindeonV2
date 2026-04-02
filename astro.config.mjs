@@ -23,9 +23,7 @@ export default defineConfig({
     sitemap(),
   ],
   markdown: {
-    remarkRehype: {
-      allowDangerousHtml: true,
-    },
+    remarkRehype: {},
   },
   vite: {
     plugins: [tailwindcss()],
