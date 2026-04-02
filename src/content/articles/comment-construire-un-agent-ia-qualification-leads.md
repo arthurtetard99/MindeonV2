@@ -3,7 +3,7 @@ title: "Comment construire un agent IA de qualification de leads en 2025"
 description: "Du premier contact à la prise de rendez-vous qualifiée : guide technique et pratique pour déployer un agent IA qui qualifie vos prospects 24/7, avec des exemples concrets sur VAPI et n8n."
 date: 2025-03-20
 author: "Équipe Mindeon.ai"
-tags: ["Lead qualification", "IA agents", "VAPI", "n8n"]
+tags: ["Lead Generation", "Agents IA", "Voice Bot", "n8n"]
 ---
 
 ## Pourquoi la qualification manuelle vous coûte cher

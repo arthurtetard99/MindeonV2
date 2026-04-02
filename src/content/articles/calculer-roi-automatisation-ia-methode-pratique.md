@@ -3,7 +3,7 @@ title: "Comment calculer le ROI d'un projet d'automatisation IA (méthode pratiq
 description: "Avant d'investir dans l'automatisation IA, calculez le retour sur investissement attendu. Voici la méthode que nous utilisons avec nos clients pour justifier chaque projet en moins d'une heure."
 date: 2025-04-15
 author: "Arthur Tetard"
-tags: ["ROI", "Automatisation", "IA", "PME", "Stratégie"]
+tags: ["ROI", "Automatisation", "PME", "Stratégie IA"]
 ---
 
 ## Le problème avec "ça va nous faire gagner du temps"

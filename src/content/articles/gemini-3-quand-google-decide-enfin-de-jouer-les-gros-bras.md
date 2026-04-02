@@ -3,7 +3,7 @@ title: "Gemini 3 : quand Google décide enfin de jouer les gros bras"
 description: "Google vient de lâcher Gemini 3 et les benchmarks sont impressionnants. On décortique ce que ce modèle change vraiment pour les entreprises qui veulent intégrer l'IA — et ce qui reste du marketing."
 date: 2025-03-10
 author: "Équipe Mindeon.ai"
-tags: ["Gemini", "Google", "LLM", "Comparatif"]
+tags: ["LLM", "Comparatif", "Stratégie IA"]
 ---
 
 ## Gemini 3 : la promesse

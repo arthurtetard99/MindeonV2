@@ -258,6 +258,36 @@ const breadcrumbSchema = {
     text-decoration: underline;
     text-underline-offset: 3px;
   }
+  .article-content :global(a[href="/contact/"]) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    background: #2563EB;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 800;
+    font-size: 0.95rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.02em;
+    padding: 0.35em 1.1em;
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    vertical-align: middle;
+  }
+  .article-content :global(a[href="/contact/"]::after) {
+    content: '→';
+    font-weight: 700;
+    transition: transform 0.2s ease;
+  }
+  .article-content :global(a[href="/contact/"]:hover) {
+    background: #1D4ED8;
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+  }
+  .article-content :global(a[href="/contact/"]:hover::after) {
+    transform: translateX(3px);
+  }
   .article-content :global(pre) {
     background: #0f172a;
     color: #e2e8f0;

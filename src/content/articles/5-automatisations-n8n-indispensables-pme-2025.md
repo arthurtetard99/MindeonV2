@@ -3,7 +3,7 @@ title: "Les 5 automatisations n8n que toute PME devrait avoir en 2025"
 description: "Pas besoin de 6 mois de développement ni d'un DSI. Ces 5 automatisations n8n sont déployables en moins d'une semaine et génèrent un ROI immédiat pour n'importe quelle PME."
 date: 2025-02-10
 author: "Arthur Tetard"
-tags: ["n8n", "Automatisation", "PME", "Productivité"]
+tags: ["n8n", "Automatisation", "PME", "Intégrations"]
 ---
 
 ## Pourquoi commencer par ces 5 automatisations

@@ -3,7 +3,7 @@ title: "VAPI vs Retell AI vs ElevenLabs : quel outil pour votre voice bot en 202
 description: "Comparatif technique et terrain des trois plateformes voice bot les plus utilisées en 2025. Latence, qualité vocale, prix, intégrations : tout ce qu'il faut savoir avant de choisir."
 date: 2025-04-02
 author: "Arthur Tetard"
-tags: ["Voice Bot", "VAPI", "Retell AI", "ElevenLabs", "Comparatif"]
+tags: ["Voice Bot", "Comparatif", "Agents IA", "Intégrations"]
 ---
 
 ## Pourquoi le choix de la plateforme compte autant que le LLM

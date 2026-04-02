@@ -3,7 +3,7 @@ title: "RAG : comment donner à votre chatbot une vraie base de connaissances m�
 description: "Le RAG (Retrieval-Augmented Generation) permet à un LLM de répondre sur VOS documents. Guide pratique pour implémenter un chatbot qui connaît votre entreprise mieux que vos nouvelles recrues."
 date: 2025-03-05
 author: "David Manscour"
-tags: ["RAG", "Chatbot", "IA", "Base de connaissances"]
+tags: ["RAG", "Chatbot", "Agents IA", "Intégrations"]
 ---
 
 ## Le problème que le RAG résout

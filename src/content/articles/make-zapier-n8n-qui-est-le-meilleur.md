@@ -3,7 +3,7 @@ title: "Make, Zapier, n8n : qui est le meilleur outil d'automatisation ?"
 description: "Comparatif complet des trois plateformes d'automatisation les plus populaires. Tarifs, flexibilité, courbe d'apprentissage, cas d'usage IA — on vous dit lequel choisir selon votre profil."
 date: 2025-01-15
 author: "Équipe Mindeon.ai"
-tags: ["n8n", "Make", "Zapier", "Automatisation", "Comparatif"]
+tags: ["Comparatif", "n8n", "No-code", "Automatisation"]
 ---
 
 ## Le verdict rapide

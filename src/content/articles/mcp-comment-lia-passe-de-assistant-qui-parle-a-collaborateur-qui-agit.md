@@ -3,7 +3,7 @@ title: "MCP : comment l'IA passe de l'assistant qui parle au collaborateur qui a
 description: "Le Model Context Protocol (MCP) d'Anthropic change la donne : les LLMs peuvent désormais interagir directement avec vos outils, fichiers et APIs. On vous explique ce que ça change concrètement."
 date: 2025-02-20
 author: "Équipe Mindeon.ai"
-tags: ["MCP", "IA agents", "Claude", "Anthropic"]
+tags: ["Agents IA", "LLM", "Développement", "Stratégie IA"]
 ---
 
 ## Qu'est-ce que le MCP ?

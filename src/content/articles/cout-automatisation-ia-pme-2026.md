@@ -3,7 +3,7 @@ title: "Combien coûte l'automatisation IA pour une PME en 2026 ?"
 description: "De 2 000 à 30 000 euros selon le périmètre. Découvrez les budgets réels pour réussir votre projet d'automatisation IA au sein de votre PME en 2026."
 date: 2026-04-02
 author: "Arthur Tetard"
-tags: ["Intelligence artificielle", "Automatisation", "PME", "Transformation digitale"]
+tags: ["Stratégie IA", "Automatisation", "PME", "ROI"]
 image: "/images/articles/cout-automatisation-ia-pme-2026.jpg"
 ---
 
