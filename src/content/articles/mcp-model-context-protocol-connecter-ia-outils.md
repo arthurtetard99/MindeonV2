@@ -51,4 +51,4 @@ En résumé, le protocole MCP est le chaînon manquant pour transformer vos outi
 
 ## Passez à l'action
 
-Vous souhaitez connecter vos outils métiers à l'intelligence artificielle pour gagner en productivité ? Notre équipe vous accompagne dans le déploiement de solutions basées sur le MCP. **Contactez-nous dès aujourd'hui pour auditer vos besoins.**
+Vous souhaitez connecter vos outils métiers à l'intelligence artificielle pour gagner en productivité ? Notre équipe vous accompagne dans le déploiement de solutions basées sur le MCP. [Contactez-nous dès aujourd'hui pour auditer vos besoins.](/contact/)
