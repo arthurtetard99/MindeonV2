@@ -23,7 +23,7 @@ n8n est une plateforme d'automatisation des flux de travail qui permet de relier
 2. **Flexibilité technique :** Vous pouvez injecter du JavaScript directement dans vos workflows pour manipuler des données complexes, là où d'autres outils no-code atteignent leurs limites.
 3. **Coûts prévisibles :** Contrairement à des modèles de facturation à la tâche, n8n propose une tarification basée sur l'auto-hébergement ou des instances managées transparentes.
 
-Pour découvrir comment structurer vos outils métier, consultez nos [solutions n8n](/solutions-n8n/).
+Pour découvrir comment structurer vos outils métier, consultez notre [comparatif Make vs n8n vs Zapier](/make-vs-n8n-vs-zapier-comparatif-2026/).
 
 ## Installation et mise en place
 
@@ -51,5 +51,7 @@ Bien que puissant, n8n demande une courbe d'apprentissage plus élevée que des 
 ## Conclusion : Automatisez pour scaler
 
 L'automatisation n'est plus une option, c'est un levier de productivité indispensable. n8n vous offre la puissance d'un outil de développement avec l'ergonomie du no-code. Que ce soit pour centraliser vos leads ou automatiser vos agents IA, les possibilités sont infinies.
+
+Pour démarrer directement, consultez nos [10 workflows n8n prêts à l'emploi pour PME](/workflows-n8n-prets-emploi-pme/) et notre tutoriel pour [automatiser votre CRM avec n8n](/automatiser-crm-n8n-ia-tutoriel/).
 
 Vous souhaitez transformer votre infrastructure technique et automatiser vos processus métier avec n8n ? [Parlons de votre projet](/contact/).

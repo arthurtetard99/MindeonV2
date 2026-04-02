@@ -76,7 +76,7 @@ Chez Mindeon, nous utilisons **n8n** pour 90% de nos projets clients. Voici pour
 
 Pour les projets d'automatisation avec de l'IA, **n8n est systématiquement notre choix**. La combinaison self-hosting + nœuds IA natifs + flexibilité du code le rend indispensable pour construire des agents robustes en production.
 
-Si vous partez de zéro et que votre équipe n'est pas technique, Make est un excellent compromis.
+Si vous partez de zéro et que votre équipe n'est pas technique, Make est un excellent compromis. Pour aller plus loin, découvrez [les 5 automatisations n8n indispensables pour une PME](/5-automatisations-n8n-indispensables-pme-2025/) avec des cas concrets prêts à déployer.
 
 ---
 

@@ -29,7 +29,7 @@ L'utilisation du **mcp ia** offre des avantages compétitifs immédiats pour les
 2. **Réduction de la complexité technique** : Plus besoin de multiplier les API personnalisées pour chaque outil.
 3. **Sécurité renforcée** : Le protocole est conçu pour que vous gardiez le contrôle total sur les accès autorisés par l'IA.
 
-Si vous souhaitez comprendre comment ces briques s'intègrent dans un écosystème plus large, consultez notre [article MCP existant](/blog/mcp-guide/) pour approfondir les aspects techniques.
+Si vous souhaitez comprendre comment ces briques s'intègrent dans un écosystème plus large, consultez notre article sur le [MCP et les agents IA autonomes](/mcp-comment-lia-passe-de-assistant-qui-parle-a-collaborateur-qui-agit/) pour approfondir les aspects techniques.
 
 ## Cas d'usage concrets en entreprise
 
@@ -39,7 +39,7 @@ Le passage à la pratique est ce qui distingue le MCP d'une simple curiosité te
 - **Gestion documentaire** : L'IA peut scanner, résumer et classer automatiquement des factures stockées sur vos serveurs internes.
 - **Assistance au développement** : L'IA accède aux logs de vos serveurs pour diagnostiquer un bug en quelques secondes.
 
-La mise en place de ces solutions permet de gagner en efficacité opérationnelle. Pour évaluer la faisabilité de ces intégrations, découvrez nos [solutions](/solutions/) d'accompagnement IA pour PME.
+La mise en place de ces solutions permet de gagner en efficacité opérationnelle. Pour évaluer la faisabilité de ces intégrations, découvrez nos [réalisations](/nos-projets/) et notre guide sur les [agents IA autonomes en 2026](/agents-ia-autonomes-2026-etat-des-lieux/).
 
 ## Limites et points de vigilance
 

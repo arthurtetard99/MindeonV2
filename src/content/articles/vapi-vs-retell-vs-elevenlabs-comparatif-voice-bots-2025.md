@@ -10,6 +10,8 @@ tags: ["Voice Bot", "Comparatif", "Agents IA", "Intégrations"]
 
 Quand on parle de voice bots, l'attention va souvent vers le modèle de langage : GPT-4o, Claude, Gemini. Mais dans un appel téléphonique, ce qui fait ou défait l'expérience, c'est la **latence bout-en-bout** — le délai entre la fin de la phrase de l'utilisateur et le début de la réponse de l'agent.
 
+Si vous cherchez à construire un agent vocal complet, lisez notre guide sur [comment construire un agent IA de qualification de leads](/comment-construire-un-agent-ia-qualification-leads/) qui couvre l'architecture n8n + VAPI de bout en bout.
+
 Une latence de 800ms : l'appel semble naturel. 1,5 secondes : on commence à sentir le délai. 2 secondes et plus : la conversation devient pénible.
 
 C'est là que le choix de la plateforme devient décisif. Nous avons déployé des voice bots sur VAPI, Retell AI et ElevenLabs pour des cas clients réels. Voici ce que nous avons appris.

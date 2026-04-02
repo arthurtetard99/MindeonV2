@@ -1,6 +1,6 @@
 globalThis.process ??= {}; globalThis.process.env ??= {};
-import { c as createComponent, r as renderComponent, a as renderTemplate } from '../../chunks/astro/server_DiNIvNvZ.mjs';
-export { r as renderers } from '../../chunks/_@astro-renderers_BmGJ1nnY.mjs';
+import { c as createComponent, r as renderComponent, a as renderTemplate } from '../../chunks/astro/server_M8Co-PDl.mjs';
+export { r as renderers } from '../../chunks/_@astro-renderers_B7eOfWy9.mjs';
 
 const prerender = false;
 const $$KeystaticAstroPage = createComponent(($$result, $$props, $$slots) => {

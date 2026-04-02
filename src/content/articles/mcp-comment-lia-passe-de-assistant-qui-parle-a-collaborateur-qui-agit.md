@@ -48,6 +48,8 @@ Nous utilisons MCP pour construire des agents qui interagissent directement avec
 
 Si vous envisagez d'intégrer l'IA dans vos processus, MCP réduit considérablement le coût et la complexité des intégrations. Un agent Claude avec les bons serveurs MCP peut devenir un véritable collaborateur numérique qui accède à vos données, prend des actions et produit des résultats mesurables.
 
+Pour aller plus loin sur la question des données métier, notre article sur le [RAG et les bases de connaissances](/rag-donner-base-connaissances-metier-a-votre-chatbot/) explique comment entraîner un agent sur vos propres documents en complément de MCP.
+
 ---
 
 *Vous voulez explorer comment MCP peut transformer vos processus ? [Réservez un appel](/contact/) avec notre équipe.*

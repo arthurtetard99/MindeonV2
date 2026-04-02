@@ -19,7 +19,7 @@ En résumé, l'objectif est d'isoler les points de friction opérationnels qui r
 
 ## 2. Choisir les bons outils : IA pour PME débutant
 
-L'**IA pour PME débutant** se concentre souvent sur des solutions "no-code" qui ne nécessitent pas de compétences en programmation. Des plateformes d'orchestration permettent de connecter vos applications métiers entre elles. Pour réussir cette transition, nous vous conseillons de suivre notre [Methodologie](/methodologie/) éprouvée qui privilégie la simplicité et l'évolutivité.
+L'**IA pour PME débutant** se concentre souvent sur des solutions "no-code" qui ne nécessitent pas de compétences en programmation. Des plateformes d'orchestration permettent de connecter vos applications métiers entre elles. Pour réussir cette transition, nous vous conseillons de commencer par des outils no-code comme [n8n](/n8n-guide-ultime-automatisation-open-source/) qui privilégient la simplicité et l'évolutivité.
 
 ## 3. Les bénéfices et les limites à anticiper
 
@@ -35,10 +35,12 @@ Vous pouvez débuter par des scénarios simples :
 - La génération automatique de comptes-rendus de réunions.
 - Le routage intelligent des leads vers les bons commerciaux.
 
-Une fois ces fondations posées, vous pourrez explorer des [Solutions](/solutions/) plus avancées pour scaler vos opérations. Il ne s'agit pas d'automatiser pour le plaisir de la technologie, mais pour servir votre stratégie globale.
+Une fois ces fondations posées, vous pourrez explorer des agents IA plus avancés pour scaler vos opérations. Il ne s'agit pas d'automatiser pour le plaisir de la technologie, mais pour servir votre stratégie globale.
 
 ## 5. Comment mesurer votre réussite
 
 Pour valider votre stratégie, mesurez le temps économisé par collaborateur et le taux de conversion de vos processus automatisés. L'automatisation doit rester un levier au service de vos objectifs commerciaux et non une charge technique complexe. 
+
+Pour aller plus loin, consultez notre guide sur le [calcul du ROI de l'automatisation](/calculer-roi-automatisation-ia-methode-pratique/) et le [comparatif des outils Make vs n8n vs Zapier](/make-vs-n8n-vs-zapier-comparatif-2026/).
 
 Si vous souhaitez structurer votre transformation numérique, [Parlons de votre projet](/contact/).

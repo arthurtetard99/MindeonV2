@@ -1,7 +1,7 @@
 globalThis.process ??= {}; globalThis.process.env ??= {};
 import { d as distExports$1 } from '../../../chunks/index_Dtq64N-W.mjs';
-import { a as requireReact } from '../../../chunks/_@astro-renderers_BmGJ1nnY.mjs';
-export { r as renderers } from '../../../chunks/_@astro-renderers_BmGJ1nnY.mjs';
+import { a as requireReact } from '../../../chunks/_@astro-renderers_B7eOfWy9.mjs';
+export { r as renderers } from '../../../chunks/_@astro-renderers_B7eOfWy9.mjs';
 
 /**
  * A `StructFailure` represents a single specific failure in validation.

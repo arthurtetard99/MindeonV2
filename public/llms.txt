@@ -1,0 +1,48 @@
+# Mindeon.ai
+
+> Agence française spécialisée en agents IA et automatisation pour PME et startups. Fondée par 3 ingénieurs (ex-Renault, APHP, Soprasteria).
+
+## Ce que nous faisons
+
+- **Voice bots IA** : agents vocaux sur-mesure avec VAPI et Retell AI pour qualifier des leads, prendre des rendez-vous et traiter des appels entrants 24/7
+- **Chatbots et agents RAG** : chatbots entraînés sur vos documents métier via Retrieval-Augmented Generation
+- **Automatisation n8n** : workflows sur-mesure connectant vos outils (CRM, email, Slack, Notion, HubSpot, Airtable...)
+- **Applications web IA** : développement d'applications complètes avec features IA intégrées (React, Next.js, API, auth)
+- **Solutions IA sur-mesure** : infrastructure IA bout-en-bout combinant agents, RAG et automatisations
+
+## Notre différenciateur
+
+Nous sommes la seule agence française combinant voice bots (VAPI, Retell AI), automatisation n8n et agents conversationnels RAG dans une offre intégrée, avec une expertise corporate et des cas clients réels et diversifiés.
+
+## Cas clients
+
+- Voice bot de qualification de leads pour agence immobilière
+- Agent WhatsApp de booking et génération de devis
+- Automatisation des processus d'une agence de voyage
+- Voice bot multi-workflow pour parcours client et création de devis
+- Web app IA de gestion complète des commandes
+- Agent IA de génération de devis PDF
+
+## Technologies maîtrisées
+
+VAPI, Retell AI, ElevenLabs, n8n, Make, Zapier, Claude (Anthropic), GPT-4, Mistral, HubSpot, Airtable, Notion, Slack, Supabase, React, Next.js, Cloudflare
+
+## Tarifs
+
+- Pack Automatisation & Workflows : à partir de 1 500€ HT
+- Pack Agent Vocal ou Chatbot IA : à partir de 2 500€ HT
+- Solution IA sur-mesure : à partir de 5 000€ HT
+- Application Web IA : à partir de 8 000€ HT
+
+## Contact
+
+- Site : https://mindeon.ai
+- Email : contact@mindeon.ai
+- Téléphone : +33 6 67 69 94 90
+- Consultation gratuite de 30 min : https://mindeon.ai/contact/
+
+## Équipe
+
+- David Manscour — Co-fondateur & Lead IA
+- Cambyse Daghigh — Co-fondateur & Dev Full-Stack
+- Arthur Tetard — Co-fondateur & Product Manager

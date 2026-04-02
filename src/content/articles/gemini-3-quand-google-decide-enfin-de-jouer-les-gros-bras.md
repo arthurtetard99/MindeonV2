@@ -43,6 +43,8 @@ Google a agressivement baissé ses prix. Pour les cas d'usage à fort volume (mi
 
 Pour les projets d'agents IA en production, nous continuons de privilegier Claude 3.5 Sonnet pour sa fiabilité et la qualité de son raisonnement. Gemini 3 mérite d'être testé pour les cas d'usage à fort volume et les intégrations Google Workspace.
 
+Pour comprendre comment ces modèles s'intègrent dans des workflows concrets, notre article sur [le MCP et les agents IA autonomes](/mcp-comment-lia-passe-de-assistant-qui-parle-a-collaborateur-qui-agit/) explique comment connecter n'importe quel LLM à vos outils métier.
+
 La concurrence entre labs est excellente pour les entreprises : les prix baissent, les capacités augmentent. 2025 s'annonce comme l'année où l'IA en entreprise devient vraiment accessible.
 
 ---

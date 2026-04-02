@@ -8,6 +8,7 @@
     "/_astro/*",
     "/favicon.png",
     "/favicon.svg",
+    "/llms.txt",
     "/robots.txt",
     "/images/*",
     "/articles",
@@ -36,6 +37,23 @@
     "/rag-donner-base-connaissances-metier-a-votre-chatbot",
     "/mcp-comment-lia-passe-de-assistant-qui-parle-a-collaborateur-qui-agit",
     "/make-zapier-n8n-qui-est-le-meilleur",
-    "/cout-automatisation-ia-pme-2026"
+    "/cout-automatisation-ia-pme-2026",
+    "/agents-ia-autonomes-2026-etat-des-lieux",
+    "/automatiser-crm-n8n-ia-tutoriel",
+    "/automatisation-ia-par-ou-commencer-pme",
+    "/creer-voice-bot-qualification-leads",
+    "/ia-agences-immobilieres-5-automatisations",
+    "/ia-evenementiel-premier-contact-devis",
+    "/ia-remplace-emplois-terrain",
+    "/make-vs-n8n-vs-zapier-comparatif-2026",
+    "/mistral-vs-claude-vs-gpt-comparatif-llm-2026",
+    "/mcp-model-context-protocol-connecter-ia-outils",
+    "/n8n-guide-ultime-automatisation-open-source",
+    "/prix-agent-vocal-ia-2026",
+    "/pourquoi-pme-qui-n-automatisent-pas-vont-decrocher",
+    "/rag-retrieval-augmented-generation-explique",
+    "/vapi-vs-retell-ai-vs-bland-comparatif",
+    "/workflows-n8n-prets-emploi-pme",
+    "/voice-bot-ia-guide-complet"
   ]
 }

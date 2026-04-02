@@ -26,13 +26,13 @@ En résumé, plus votre projet demande d'interopérabilité entre vos logiciels 
 Pour structurer votre réflexion, voici les paliers d'investissement observés sur le marché actuel :
 
 ### 1. Projets simples (2 000 € – 7 000 €)
-Idéal pour les PME souhaitant tester l'IA. Cela inclut l'automatisation du support client par chatbot, le tri automatique des emails entrants ou la génération de comptes-rendus de réunions. Découvrez nos [solutions](/solutions/) pour ces besoins rapides.
+Idéal pour les PME souhaitant tester l'IA. Cela inclut l'automatisation du support client par chatbot, le tri automatique des emails entrants ou la génération de comptes-rendus de réunions. Découvrez nos [tarifs](/tarifs/) pour ces besoins rapides.
 
 ### 2. Projets intermédiaires (7 000 € – 15 000 €)
 Intégration d'agents IA dans vos outils de gestion. Ici, on automatise la saisie comptable, le scoring des leads commerciaux ou la gestion des stocks en temps réel.
 
 ### 3. Projets complexes (15 000 € – 30 000 € +)
-Déploiement d'une architecture IA complète connectée à vos bases de données propriétaires pour une analyse prédictive poussée. Ces projets nécessitent une [methodologie](/methodologie/) rigoureuse pour garantir la sécurité des données et l'adoption par vos équipes.
+Déploiement d'une architecture IA complète connectée à vos bases de données propriétaires pour une analyse prédictive poussée. Ces projets nécessitent une méthodologie rigoureuse pour garantir la sécurité des données et l'adoption par vos équipes — [découvrez nos réalisations](/nos-projets/) pour voir comment nous les menons concrètement.
 
 ## Pourquoi investir maintenant ?
 

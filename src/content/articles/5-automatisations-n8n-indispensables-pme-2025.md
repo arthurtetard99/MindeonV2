@@ -91,6 +91,8 @@ Si vous partez de zéro, voici l'ordre dans lequel nous recommandons de déploye
 
 Chaque automatisation prend entre 4 et 16 heures pour être déployée et testée. Comptez 2-4 semaines pour avoir les 5 en production.
 
+Avant de vous lancer, consultez notre [méthode pour calculer le ROI d'un projet d'automatisation](/calculer-roi-automatisation-ia-methode-pratique/) — utile pour prioriser les 5 automatisations selon votre contexte.
+
 ---
 
 *Vous voulez qu'on déploie ces automatisations dans votre entreprise ? [Réservez un appel de 30 min](/contact/) — on vous dira exactement ce qui est faisable avec votre stack actuelle.*

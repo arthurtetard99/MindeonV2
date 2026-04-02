@@ -23,7 +23,7 @@ function getBanner(tags: string[]): { gradient: string; label: string; pattern: 
 ---
 
 <BaseLayout
-  title="Nos projets d'agents IA et d'automatisation"
+  title="Nos projets d'agents IA et automatisation"
   description="Découvrez nos réalisations : voice bots, agents conversationnels, automatisations CRM. Plus de 15 projets livrés pour des PME et startups."
   pathname="/nos-projets/"
 >
@@ -36,10 +36,10 @@ function getBanner(tags: string[]): { gradient: string; label: string; pattern: 
         Portfolio
       </div>
       <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1]">
-        15+ projets livrés
+        15+ projets d'agents IA<br>et d'automatisation livrés
       </h1>
       <p class="text-xl text-slate-500 leading-relaxed">
-        Nous concevons des infrastructures d'IA sur-mesure qui transforment l'efficacité opérationnelle. Découvrez comment l'automatisation intelligente redéfinit les standards industriels.
+        Voice bots, chatbots IA, automatisation CRM et workflows n8n — nos cas clients couvrent l'immobilier, l'événementiel, le SaaS et plus encore. Découvrez comment nous automatisons les processus de nos clients PME.
       </p>
     </header>
 
@@ -107,12 +107,20 @@ function getBanner(tags: string[]): { gradient: string; label: string; pattern: 
         <p class="text-slate-500 text-lg mb-10">
           Collaborons pour concevoir la solution d'intelligence artificielle qui fera passer votre entreprise à l'échelle supérieure.
         </p>
-        <a
-          href="/contact/"
-          class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-10 py-4 rounded-2xl transition-all duration-200 shadow-[0_4px_20px_rgba(37,99,235,0.35)] hover:scale-[1.02] active:scale-95 text-lg"
-        >
-          Discuter de mon besoin
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact/"
+            class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-10 py-4 rounded-2xl transition-all duration-200 shadow-[0_4px_20px_rgba(37,99,235,0.35)] hover:scale-[1.02] active:scale-95 text-lg"
+          >
+            Discuter de mon besoin
+          </a>
+          <a
+            href="/tarifs/"
+            class="inline-flex items-center gap-2 border border-slate-200 hover:border-primary text-slate-700 hover:text-primary font-bold px-10 py-4 rounded-2xl transition-all duration-200 text-lg"
+          >
+            Voir nos tarifs
+          </a>
+        </div>
       </div>
     </section>
 

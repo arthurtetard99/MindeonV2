@@ -3,7 +3,7 @@ title: "IA pour agences immobilières : 5 automatisations qui changent tout"
 description: "Qualification de leads, visites virtuelles, estimation automatique : 5 cas d usage IA concrets pour les agences immobilieres. Boostez votre productivité."
 date: 2026-04-02
 author: "Arthur Tetard"
-tags: ["Automatisation", "Voice Bot", "Lead Generation", "Agents IA", "ROI"]
+tags: ["Automatisation", "Voice Bot", "Lead Generation", "Agents IA"]
 image: "/images/articles/ia-agences-immobilieres-5-automatisations.jpg"
 ---
 
@@ -13,7 +13,7 @@ L'intégration d'une **ia agence immobilière** n'est plus une option, mais un l
 
 ## 1. Le Voice Bot : votre réceptionniste 24/7
 
-L'un des cas d'usage les plus puissants est le déploiement d'un agent IA immobilier sous forme de Voice Bot. Contrairement à un simple répondeur, il décroche, comprend le motif de l'appel (demande de visite, estimation, renseignement sur un [projet immobilier](/projet-immobilier)) et qualifie le lead en temps réel.
+L'un des cas d'usage les plus puissants est le déploiement d'un agent IA immobilier sous forme de Voice Bot. Contrairement à un simple répondeur, il décroche, comprend le motif de l'appel (demande de visite, estimation, renseignement sur un projet immobilier) et qualifie le lead en temps réel.
 
 *Cas client :* Nous avons récemment déployé un Voice Bot pour une agence traitant plus de 500 appels par mois. Résultat : 80% des demandes de premier niveau sont traitées automatiquement, et les agents ne reçoivent plus que les leads chauds directement dans leur CRM.
 
@@ -40,5 +40,7 @@ Si l'IA offre un ROI important, elle ne remplace pas l'humain. Les risques princ
 ## Conclusion : passez à l'action
 
 L'adoption de l'IA dans votre agence immobilière est une transition progressive. L'objectif n'est pas de tout automatiser, mais de supprimer les frictions inutiles dans votre cycle de vente. Vous souhaitez transformer votre manière de gérer vos prospects et automatiser vos processus clés ?
+
+Pour approfondir : notre [guide complet sur le voice bot IA](/voice-bot-ia-guide-complet/) et notre [guide pour créer un voice bot de qualification](/creer-voice-bot-qualification-leads/).
 
 [Contactez nos experts](/contact/) dès maintenant pour évaluer votre potentiel d'automatisation.

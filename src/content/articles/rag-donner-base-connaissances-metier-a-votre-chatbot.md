@@ -10,6 +10,8 @@ tags: ["RAG", "Chatbot", "Agents IA", "Intégrations"]
 
 Claude et GPT-4 sont brillants — mais ils ne savent rien de votre catalogue produit, de vos procédures internes, de vos CGV ou de votre historique client. Un chatbot générique va halluciner ou répondre "je ne sais pas" sur 80% de vos questions métier.
 
+> Si vous cherchez à aller encore plus loin — c'est-à-dire que votre agent ne se contente pas de répondre mais agit sur vos outils —, lisez notre article sur [le MCP et les agents IA autonomes](/mcp-comment-lia-passe-de-assistant-qui-parle-a-collaborateur-qui-agit/).
+
 Le **RAG (Retrieval-Augmented Generation)** change ça : avant de générer une réponse, le LLM consulte une base documentaire qui contient VOS données. Il répond sur votre réalité, pas sur ses données d'entraînement.
 
 ## Comment ça marche, concrètement

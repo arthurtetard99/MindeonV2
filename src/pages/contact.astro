@@ -20,22 +20,33 @@ const faqs = [
     a: "Oui, nous proposons des contrats de maintenance mensuelle incluant monitoring, mises à jour des modèles et support prioritaire."
   },
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 ---
 
 <BaseLayout
-  title="Contact — Réservez votre consultation IA gratuite"
-  description="30 minutes pour décortiquer votre projet d'automatisation. Zéro engagement, 100% concret. Prenez rendez-vous avec notre équipe."
+  title="Contact - Consultation IA gratuite de 30 min"
+  description="30 minutes pour décortiquer votre projet d'automatisation IA. Zéro engagement, 100% concret. Prenez rendez-vous avec notre équipe."
   pathname="/contact/"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
   <!-- Header -->
   <section class="bg-slate-50 border-b border-slate-200 pt-16 pb-20 text-center">
     <div class="max-w-3xl mx-auto px-6">
       <Badge>Consultation gratuite</Badge>
       <h1 class="mt-4 text-5xl font-extrabold text-slate-900 leading-tight tracking-tight mb-4">
-        Parlons de votre projet
+        Consultation IA gratuite de 30 min
       </h1>
       <p class="text-xl text-slate-600 leading-relaxed">
-        30 minutes pour décortiquer vos enjeux. On vous dit honnêtement si et comment l'IA peut vous aider — sans bullshit ni engagement.
+        Voice bot, chatbot IA, automatisation CRM ou agent sur-mesure — 30 minutes pour décortiquer vos enjeux et définir la solution la plus adaptée à votre PME.
       </p>
     </div>
   </section>

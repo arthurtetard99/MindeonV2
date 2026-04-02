@@ -12,7 +12,7 @@ Quasiment tous les projets d'automatisation se vendent avec cette phrase. Le pro
 
 Ce qu'on veut savoir : combien ça coûte, combien ça rapporte, en combien de temps on récupère l'investissement.
 
-Voici la méthode que nous utilisons pour calculer le ROI de nos projets chez Mindeon — adaptable à n'importe quelle automatisation, qu'elle soit basée sur n8n, Claude, ou n'importe quel outil.
+Voici la méthode que nous utilisons pour calculer le ROI de nos projets chez Mindeon — adaptable à n'importe quelle automatisation, qu'elle soit basée sur [n8n](/5-automatisations-n8n-indispensables-pme-2025/), Claude, ou n'importe quel outil.
 
 ## Étape 1 : Identifier et quantifier le problème
 

@@ -46,6 +46,8 @@ n8n est la colle entre l'agent conversationnel et vos outils métier. Voici le f
 3. L'agent qualifie → renvoie le score + résumé structuré
 4. n8n route selon le score : CRM, agenda, Slack, email
 
+Avant de choisir votre plateforme vocale, consultez notre [comparatif VAPI vs Retell AI vs ElevenLabs](/vapi-vs-retell-vs-elevenlabs-comparatif-voice-bots-2025/) pour choisir la stack adaptée à votre cas d'usage.
+
 ## Le prompt système qui fait la différence
 
 La plupart des agents échouent à la qualification parce que leur prompt est trop générique. Voici notre structure :

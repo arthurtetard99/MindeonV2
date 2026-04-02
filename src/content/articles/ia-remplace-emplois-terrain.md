@@ -13,7 +13,7 @@ L'IA remplace-t-elle vraiment des emplois ? Cette question domine les débats da
 
 ## La fin des tâches à faible valeur ajoutée
 
-Le constat est sans appel : les rôles qui disparaissent sont ceux qui se résument à de la saisie de données, du copier-coller répétitif ou du traitement administratif pur. Ces missions, que nous intégrons souvent dans nos [cas clients](/cas-clients/), sont désormais traitées par des agents automatisés. 
+Le constat est sans appel : les rôles qui disparaissent sont ceux qui se résument à de la saisie de données, du copier-coller répétitif ou du traitement administratif pur. Ces missions, que nous intégrons souvent dans nos [projets clients](/nos-projets/), sont désormais traitées par des agents automatisés. 
 
 Loin de supprimer l'emploi, cela libère un temps précieux pour les collaborateurs qui peuvent enfin se concentrer sur l'analyse, la relation client et la stratégie. La valeur ne réside plus dans l'exécution, mais dans l'interprétation des résultats produits par la machine.
 
@@ -36,5 +36,7 @@ Le succès dépend moins de la technologie elle-même que de la gestion du chang
 ## Conclusion : Vers une collaboration augmentée
 
 L'idée que l'IA remplace l'humain est un mythe qui occulte la réalité du marché : l'IA remplace ceux qui refusent d'utiliser l'IA. La question n'est plus de savoir si votre emploi est menacé, mais comment vous pouvez intégrer l'automatisation pour devenir indispensable à votre organisation.
+
+Pour aller plus loin, découvrez [pourquoi les PME qui n'automatisent pas vont décrocher](/pourquoi-pme-qui-n-automatisent-pas-vont-decrocher/) et [par où commencer quand on est une PME](/automatisation-ia-par-ou-commencer-pme/).
 
 Vous souhaitez identifier les processus que vous pouvez automatiser dès maintenant pour booster votre productivité ? [Parlons de votre projet](/contact/)

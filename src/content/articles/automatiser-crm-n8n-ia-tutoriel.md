@@ -29,12 +29,12 @@ La mise en place d'une automatisation CRM via IA suit généralement un schéma 
 
 1. **Trigger (Déclencheur) :** Un événement survient, comme la création d'un nouveau lead via votre site ou une demande entrante.
 2. **Enrichissement :** Le workflow n8n envoie les données du prospect à un modèle d'IA (via API) pour analyser le profil ou le contexte.
-3. **Décision :** L'IA score le prospect ou rédige une réponse adaptée en fonction de vos [solutions CRM](/solutions/) existantes.
+3. **Décision :** L'IA score le prospect ou rédige une réponse adaptée en fonction de vos outils CRM existants.
 4. **Action :** Le CRM est mis à jour, et une notification est envoyée à l'équipe commerciale ou au prospect.
 
 ## Cas d'usage concrets
 
-L'utilisation du CRM avec intelligence artificielle ouvre des portes infinies. Par exemple, si vous gérez un [projet agence voyage](/projet-agence-voyage/), n8n peut lire automatiquement les emails de demandes de devis, extraire les dates et la destination via l'IA, puis créer un dossier complet dans votre CRM sans aucune intervention humaine.
+L'utilisation du CRM avec intelligence artificielle ouvre des portes infinies. Par exemple, pour une agence événementielle, n8n peut lire automatiquement les emails de demandes de devis, extraire les dates et le lieu via l'IA, puis créer un dossier complet dans votre CRM sans aucune intervention humaine — comme illustré dans notre [cas client événementiel](/ia-evenementiel-premier-contact-devis/).
 
 ### Limites à anticiper
 * **La qualité des données :** Une automatisation n'est aussi bonne que les données qu'elle reçoit.
@@ -45,4 +45,6 @@ En fin de compte, l'IA ne remplace pas votre force commerciale ; elle la démult
 
 ## Passer à l'action
 
-L'automatisation est un processus continu. Commencez par un flux simple — comme l'enrichissement automatique des champs de contact — avant de passer à des scénarios complexes de closing. Vous souhaitez sécuriser la mise en œuvre de votre infrastructure d'automatisation ? [Parlons de votre projet](/contact/).
+L'automatisation est un processus continu. Commencez par un flux simple — comme l'enrichissement automatique des champs de contact — avant de passer à des scénarios complexes de closing. Consultez notre [guide ultime n8n](/n8n-guide-ultime-automatisation-open-source/) et nos [10 workflows n8n prêts à l'emploi](/workflows-n8n-prets-emploi-pme/) pour démarrer rapidement.
+
+Vous souhaitez sécuriser la mise en œuvre de votre infrastructure d'automatisation ? [Parlons de votre projet](/contact/).

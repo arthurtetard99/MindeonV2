@@ -23,7 +23,7 @@ En résumé, le RAG agit comme un assistant qui lirait vos dossiers avant de ré
 
 ## Pourquoi intégrer le RAG dans votre stratégie IA ?
 
-L'adoption du RAG offre des avantages compétitifs immédiats pour les entreprises. Si vous souhaitez approfondir l'aspect technique de cette mise en œuvre, consultez nos [Guides techniques](/guides-techniques/).
+L'adoption du RAG offre des avantages compétitifs immédiats pour les entreprises. Si vous souhaitez approfondir l'aspect technique de cette mise en œuvre, consultez nos [ressources IA](/ressources/).
 
 - **Fiabilité accrue :** L'IA ne s'appuie plus sur des connaissances générales mais sur vos données propriétaires.
 - **Transparence :** Le système peut citer les sources exactes utilisées pour générer chaque réponse.
@@ -35,10 +35,12 @@ Il est toutefois crucial de souligner que la qualité des réponses dépend dire
 
 Bien que puissant, le RAG n'est pas une solution miracle sans contraintes. Le coût est principalement lié à deux facteurs : le stockage vectoriel et l'utilisation des tokens lors de l'appel à l'API du modèle de langage. De plus, la mise en place initiale demande une expertise en architecture de données pour garantir une récupération efficace des informations.
 
-Pour évaluer la faisabilité de votre projet, nous vous invitons à explorer nos différentes [Solutions](/solutions/) dédiées aux entreprises cherchant à automatiser leur gestion des connaissances.
+Pour évaluer la faisabilité de votre projet, nous vous invitons à explorer nos [réalisations](/nos-projets/) dédiées aux entreprises cherchant à automatiser leur gestion des connaissances.
 
 ## Passer à l'action
 
 Le RAG est aujourd'hui le standard pour les entreprises qui souhaitent exploiter pleinement leur capital informationnel. Que ce soit pour un service client automatisé ou pour accompagner vos experts métiers, cette technologie offre un retour sur investissement rapide par le gain de temps et la précision de l'information.
+
+Pour approfondir, lisez notre article sur le [protocole MCP](/mcp-model-context-protocol-connecter-ia-outils/) et notre guide sur les [agents IA autonomes en 2026](/agents-ia-autonomes-2026-etat-des-lieux/).
 
 Vous souhaitez savoir comment intégrer le RAG à vos outils métiers ? [Parlons de votre projet](/contact/)

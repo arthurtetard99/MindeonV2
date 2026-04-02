@@ -15,7 +15,7 @@ Pourquoi les PME qui n'automatisent pas vont décrocher ? La réponse est imméd
 
 Historiquement, les PME se distinguaient par leur proximité et leur réactivité. Aujourd'hui, ces atouts sont mis à mal par l'explosion du volume de données et la nécessité de réponses instantanées. Une entreprise qui traite encore ses leads, sa facturation ou son support client manuellement accumule une « dette opérationnelle ».
 
-En automatisant vos flux de travail, vous ne gagnez pas seulement du temps ; vous éliminez les erreurs humaines et libérez vos talents pour des missions stratégiques. Pour comprendre comment transformer vos opérations, explorez nos [Solutions](/solutions/).
+En automatisant vos flux de travail, vous ne gagnez pas seulement du temps ; vous éliminez les erreurs humaines et libérez vos talents pour des missions stratégiques. Pour comprendre comment transformer vos opérations, découvrez [par où commencer quand on est une PME](/automatisation-ia-par-ou-commencer-pme/).
 
 ## Cas d'usage : Où l'automatisation devient vitale
 
@@ -26,7 +26,7 @@ L'implémentation de l'IA et de l'automatisation touche tous les départements d
 - **RH et Administration :** Gestion automatisée des notes de frais et du traitement des contrats.
 - **Logistique :** Synchronisation des stocks en temps réel via des flux d'intégration.
 
-L'enjeu est de passer d'une gestion réactive à une stratégie proactive. Vous pouvez consulter nos [Cas clients](/cas-clients/) pour découvrir comment des structures similaires à la vôtre ont franchi le pas avec succès.
+L'enjeu est de passer d'une gestion réactive à une stratégie proactive. Vous pouvez consulter nos [réalisations](/nos-projets/) pour découvrir comment des structures similaires à la vôtre ont franchi le pas avec succès.
 
 ## Les barrières : Prix et limites
 
@@ -37,5 +37,7 @@ Attention toutefois aux limites : une automatisation mal pensée peut amplifier 
 ## Conclusion : Le coût de l'inaction
 
 Le risque principal n'est plus de tester une nouvelle technologie, mais de rester immobile. Le fossé entre les PME automatisées et les autres ne cessera de se creuser. L'automatisation est votre assurance compétitive pour les années à venir.
+
+Pour aller plus loin : [comment calculer le ROI de votre automatisation](/calculer-roi-automatisation-ia-methode-pratique/) et [les 5 workflows n8n prêts à l'emploi pour PME](/workflows-n8n-prets-emploi-pme/).
 
 Ne laissez pas votre entreprise stagner face à la transformation numérique. [Parlons de votre projet](/contact/) pour définir ensemble une stratégie d'automatisation sur mesure.

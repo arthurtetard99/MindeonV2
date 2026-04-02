@@ -13,7 +13,7 @@ Vous cherchez à gagner en productivité sans multiplier les logiciels coûteux 
 
 ## Pourquoi choisir n8n pour votre automatisation ?
 
-n8n est une plateforme de workflow open-source et flexible qui surpasse souvent ses concurrents par sa capacité à être auto-hébergée, garantissant ainsi la souveraineté de vos données. Pour une PME, le recours aux [solutions](/solutions/) d'automatisation permet de réduire drastiquement les erreurs humaines tout en unifiant des logiciels qui ne communiquent pas naturellement entre eux.
+n8n est une plateforme de workflow open-source et flexible qui surpasse souvent ses concurrents par sa capacité à être auto-hébergée, garantissant ainsi la souveraineté de vos données. Pour aller plus loin, consultez notre [guide ultime n8n](/n8n-guide-ultime-automatisation-open-source/) et le [comparatif Make vs n8n vs Zapier](/make-vs-n8n-vs-zapier-comparatif-2026/).
 
 ## 10 Workflows n8n essentiels pour booster votre PME
 

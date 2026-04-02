@@ -11,7 +11,7 @@ image: "/images/articles/ia-evenementiel-premier-contact-devis.jpg"
 L'utilisation de l'**ia evenementiel** permet aujourd'hui aux agences de réduire radicalement le temps entre la demande d'un prospect et l'envoi d'une proposition commerciale. En automatisant la capture des besoins via WhatsApp, il est possible de générer un devis sur-mesure en moins de 2 minutes, transformant ainsi votre réactivité en avantage concurrentiel majeur.
 
 ## Le défi : la réactivité dans le secteur événementiel
-Dans l'événementiel, le premier prestataire qui répond est souvent celui qui signe le contrat. Pourtant, les équipes passent des heures à qualifier des leads manuellement. Notre client, [Projets Magnolia](/projets-magnolia/), faisait face à ce goulot d'étranglement : un volume croissant de demandes rendant le traitement manuel impossible sans sacrifier la qualité du service.
+Dans l'événementiel, le premier prestataire qui répond est souvent celui qui signe le contrat. Pourtant, les équipes passent des heures à qualifier des leads manuellement. Notre client, [Projets Magnolia](/magnolia-implementation-dun-agent-conversationnel-oriente-sales-pour-creation-de-devis/), faisait face à ce goulot d'étranglement : un volume croissant de demandes rendant le traitement manuel impossible sans sacrifier la qualité du service.
 
 ## Cas concret : L'automatisation chez MagnoliaForEvents
 Pour résoudre ce problème, nous avons implémenté un agent IA conversationnel accessible via WhatsApp. Voici le parcours complet du prospect :
@@ -40,5 +40,7 @@ En résumé, l'adoption de solutions IA transforme votre structure en une organi
 
 ## Passez à l'action
 Vous souhaitez réduire vos délais de réponse et professionnaliser votre suivi client ? Ne laissez plus vos prospects attendre.
+
+Pour aller plus loin : découvrez comment [automatiser votre CRM avec n8n](/automatiser-crm-n8n-ia-tutoriel/) et comment les [agents IA autonomes](/agents-ia-autonomes-2026-etat-des-lieux/) transforment la relation client.
 
 [Contactez-nous](/contact/) pour évaluer ensemble l'automatisation de votre processus de vente.
