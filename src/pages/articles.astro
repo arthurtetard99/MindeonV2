@@ -45,7 +45,7 @@ function getIcon(tags: string[]): string {
 ---
 
 <BaseLayout
-  title="Blog IA - Guides et tendances automatisation"
+  title="Blog IA - Guides et tendances automatisation | Mindeon.ai"
   description="Analyses, comparatifs et guides pratiques sur l'IA, l'automatisation et les agents intelligents pour les entreprises."
   pathname="/articles/"
 >
@@ -61,6 +61,28 @@ function getIcon(tags: string[]): string {
         <p class="text-xl text-slate-500 leading-relaxed">
           Décryptage des avancées technologiques, veille stratégique et guides pratiques pour naviguer dans l'ère de l'intelligence artificielle générative.
         </p>
+      </div>
+    </section>
+
+    <!-- Search -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mb-6">
+      <div class="relative max-w-xl">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input
+          id="article-search"
+          type="search"
+          placeholder="Rechercher un article..."
+          autocomplete="off"
+          class="w-full pl-11 pr-10 py-3 rounded-xl border border-slate-200 bg-white text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+          aria-label="Rechercher un article"
+        />
+        <button
+          id="search-clear"
+          class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 hidden p-1"
+          aria-label="Effacer la recherche"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
       </div>
     </section>
 
@@ -96,6 +118,7 @@ function getIcon(tags: string[]): string {
               href={`/${article.slug}/`}
               class="article-card group flex flex-col bg-white rounded-[1.5rem] overflow-hidden transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_24px_rgba(13,28,47,0.06)] hover:shadow-[0_12px_40px_rgba(13,28,47,0.12)]"
               data-tags={JSON.stringify(article.data.tags ?? [])}
+              data-title={article.data.title.toLowerCase()}
               aria-label={article.data.title}
             >
               <!-- Banner -->
@@ -169,27 +192,56 @@ function getIcon(tags: string[]): string {
   </main>
 
   <script>
-    const buttons = document.querySelectorAll<HTMLButtonElement>('.tag-btn');
-    const cards = document.querySelectorAll<HTMLElement>('.article-card');
+    const buttons     = document.querySelectorAll<HTMLButtonElement>('.tag-btn');
+    const cards       = document.querySelectorAll<HTMLElement>('.article-card');
+    const searchInput = document.getElementById('article-search') as HTMLInputElement | null;
+    const clearBtn    = document.getElementById('search-clear') as HTMLButtonElement | null;
 
+    let activeTag   = 'all';
+    let searchQuery = '';
+
+    function applyFilters() {
+      cards.forEach(card => {
+        let tags: string[] = [];
+        try { tags = JSON.parse(card.dataset.tags ?? '[]'); } catch {}
+        const title = card.dataset.title ?? '';
+
+        const matchTag    = activeTag === 'all' || tags.includes(activeTag);
+        const matchSearch = searchQuery === '' ||
+          title.includes(searchQuery) ||
+          tags.some(t => t.toLowerCase().includes(searchQuery));
+
+        card.style.display = matchTag && matchSearch ? '' : 'none';
+      });
+    }
+
+    // Tag buttons
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
-        const tag = btn.dataset.tag ?? 'all';
-
+        activeTag = btn.dataset.tag ?? 'all';
         buttons.forEach(b => {
           b.classList.remove('bg-primary', 'text-white', 'border-primary', 'active');
           b.classList.add('border-slate-200', 'text-slate-600', 'bg-white');
         });
         btn.classList.add('bg-primary', 'text-white', 'border-primary', 'active');
         btn.classList.remove('border-slate-200', 'text-slate-600', 'bg-white');
-
-        cards.forEach(card => {
-          let tags: string[] = [];
-          try { tags = JSON.parse(card.dataset.tags ?? '[]'); } catch {}
-          const visible = tag === 'all' || tags.includes(tag);
-          card.style.display = visible ? '' : 'none';
-        });
+        applyFilters();
       });
+    });
+
+    // Search input
+    searchInput?.addEventListener('input', () => {
+      searchQuery = searchInput.value.toLowerCase().trim();
+      if (clearBtn) clearBtn.classList.toggle('hidden', searchQuery === '');
+      applyFilters();
+    });
+
+    // Clear button
+    clearBtn?.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      searchQuery = '';
+      clearBtn.classList.add('hidden');
+      applyFilters();
     });
   </script>
 </BaseLayout>

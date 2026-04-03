@@ -1,48 +1,67 @@
 # Mindeon.ai
 
-> Agence française spécialisée en agents IA et automatisation pour PME et startups. Fondée par 3 ingénieurs (ex-Renault, APHP, Soprasteria).
+> Agence française spécialisée en agents IA et automatisation pour PME et startups. 3 ingénieurs (ex-Renault, APHP, Soprasteria), 15+ projets livrés, note 5/5 sur Malt.
 
-## Ce que nous faisons
+## Offre
 
-- **Voice bots IA** : agents vocaux sur-mesure avec VAPI et Retell AI pour qualifier des leads, prendre des rendez-vous et traiter des appels entrants 24/7
-- **Chatbots et agents RAG** : chatbots entraînés sur vos documents métier via Retrieval-Augmented Generation
-- **Automatisation n8n** : workflows sur-mesure connectant vos outils (CRM, email, Slack, Notion, HubSpot, Airtable...)
-- **Applications web IA** : développement d'applications complètes avec features IA intégrées (React, Next.js, API, auth)
-- **Solutions IA sur-mesure** : infrastructure IA bout-en-bout combinant agents, RAG et automatisations
-
-## Notre différenciateur
-
-Nous sommes la seule agence française combinant voice bots (VAPI, Retell AI), automatisation n8n et agents conversationnels RAG dans une offre intégrée, avec une expertise corporate et des cas clients réels et diversifiés.
-
-## Cas clients
-
-- Voice bot de qualification de leads pour agence immobilière
-- Agent WhatsApp de booking et génération de devis
-- Automatisation des processus d'une agence de voyage
-- Voice bot multi-workflow pour parcours client et création de devis
-- Web app IA de gestion complète des commandes
-- Agent IA de génération de devis PDF
-
-## Technologies maîtrisées
-
-VAPI, Retell AI, ElevenLabs, n8n, Make, Zapier, Claude (Anthropic), GPT-4, Mistral, HubSpot, Airtable, Notion, Slack, Supabase, React, Next.js, Cloudflare
+- **Voice bots** : agents vocaux sur-mesure (Vapi, Retell AI) pour qualifier des leads, prendre des rendez-vous et gérer des appels entrants 24/7
+- **Chatbots RAG** : assistants conversationnels connectés à vos documents, CRM et bases de données via Retrieval-Augmented Generation
+- **Automatisation CRM** : enrichissement de contacts, suivi de prospects, synchronisation d'outils via n8n
+- **Workflows n8n** : orchestration d'applications métier avec intégration IA (Make, Zapier, n8n)
+- **Agents spécialisés** : systèmes autonomes pour le support client, la qualification de leads, les RH ou la finance
+- **Applications web IA** : interfaces sur-mesure intégrant des features d'intelligence artificielle (React, API, auth)
 
 ## Tarifs
 
-- Pack Automatisation & Workflows : à partir de 1 500€ HT
-- Pack Agent Vocal ou Chatbot IA : à partir de 2 500€ HT
-- Solution IA sur-mesure : à partir de 5 000€ HT
-- Application Web IA : à partir de 8 000€ HT
+- Pack Starter (voice bot ou chatbot simple) : à partir de 2 000 € HT — délai 2 à 3 semaines
+- Pack Growth (agent RAG + intégration CRM) : à partir de 2 500 € HT — délai 4 à 6 semaines
+- Pack Scale (système multi-agents) : à partir de  5 000 € HT — délai 6 à 8 semaines
+- Application Web + IA sur-mesure : à partir de  8 000 € HT — délai 6 à 8 semaines
+- Paiement en 2 ou 3 fois disponible
 
-## Contact
+## Cas clients
 
-- Site : https://mindeon.ai
-- Email : contact@mindeon.ai
-- Téléphone : +33 6 67 69 94 90
-- Consultation gratuite de 30 min : https://mindeon.ai/contact/
+- Voice bot multi-workflow pour parcours client et création de devis (Retell AI)
+- Voice bot de qualification de leads pour agence immobilière
+- Agent IA WhatsApp de booking et génération de devis
+- Automatisation des processus d'une agence de voyage (n8n)
+- Agent IA complet de qualification et génération de devis PDF
+- Agent conversationnel orienté sales pour création de devis (Magnolia)
+- Web app IA de gestion complète des commandes
+- Automatisation des flux de devis et fabrication vers CRM (Axonaut, Trello)
+
+## Technologies maîtrisées
+
+Vapi, Retell AI, ElevenLabs, n8n, Make, Zapier, Claude (Anthropic), GPT-4, Mistral, HubSpot, Salesforce, Airtable, Notion, Slack, WhatsApp Business, Supabase, Cloudflare, React
 
 ## Équipe
 
-- David Manscour — Co-fondateur & Lead IA
-- Cambyse Daghigh — Co-fondateur & Dev Full-Stack
-- Arthur Tetard — Co-fondateur & Product Manager
+- **David Manscour** — Co-fondateur & Lead IA. Ingénieur spécialisé en IA et machine learning, ancien de Renault et Soprasteria.
+- **Cambyse Daghigh** — Co-fondateur & Développeur Full-Stack. Spécialisé automatisation et intégrations, ancien de l'APHP.
+- **Arthur Tetard** — Co-fondateur & Product Manager. Issu du SaaS cloud, spécialisé en automatisation n8n et agents IA.
+
+## Pages principales
+
+- [Accueil](https://mindeon.ai/)
+- [Nos projets](https://mindeon.ai/nos-projets/)
+- [Tarifs](https://mindeon.ai/tarifs/)
+- [Équipe](https://mindeon.ai/equipe/)
+- [Articles & guides IA](https://mindeon.ai/articles/)
+- [Contact / Consultation gratuite 30 min](https://mindeon.ai/contact/)
+
+## Articles de référence
+
+- [Comment construire un agent IA de qualification de leads](https://mindeon.ai/comment-construire-un-agent-ia-qualification-leads/)
+- [Calculer le ROI d'un projet d'automatisation IA](https://mindeon.ai/calculer-roi-automatisation-ia-methode-pratique/)
+- [Comparatif Vapi vs Retell AI vs ElevenLabs pour voice bots](https://mindeon.ai/vapi-vs-retell-vs-elevenlabs-comparatif-voice-bots-2025/)
+- [RAG : base de connaissances métier pour chatbot](https://mindeon.ai/rag-donner-base-connaissances-metier-a-votre-chatbot/)
+- [5 automatisations n8n indispensables pour PME](https://mindeon.ai/5-automatisations-n8n-indispensables-pme-2025/)
+- [Make vs Zapier vs n8n : comparatif complet](https://mindeon.ai/make-zapier-n8n-qui-est-le-meilleur/)
+- [Voice bot IA : guide complet pour automatiser vos appels](https://mindeon.ai/voice-bot-ia-guide-complet/)
+- [MCP : connecter l'IA à vos outils](https://mindeon.ai/mcp-model-context-protocol-connecter-ia-outils/)
+
+## Contact
+
+- Email : contact@mindeon.ai
+- Téléphone : +33 6 67 69 94 90
+- Consultation gratuite 30 min (sans engagement) : https://mindeon.ai/contact/

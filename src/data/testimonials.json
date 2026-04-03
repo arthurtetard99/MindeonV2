@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Jean-Luc Bonnet",
+    "name": "Jean-Luc",
     "company": "JLB EVENT",
     "role": "Fondateur",
     "rating": 5,
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "name": "Enguerrand de Montfort",
+    "name": "Enguerrand",
     "company": "Civisbot",
     "role": "CEO",
     "rating": 5,
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "name": "Massimo Calvino",
+    "name": "Massimo",
     "company": "JoRecord.io",
     "role": "CTO",
     "rating": 5,
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "name": "Enzo Martin",
+    "name": "Enzo",
     "company": "Wheeled",
     "role": "Co-fondateur",
     "rating": 5,
@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "name": "Lahcene Boucetta",
+    "name": "Lahcene",
     "company": "Digit-All Things",
     "role": "Directeur",
     "rating": 5,
