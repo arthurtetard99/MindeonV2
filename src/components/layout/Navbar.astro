@@ -12,7 +12,7 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header id="navbar" class="fixed top-0 left-0 right-0 z-50 pt-4 px-6">
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 pt-4 px-3 sm:px-6">
   <div class="max-w-6xl mx-auto bg-white rounded-[2rem] shadow-[0_2px_20px_rgba(0,0,0,0.08)] border border-slate-100">
     <div class="flex items-center justify-between h-16 px-6 gap-8">
 
@@ -26,7 +26,7 @@ const currentPath = Astro.url.pathname;
         {navLinks.map(link => (
           <a
             href={link.href}
-            class={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+            class={`px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 ${
               currentPath === link.href
                 ? 'text-primary font-semibold'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
@@ -41,15 +41,15 @@ const currentPath = Astro.url.pathname;
       <div class="flex items-center gap-3 shrink-0">
         <a
           href="/contact/"
-          class="hidden md:inline-flex items-center bg-primary hover:bg-primary-dark text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:scale-[1.02] active:scale-95"
+          class="hidden md:inline-flex items-center bg-primary hover:bg-primary-dark text-white font-semibold text-sm px-5 py-3 rounded-full transition-all duration-200 hover:scale-[1.02] active:scale-95 min-h-[48px]"
         >
-          Démarrer
+          Consultation gratuite
         </a>
 
         <!-- Hamburger -->
         <button
           id="menu-toggle"
-          class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+          class="md:hidden p-3 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center"
           aria-label="Ouvrir le menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
@@ -66,7 +66,7 @@ const currentPath = Astro.url.pathname;
         {navLinks.map(link => (
           <a
             href={link.href}
-            class={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+            class={`px-4 py-3.5 min-h-[48px] flex items-center rounded-lg text-sm font-medium transition-colors ${
               currentPath === link.href
                 ? 'text-primary bg-primary-light'
                 : 'text-slate-700 hover:text-slate-900 hover:bg-slate-50'
@@ -75,8 +75,8 @@ const currentPath = Astro.url.pathname;
             {link.label}
           </a>
         ))}
-        <a href="/contact/" class="mt-2 flex items-center justify-center bg-primary text-white font-semibold text-sm px-5 py-3 rounded-xl">
-          Démarrer →
+        <a href="/contact/" class="mt-2 flex items-center justify-center bg-primary text-white font-semibold text-sm px-5 py-3.5 rounded-xl min-h-[48px]">
+          Consultation gratuite →
         </a>
       </nav>
     </div>
@@ -84,7 +84,7 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <!-- Spacer -->
-<div class="h-24"></div>
+<div class="h-20 md:h-24"></div>
 
 <script>
   const toggle = document.getElementById('menu-toggle');
@@ -94,7 +94,7 @@ const currentPath = Astro.url.pathname;
 
   toggle?.addEventListener('click', () => {
     const isOpen = menu?.classList.toggle('hidden') === false;
-    toggle.setAttribute('aria-expanded', String(!isOpen));
+    toggle?.setAttribute('aria-expanded', String(!isOpen));
     iconMenu?.classList.toggle('hidden', !isOpen);
     iconClose?.classList.toggle('hidden', isOpen);
   });

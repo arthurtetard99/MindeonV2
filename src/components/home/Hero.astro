@@ -7,8 +7,8 @@ import Badge from '../ui/Badge.astro';
   aria-labelledby="hero-heading"
 >
   <!-- Background decorative blobs -->
-  <div class="absolute -top-24 -right-24 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
-  <div class="absolute top-1/2 -left-32 w-80 h-80 bg-primary/3 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute -top-24 -right-24 w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute top-1/2 -left-32 w-48 h-48 md:w-80 md:h-80 bg-primary/3 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -34,14 +34,14 @@ import Badge from '../ui/Badge.astro';
           href="/contact/"
           class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 shadow-[0_4px_14px_rgba(37,99,235,0.3)] hover:shadow-[0_6px_20px_rgba(37,99,235,0.4)] hover:scale-[1.02] active:scale-95 text-base"
         >
-          Réserver un appel
+          Réserver une consultation IA gratuite
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
         <a
           href="/nos-projets/"
           class="inline-flex items-center gap-2 border border-slate-200 text-slate-700 hover:border-primary hover:text-primary font-bold px-8 py-4 rounded-xl transition-all duration-200 hover:bg-primary-light text-base"
         >
-          Voir nos projets
+          Voir nos projets d'agents IA
         </a>
       </div>
 
@@ -116,7 +116,7 @@ import Badge from '../ui/Badge.astro';
                 ></div>
               ))}
             </div>
-            <p class="text-xs text-slate-400 mt-2">Performance agent — 7 derniers jours</p>
+            <p class="text-xs text-slate-500 mt-2">Performance agent — 7 derniers jours</p>
           </div>
           <!-- Mock conversation -->
           <div class="bg-white rounded-xl p-4 border border-slate-100 space-y-2">

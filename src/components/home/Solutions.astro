@@ -2,6 +2,15 @@
 import SectionHeading from '../ui/SectionHeading.astro';
 import solutions from '../../data/solutions.json';
 
+const internalLinks: Record<string, { href: string; label: string }> = {
+  'voice-bots':              { href: '/vapi-vs-retell-vs-elevenlabs-comparatif-voice-bots-2025/', label: 'Comparer Vapi, Retell et ElevenLabs' },
+  'agents-conversationnels': { href: '/comment-construire-un-agent-ia-qualification-leads/',      label: 'Guide : agent IA de qualification' },
+  'automatisation-crm':      { href: '/5-automatisations-n8n-indispensables-pme-2025/',           label: '5 automatisations n8n pour PME' },
+  'workflows-n8n':           { href: '/make-zapier-n8n-qui-est-le-meilleur/',                     label: 'Make vs Zapier vs n8n : comparatif' },
+  'agents-specialises':      { href: '/rag-donner-base-connaissances-metier-a-votre-chatbot/',    label: 'RAG : base de connaissances métier' },
+  'integrations-api':        { href: '/nos-projets/',                                              label: 'Voir nos intégrations en production' },
+};
+
 const icons: Record<string, string> = {
   phone: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.82 5.82l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>`,
   'message-square': `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
@@ -17,21 +26,28 @@ const icons: Record<string, string> = {
     <SectionHeading
       badge="Nos solutions"
       title="Voice bots, chatbots IA et automatisation CRM pour PME"
-      subtitle="Des agents IA sur-mesure pour automatiser vos processus, qualifier vos leads et réduire vos coûts opérationnels."
+      subtitle="Des agents IA sur-mesure — assistants virtuels, automatisation de processus RPA et intégrations API — pour qualifier vos leads, réduire vos coûts opérationnels et scaler sans recruter."
       center
     />
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 stagger-60">
       {solutions.map((solution) => (
-        <div
-          class="reveal flex flex-col bg-slate-50 rounded-3xl p-8"
-        >
+        <div class="reveal flex flex-col bg-slate-50 rounded-3xl p-8">
           <!-- Icon -->
           <div class="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-8 shrink-0 text-primary">
             <Fragment set:html={icons[solution.icon] ?? icons.plug} />
           </div>
           <h3 class="text-xl font-extrabold text-slate-900 mb-3">{solution.title}</h3>
-          <p class="text-base text-slate-500 leading-relaxed">{solution.description}</p>
+          <p class="text-base text-slate-500 leading-relaxed flex-1">{solution.description}</p>
+          {internalLinks[solution.id] && (
+            <a
+              href={internalLinks[solution.id].href}
+              class="inline-flex items-center gap-1.5 mt-6 text-primary text-sm font-semibold hover:underline"
+            >
+              {internalLinks[solution.id].label}
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          )}
         </div>
       ))}
     </div>

@@ -8,11 +8,12 @@ import FeaturedProject from '../components/home/FeaturedProject.astro';
 import Testimonials from '../components/home/Testimonials.astro';
 import Methodology from '../components/home/Methodology.astro';
 import CTASection from '../components/home/CTASection.astro';
+import FAQ from '../components/home/FAQ.astro';
 ---
 
 <BaseLayout
   title="Agence agents IA et automatisation pour PME"
-  description="Agence IA pour PME : voice bots, chatbots et automatisation CRM sur-mesure. 3 ingénieurs, 15+ projets livrés. Consultation gratuite."
+  description="Agence IA spécialisée en voice bots, chatbots RAG et automatisation CRM avec n8n. 3 ingénieurs, 15+ projets livrés pour PME et startups. Consultation gratuite 30 min."
   pathname="/"
 >
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -36,5 +37,6 @@ import CTASection from '../components/home/CTASection.astro';
   <FeaturedProject />
   <Testimonials />
   <Methodology />
+  <FAQ />
   <CTASection />
 </BaseLayout>

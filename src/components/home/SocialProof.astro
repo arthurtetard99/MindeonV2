@@ -71,6 +71,9 @@ const metrics = [
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       const el = entry.target as HTMLElement;
+      if (el.dataset.animated) return;
+      el.dataset.animated = 'true';
+      observer.unobserve(el);
       const target = parseInt(el.dataset.target ?? '0', 10);
       const isNegative = target < 0;
       const abs = Math.abs(target);
@@ -81,7 +84,6 @@ const metrics = [
         el.textContent = (isNegative ? '-' : '') + current.toString();
         if (current >= abs) clearInterval(timer);
       }, 30);
-      observer.unobserve(el);
     });
   }, { threshold: 0.5 });
 

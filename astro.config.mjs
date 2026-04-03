@@ -17,6 +17,9 @@ export default defineConfig({
   image: {
     quality: 80,
   },
+  build: {
+    inlineStylesheets: 'auto',
+  },
   integrations: [
     react(),
     keystatic(),

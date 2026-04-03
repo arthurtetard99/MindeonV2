@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  overflow-x: hidden;
+}
+
 @theme {
   --color-primary: #2563EB;
   --color-primary-dark: #1D4ED8;
@@ -28,13 +32,13 @@
   transform: translateY(0);
 }
 
-/* Hero stagger */
-.hero-badge    { animation: fadeUp 0.6s ease 0.05s both; }
-.hero-title    { animation: fadeUp 0.7s ease 0.15s both; }
-.hero-sub      { animation: fadeUp 0.7s ease 0.25s both; }
-.hero-ctas     { animation: fadeUp 0.7s ease 0.35s both; }
-.hero-trust    { animation: fadeUp 0.7s ease 0.45s both; }
-.hero-image    { animation: fadeUp 0.8s ease 0.55s both; }
+/* Hero stagger — title renders immediately (LCP), rest staggers after */
+.hero-badge    { animation: fadeUp 0.5s ease forwards; }
+.hero-title    { animation: fadeUp 0.6s ease forwards; }
+.hero-sub      { animation: fadeUp 0.6s ease 0.1s both; }
+.hero-ctas     { animation: fadeUp 0.6s ease 0.2s both; }
+.hero-trust    { animation: fadeUp 0.6s ease 0.3s both; }
+.hero-image    { animation: fadeUp 0.7s ease 0.15s both; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -88,7 +92,13 @@
 /* Architecture diagram container */
 .arch-container {
   background: #0d1c2f;
-  padding: 2.5rem 1.5rem;
+  padding: 1.5rem 1rem;
+  overflow-x: auto;
+}
+@media (min-width: 640px) {
+  .arch-container {
+    padding: 2.5rem 1.5rem;
+  }
 }
 .arch-blob {
   background: rgba(37, 99, 235, 0.2);

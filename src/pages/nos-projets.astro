@@ -27,7 +27,7 @@ function getBanner(tags: string[]): { gradient: string; label: string; pattern: 
   description="Découvrez nos réalisations : voice bots, agents conversationnels, automatisations CRM. Plus de 15 projets livrés pour des PME et startups."
   pathname="/nos-projets/"
 >
-  <main class="pt-28 pb-24 px-6 md:px-10 lg:px-16 max-w-7xl mx-auto">
+  <main class="pt-24 md:pt-28 pb-24 px-4 sm:px-6 md:px-10 lg:px-16 max-w-7xl mx-auto">
 
     <!-- Hero -->
     <header class="mb-20 max-w-3xl">
@@ -35,7 +35,7 @@ function getBanner(tags: string[]): { gradient: string; label: string; pattern: 
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
         Portfolio
       </div>
-      <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1]">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1]">
         15+ projets d'agents IA<br>et d'automatisation livrés
       </h1>
       <p class="text-xl text-slate-500 leading-relaxed">
@@ -55,7 +55,7 @@ function getBanner(tags: string[]): { gradient: string; label: string; pattern: 
             aria-label={projet.data.title}
           >
             <!-- Colored banner -->
-            <div class={`h-64 bg-gradient-to-br ${gradient} relative overflow-hidden flex items-center justify-center`}>
+            <div class={`h-48 md:h-64 bg-gradient-to-br ${gradient} relative overflow-hidden flex items-center justify-center`}>
               <div class="absolute inset-0 opacity-20 dot-pattern-sm"></div>
               <div class="absolute top-6 left-6 px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-white text-xs font-bold tracking-wider uppercase">
                 {label}
@@ -112,13 +112,13 @@ function getBanner(tags: string[]): { gradient: string; label: string; pattern: 
             href="/contact/"
             class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold px-10 py-4 rounded-2xl transition-all duration-200 shadow-[0_4px_20px_rgba(37,99,235,0.35)] hover:scale-[1.02] active:scale-95 text-lg"
           >
-            Discuter de mon besoin
+            Discuter de mon projet IA
           </a>
           <a
             href="/tarifs/"
             class="inline-flex items-center gap-2 border border-slate-200 hover:border-primary text-slate-700 hover:text-primary font-bold px-10 py-4 rounded-2xl transition-all duration-200 text-lg"
           >
-            Voir nos tarifs
+            Consulter nos tarifs IA
           </a>
         </div>
       </div>

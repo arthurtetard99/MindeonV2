@@ -92,7 +92,7 @@ const category = tags[0] ?? 'Cas client';
             Cas client
           </span>
 
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] mb-8 text-slate-900">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] mb-8 text-slate-900">
             {title}
           </h1>
 
@@ -100,19 +100,19 @@ const category = tags[0] ?? 'Cas client';
           <div class="grid grid-cols-2 md:grid-cols-3 gap-6 py-8 border-t border-slate-100">
             {client && (
               <div>
-                <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-1">Client</p>
+                <p class="text-[10px] font-bold text-slate-600 tracking-widest uppercase mb-1">Client</p>
                 <p class="font-semibold text-slate-800 text-sm">{client}</p>
               </div>
             )}
             {date && (
               <div>
-                <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-1">Date</p>
+                <p class="text-[10px] font-bold text-slate-600 tracking-widest uppercase mb-1">Date</p>
                 <time class="font-semibold text-slate-800 text-sm" datetime={date.toISOString()}>{formatDate(date)}</time>
               </div>
             )}
             {tags.length > 0 && (
               <div>
-                <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-1">Technologies</p>
+                <p class="text-[10px] font-bold text-slate-600 tracking-widest uppercase mb-1">Technologies</p>
                 <p class="font-semibold text-slate-800 text-sm">{tags.slice(0, 3).join(', ')}</p>
               </div>
             )}
