@@ -94,9 +94,9 @@ const currentPath = Astro.url.pathname;
 
   toggle?.addEventListener('click', () => {
     const isOpen = menu?.classList.toggle('hidden') === false;
-    toggle?.setAttribute('aria-expanded', String(!isOpen));
-    iconMenu?.classList.toggle('hidden', !isOpen);
-    iconClose?.classList.toggle('hidden', isOpen);
+    toggle?.setAttribute('aria-expanded', String(isOpen));
+    iconMenu?.classList.toggle('hidden', isOpen);
+    iconClose?.classList.toggle('hidden', !isOpen);
   });
 
   document.querySelectorAll('#mobile-menu a').forEach(link => {
