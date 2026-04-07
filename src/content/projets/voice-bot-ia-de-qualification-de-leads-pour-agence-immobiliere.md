@@ -25,6 +25,18 @@ L'agent vocal :
 - Propose et confirme un créneau de visite
 - Enregistre tout dans le CRM de l'agence
 
+### Conversation naturelle et structurée
+
+L'interface VAPI permet de visualiser en temps réel le déroulé de chaque appel : transcription, étapes franchies et données collectées. Chaque échange est enregistré et structuré pour alimenter directement le CRM.
+
+![Interface VAPI — transcription et déroulé d'un appel de qualification](/images/projets/voice-bot-ia-de-qualification-de-leads-pour-agence-immobiliere_VAPI-Chat1.png)
+
+### Prompt et personnalisation de l'agent
+
+Le comportement de l'agent est entièrement paramétrable depuis VAPI : ton, script de qualification, gestion des objections et conditions de transfert vers un agent humain. Le prompt est conçu pour s'adapter aux spécificités de chaque bien et de chaque profil de prospect.
+
+![Configuration du prompt et des paramètres de l'agent dans VAPI](/images/projets/voice-bot-ia-de-qualification-de-leads-pour-agence-immobiliere_VAPI-Prompt.png)
+
 ## Résultats
 
 En 3 mois, le système a contacté **2 340 leads** et planifié **487 visites** sans intervention humaine. Les agents ont pu se concentrer uniquement sur les visites et la négociation.

@@ -372,12 +372,49 @@ const category = tags[0] ?? 'Cas client';
     border-bottom: 1px solid #f1f5f9;
   }
   .project-content :global(tr:hover td) { background: #f8fafc; }
-  .project-content :global(img) {
-    width: 100%;
+  .project-content :global(.img-row) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .project-content :global(.img-row p) {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .project-content :global(.img-row img) {
+    margin: 0;
+    max-height: 700px;
+    max-width: 100%;
+    width: auto;
     height: auto;
+    border: none;
+    border-radius: 0.75rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .project-content :global(.img-row img:hover) {
+    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4), 0 0 20px rgba(37, 99, 235, 0.3), 0 0 50px rgba(37, 99, 235, 0.15);
+    transform: translateY(-2px);
+  }
+  @media (max-width: 640px) {
+    .project-content :global(.img-row) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .project-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
     display: block;
     border-radius: 1rem;
-    margin: 2rem 0;
+    margin: 2rem auto;
     border: 1px solid #e2e8f0;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .project-content :global(img:hover) {
+    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4), 0 0 20px rgba(37, 99, 235, 0.3), 0 0 50px rgba(37, 99, 235, 0.15);
+    transform: translateY(-2px);
   }
 </style>

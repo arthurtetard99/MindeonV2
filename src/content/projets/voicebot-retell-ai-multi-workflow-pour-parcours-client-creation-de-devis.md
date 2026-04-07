@@ -20,14 +20,32 @@ Notre client, une agence commerciale B2B, traitait des dizaines d'appels entrant
 
 Nous avons conçu un agent vocal basé sur **Retell AI** avec une architecture multi-workflow orchestrée via **n8n** :
 
-1. **Qualification vocale** — L'agent engage la conversation, collecte les besoins du prospect (volume, budget, délai) et évalue sa maturité d'achat.
+### 1. Qualification vocale
 
-2. **Enrichissement de données** — Les informations collectées sont envoyées via webhook à n8n, qui enrichit le profil dans le CRM (HubSpot).
+L'agent engage la conversation, collecte les besoins du prospect (volume, budget, délai) et évalue sa maturité d'achat. La configuration de l'agent dans Retell AI permet de définir précisément le script de qualification, les conditions de transition entre les étapes et la gestion des réponses inattendues.
 
-3. **Génération de devis** — n8n déclenche automatiquement la création d'un devis PDF personnalisé avec les tarifs appropriés, envoyé par email au prospect.
+<div class="img-row">
 
-4. **Notification commerciale** — L'équipe commerciale reçoit une alerte avec le résumé de l'appel et le devis généré.
+![Configuration de l'agent vocal dans Retell AI — étape de qualification](/images/projets/voicebot-retell-ai-multi-workflow-pour-parcours-client-creation-de-devis_Setting-Retell1.png)
+
+![Configuration du workflow de génération de devis dans Retell AI](/images/projets/voicebot-retell-ai-multi-workflow-pour-parcours-client-creation-de-devis_Setting-Retell2.png)
+
+</div>
+
+### 2. Enrichissement de données
+
+Les informations collectées sont envoyées via webhook à n8n, qui enrichit le profil dans le CRM (HubSpot) et vérifie si le prospect est déjà connu.
+
+### 3. Génération de devis
+
+n8n déclenche automatiquement la création d'un devis PDF personnalisé avec les tarifs appropriés, envoyé par email au prospect dans la foulée de l'appel. Le second workflow Retell gère la confirmation et les éventuelles questions de suivi.
+
+### 4. Notification commerciale
+
+L'équipe commerciale reçoit une alerte avec le résumé de l'appel et le devis généré, prête à relancer les prospects les plus chauds.
 
 ## Résultats après 30 jours
 
 Le système a traité **847 appels entrants** en 30 jours, avec un taux de succès de 91%. Les commerciaux ont pu se concentrer exclusivement sur les clients chauds, augmentant leur taux de closing de 20%.
+
+![Tableau de bord des résultats dans Retell AI — appels traités et taux de succès](/images/projets/voicebot-retell-ai-multi-workflow-pour-parcours-client-creation-de-devis_Resultat_Retell.png)
