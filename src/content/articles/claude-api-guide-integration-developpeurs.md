@@ -19,7 +19,7 @@ Pour commencer, vous devez disposer d'une clé API générée via la console Ant
 2. Initialisez le client avec votre clé sécurisée.
 3. Configurez vos headers de requête pour garantir la conformité avec les standards de l'API.
 
-Une fois l'authentification établie, vous pouvez envoyer vos premières requêtes d'inférence. Si vous souhaitez explorer comment ces intégrations s'inscrivent dans une architecture plus globale, consultez nos [Solutions](/solutions/) pour automatiser vos processus métiers.
+Une fois l'authentification établie, vous pouvez envoyer vos premières requêtes d'inférence. Si vous souhaitez explorer comment ces intégrations s'inscrivent dans une architecture plus globale, consultez nos [projets réalisés](/nos-projets/) pour voir comment ces intégrations s'appliquent en production.
 
 ## Paramétrage des requêtes : Prompt Engineering et Streaming
 
@@ -28,7 +28,7 @@ Le succès d'une intégration repose sur la précision des prompts et la gestion
 *   **Streaming :** Utilisez le mode streaming pour améliorer la réactivité perçue de votre application en affichant la réponse au fur et à mesure de sa génération.
 *   **Gestion du contexte :** Optimisez la taille de la fenêtre de contexte en ne conservant que les échanges pertinents pour réduire la latence et les coûts.
 
-Pour des implémentations plus poussées, nos [Guides techniques](/guides/) détaillent les bonnes pratiques pour structurer vos requêtes de manière efficiente.
+Pour des implémentations plus poussées, nos [ressources](/ressources/) détaillent les bonnes pratiques pour structurer vos requêtes de manière efficiente.
 
 ## Utilisation des fonctions (Tool Use)
 

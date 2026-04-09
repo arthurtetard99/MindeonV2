@@ -29,20 +29,20 @@ n8n récupère les grilles tarifaires depuis Airtable, applique les règles de c
 
 Un template HTML/CSS dynamique génère un devis PDF professionnel personnalisé avec coordonnées client, descriptif des prestations, tableau de prix détaillé, conditions générales et QR code pour signature électronique (Yousign).
 
-![Génération automatique du document devis PDF depuis les données structurées](/images/projets/agent-ia-complet-de-qualification-et-de-generation-de-devis-pdf_generation.png)
+![Génération automatique du document devis PDF depuis les données structurées](/images/projets/agent-ia-complet-de-qualification-et-de-generation-de-devis-pdf_generation.webp)
 
 La mise en forme est soignée et fidèle à la charte graphique de l'entreprise : logo, typographie, couleurs et disposition des blocs sont entièrement paramétrables.
 
-![Aperçu de la mise en forme finale du devis PDF avec branding client](/images/projets/agent-ia-complet-de-qualification-et-de-generation-de-devis-pdf_mise_en_forme.png)
+![Aperçu de la mise en forme finale du devis PDF avec branding client](/images/projets/agent-ia-complet-de-qualification-et-de-generation-de-devis-pdf_mise_en_forme.webp)
 
 ### Étape 4 : Envoi et suivi
 
 Le devis est envoyé par email avec lien de signature. Un workflow de relance automatique est déclenché si le devis n'est pas ouvert sous 48h, puis si non signé sous 5 jours.
 
-![Email d'envoi du devis avec lien de signature électronique intégré](/images/projets/agent-ia-complet-de-qualification-et-de-generation-de-devis-pdf_mail.png)
+![Email d'envoi du devis avec lien de signature électronique intégré](/images/projets/agent-ia-complet-de-qualification-et-de-generation-de-devis-pdf_mail.webp)
 
 ## Résultats
 
 47 devis traités dans le premier mois d'utilisation. Temps moyen de traitement : **4 minutes 30 secondes**.
 
-![Exemple de devis PDF finalisé — rendu professionnel prêt à signer](/images/projets/agent-ia-complet-de-qualification-et-de-generation-de-devis-pdf_result.png)
+![Exemple de devis PDF finalisé — rendu professionnel prêt à signer](/images/projets/agent-ia-complet-de-qualification-et-de-generation-de-devis-pdf_result.webp)

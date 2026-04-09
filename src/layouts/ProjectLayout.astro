@@ -39,11 +39,17 @@ function getIllustrationTopic(tags: string[]): string {
 
 // Try to extract a short stat prefix from a result sentence
 function extractStat(result: string): { stat: string; label: string } {
+  // Séparateur explicite : "titre bleu|label gris"
+  if (result.includes('|')) {
+    const [stat, label] = result.split('|');
+    return { stat: stat.trim(), label: label.trim() };
+  }
+  // Auto-détection du préfixe numérique
   const match = result.match(/^([+\-]?\d[\d\s%€hkKmM\/+\-.]*(?:\/\d+)?)/);
   if (match) {
     return { stat: match[1].trim(), label: result.slice(match[1].length).replace(/^[\s–—\-:]+/, '').trim() };
   }
-  // No leading number — show first 4 words as stat, rest as label
+  // Pas de chiffre — 3 premiers mots en bleu
   const words = result.split(' ');
   return { stat: words.slice(0, 3).join(' '), label: words.slice(3).join(' ') };
 }

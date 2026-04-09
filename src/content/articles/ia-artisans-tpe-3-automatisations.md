@@ -18,7 +18,7 @@ Chaque fois qu'un client vous envoie un e-mail ou un message via un formulaire, 
 - Centralisation : Toutes vos données clients sont stockées au même endroit.
 - Gain de temps : Vous évitez la saisie manuelle dans vos tableaux Excel.
 
-En résumé, cette automatisation transforme vos e-mails entrants en opportunités commerciales qualifiées, sans que vous ayez à lever le petit doigt. Découvrez nos [solutions](/solutions/) pour déployer ces flux de travail rapidement.
+En résumé, cette automatisation transforme vos e-mails entrants en opportunités commerciales qualifiées, sans que vous ayez à lever le petit doigt. Découvrez nos [projets réalisés](/nos-projets/) pour voir comment ces flux de travail sont déployés concrètement.
 
 ## 2. La centralisation des documents et factures
 Le tri des factures et des bons de livraison est souvent une perte d'énergie majeure pour les artisans. Grâce à des outils de reconnaissance optique de caractères (OCR) boostés à l'IA, vous pouvez numériser vos documents papier et extraire automatiquement les montants, les dates et les noms de fournisseurs.

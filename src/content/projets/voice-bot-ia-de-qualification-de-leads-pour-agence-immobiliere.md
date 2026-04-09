@@ -29,13 +29,13 @@ L'agent vocal :
 
 L'interface VAPI permet de visualiser en temps réel le déroulé de chaque appel : transcription, étapes franchies et données collectées. Chaque échange est enregistré et structuré pour alimenter directement le CRM.
 
-![Interface VAPI — transcription et déroulé d'un appel de qualification](/images/projets/voice-bot-ia-de-qualification-de-leads-pour-agence-immobiliere_VAPI-Chat1.png)
+![Interface VAPI — transcription et déroulé d'un appel de qualification](/images/projets/voice-bot-ia-de-qualification-de-leads-pour-agence-immobiliere_VAPI-Chat1.webp)
 
 ### Prompt et personnalisation de l'agent
 
 Le comportement de l'agent est entièrement paramétrable depuis VAPI : ton, script de qualification, gestion des objections et conditions de transfert vers un agent humain. Le prompt est conçu pour s'adapter aux spécificités de chaque bien et de chaque profil de prospect.
 
-![Configuration du prompt et des paramètres de l'agent dans VAPI](/images/projets/voice-bot-ia-de-qualification-de-leads-pour-agence-immobiliere_VAPI-Prompt.png)
+![Configuration du prompt et des paramètres de l'agent dans VAPI](/images/projets/voice-bot-ia-de-qualification-de-leads-pour-agence-immobiliere_VAPI-Prompt.webp)
 
 ## Résultats
 

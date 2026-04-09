@@ -20,14 +20,14 @@ Les principaux bénéfices incluent :
 - **Réduction des coûts** : Diminution drastique du coût par contact.
 - **Rapidité de traitement** : Rappel immédiat d'un prospect après une demande entrante.
 
-Pour aller plus loin sur la technologie derrière ces outils, consultez notre [guide voice bot IA](/guide-voice-bot-ia/).
+Pour aller plus loin sur la technologie derrière ces outils, consultez notre [guide voice bot IA](/voice-bot-ia-guide-complet/).
 
 ## Les cas d'usage concrets
 
 L'usage d'un callbot ne se limite pas à la simple émission d'appels. Voici comment les entreprises l'exploitent aujourd'hui :
 
 1. **Qualification de leads** : Vérifier l'intérêt d'un prospect avant de transférer l'appel à un humain.
-2. **Relance d'impayés** : Automatiser le rappel des échéances de paiement avec un ton neutre et professionnel. Pour ce besoin précis, découvrez notre [agent relance commerciale](/agent-relance-commerciale/).
+2. **Relance d'impayés** : Automatiser le rappel des échéances de paiement avec un ton neutre et professionnel. Pour ce besoin précis, découvrez comment nous avons structuré ce type d'automatisation dans nos [projets clients](/nos-projets/).
 3. **Prise de rendez-vous** : Synchronisation en temps réel avec votre calendrier pour fixer des créneaux.
 4. **Enquêtes de satisfaction** : Collecte de feedback client immédiat suite à une intervention.
 

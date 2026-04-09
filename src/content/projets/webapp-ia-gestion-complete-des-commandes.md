@@ -21,7 +21,7 @@ Ce distributeur industriel recevait ses commandes par email, fax et portail web.
 
 Une webapp Next.js centralise toutes les commandes entrantes. Un modèle d'IA (Claude) extrait automatiquement les données structurées depuis n'importe quel format (email, PDF, image de bon de commande) et les intègre dans le système.
 
-![Interface de réception et d'extraction intelligente des commandes entrantes](/images/projets/webapp-ia-gestion-complete-des-commandes_Etape1.png)
+![Interface de réception et d'extraction intelligente des commandes entrantes](/images/projets/webapp-ia-gestion-complete-des-commandes_Etape1.webp)
 
 ### Workflow de traitement automatisé
 
@@ -30,13 +30,13 @@ Une webapp Next.js centralise toutes les commandes entrantes. Un modèle d'IA (C
 - **Notifications proactives** : alertes client à chaque étape (confirmation, expédition, livraison)
 - **Gestion des exceptions** : flagging automatique des anomalies pour traitement humain
 
-![Workflow de traitement et de routing des commandes avec gestion des exceptions](/images/projets/webapp-ia-gestion-complete-des-commandes_Etape2.png)
+![Workflow de traitement et de routing des commandes avec gestion des exceptions](/images/projets/webapp-ia-gestion-complete-des-commandes_Etape2.webp)
 
 ### Génération automatique des devis et factures
 
 Pour les commandes nécessitant une validation tarifaire, la webapp génère automatiquement un devis soumis au client avant confirmation. Une fois validé, la facture est émise sans intervention manuelle.
 
-![Devis et facture générés automatiquement depuis les données de commande](/images/projets/webapp-ia-gestion-complete-des-commandes_devis.png)
+![Devis et facture générés automatiquement depuis les données de commande](/images/projets/webapp-ia-gestion-complete-des-commandes_devis.webp)
 
 ### Dashboard de pilotage
 
@@ -46,7 +46,7 @@ Un tableau de bord temps réel permet au management de suivre :
 - Délais moyens et taux d'erreur
 - Alertes sur les commandes à risque
 
-![Dashboard de pilotage temps réel — vue management des commandes](/images/projets/webapp-ia-gestion-complete-des-commandes_Result.png)
+![Dashboard de pilotage temps réel — vue management des commandes](/images/projets/webapp-ia-gestion-complete-des-commandes_Result.webp)
 
 ## Stack technique
 

@@ -21,7 +21,7 @@ L'agence gérait ses données fournisseurs dans 5 systèmes différents (emails,
 
 Un workflow n8n collecte automatiquement les disponibilités et tarifs de chaque fournisseur toutes les heures, les normalise et les stocke dans une base Airtable centralisée. Les conseillers disposent ainsi d'une source de vérité unique, toujours à jour.
 
-![Vue d'ensemble du pipeline de centralisation des données fournisseurs](/images/projets/automatisation-process-donnees-dune-agence-de-voyage_1.png)
+![Vue d'ensemble du pipeline de centralisation des données fournisseurs](/images/projets/automatisation-process-donnees-dune-agence-de-voyage_1.webp)
 
 ### Automatisation des devis
 
@@ -31,13 +31,13 @@ Quand un conseiller crée un devis, il sélectionne simplement les composants (v
 3. Génère le document devis en PDF avec le branding agence
 4. L'envoie au client et archive dans le CRM
 
-![Génération automatique du devis voyage avec calcul des marges et taxes](/images/projets/automatisation-process-donnees-dune-agence-de-voyage_2.png)
+![Génération automatique du devis voyage avec calcul des marges et taxes](/images/projets/automatisation-process-donnees-dune-agence-de-voyage_2.webp)
 
 ### Synchronisation CRM
 
 Chaque interaction client (email, devis envoyé, paiement) est automatiquement enregistrée dans HubSpot, sans aucune saisie manuelle. Les conseillers ont une vue complète de chaque dossier client en temps réel.
 
-![Synchronisation automatique des données dans le CRM HubSpot](/images/projets/automatisation-process-donnees-dune-agence-de-voyage_3.png)
+![Synchronisation automatique des données dans le CRM HubSpot](/images/projets/automatisation-process-donnees-dune-agence-de-voyage_3.webp)
 
 ## Résultats
 

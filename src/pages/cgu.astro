@@ -7,37 +7,66 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Conditions Générales d'Utilisation du site Mindeon.ai."
   pathname="/cgu/"
 >
-  <section class="py-20">
-    <div class="max-w-3xl mx-auto px-6 prose prose-slate prose-lg">
-      <h1 class="not-prose text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-8">Conditions Générales d'Utilisation</h1>
-      <p class="text-slate-500 text-sm">Dernière mise à jour : avril 2025</p>
+  <!-- Hero -->
+  <section class="bg-slate-900 pt-16 pb-20">
+    <div class="max-w-3xl mx-auto px-6">
+      <a href="/" class="inline-flex items-center gap-2 text-slate-400 hover:text-white text-sm font-medium mb-10 transition-colors group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-0.5 transition-transform" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        Retour à l'accueil
+      </a>
+      <span class="inline-block px-3 py-1 rounded-full bg-blue-900/50 text-blue-300 text-xs font-bold tracking-wider uppercase mb-5">Légal</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.1] mb-5">Conditions Générales d'Utilisation</h1>
+      <p class="text-slate-400 text-sm">Dernière mise à jour : avril 2026</p>
+    </div>
+  </section>
 
-      <h2>1. Acceptation des CGU</h2>
-      <p>L'utilisation du site mindeon.ai implique l'acceptation pleine et entière des présentes conditions générales d'utilisation.</p>
+  <!-- Content -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="space-y-10">
 
-      <h2>2. Accès au site</h2>
-      <p>Le site est accessible gratuitement depuis tout endroit par tout utilisateur disposant d'un accès à internet. Mindeon.ai se réserve le droit de modifier, suspendre ou interrompre l'accès au site à tout moment, sans préavis.</p>
+        <div class="border-l-4 border-primary pl-6">
+          <h2 class="text-xl font-extrabold text-slate-900 mb-3">1. Acceptation des CGU</h2>
+          <p class="text-slate-600 leading-relaxed">L'utilisation du site mindeon.ai implique l'acceptation pleine et entière des présentes conditions générales d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser ce site.</p>
+        </div>
 
-      <h2>3. Utilisation du site</h2>
-      <p>L'utilisateur s'engage à :</p>
-      <ul>
-        <li>Ne pas utiliser le site à des fins illégales ou frauduleuses</li>
-        <li>Ne pas porter atteinte aux droits des tiers</li>
-        <li>Ne pas tenter de perturber le fonctionnement du site</li>
-        <li>Fournir des informations exactes lors des prises de contact</li>
-      </ul>
+        <div class="border-l-4 border-slate-200 pl-6">
+          <h2 class="text-xl font-extrabold text-slate-900 mb-3">2. Accès au site</h2>
+          <p class="text-slate-600 leading-relaxed">Le site est accessible gratuitement depuis tout endroit par tout utilisateur disposant d'un accès à internet. Mindeon.ai se réserve le droit de modifier, suspendre ou interrompre l'accès au site à tout moment, sans préavis.</p>
+        </div>
 
-      <h2>4. Contenu du site</h2>
-      <p>Les informations publiées sur le site sont données à titre indicatif. Mindeon.ai se réserve le droit de les modifier sans préavis.</p>
+        <div class="border-l-4 border-slate-200 pl-6">
+          <h2 class="text-xl font-extrabold text-slate-900 mb-3">3. Utilisation du site</h2>
+          <p class="text-slate-600 leading-relaxed mb-3">L'utilisateur s'engage à :</p>
+          <ul class="space-y-2 text-slate-600">
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> Ne pas utiliser le site à des fins illégales ou frauduleuses</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> Ne pas porter atteinte aux droits des tiers</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> Ne pas tenter de perturber le fonctionnement du site</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> Fournir des informations exactes lors des prises de contact</li>
+          </ul>
+        </div>
 
-      <h2>5. Liens hypertextes</h2>
-      <p>Le site peut contenir des liens vers des sites tiers. Mindeon.ai n'est pas responsable du contenu de ces sites externes.</p>
+        <div class="border-l-4 border-slate-200 pl-6">
+          <h2 class="text-xl font-extrabold text-slate-900 mb-3">4. Contenu du site</h2>
+          <p class="text-slate-600 leading-relaxed">Les informations publiées sur le site sont données à titre indicatif. Mindeon.ai se réserve le droit de les modifier sans préavis. Les articles, guides et ressources disponibles sur le site sont protégés par le droit d'auteur.</p>
+        </div>
 
-      <h2>6. Droit applicable</h2>
-      <p>Les présentes CGU sont régies par le droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
+        <div class="border-l-4 border-slate-200 pl-6">
+          <h2 class="text-xl font-extrabold text-slate-900 mb-3">5. Liens hypertextes</h2>
+          <p class="text-slate-600 leading-relaxed">Le site peut contenir des liens vers des sites tiers. Mindeon.ai n'est pas responsable du contenu de ces sites externes ni des dommages pouvant résulter de leur utilisation.</p>
+        </div>
 
-      <h2>7. Contact</h2>
-      <p>Pour toute question : <a href="mailto:contact@mindeon.ai">contact@mindeon.ai</a></p>
+        <div class="border-l-4 border-slate-200 pl-6">
+          <h2 class="text-xl font-extrabold text-slate-900 mb-3">6. Droit applicable</h2>
+          <p class="text-slate-600 leading-relaxed">Les présentes CGU sont régies par le droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
+        </div>
+
+        <div class="border-l-4 border-slate-200 pl-6">
+          <h2 class="text-xl font-extrabold text-slate-900 mb-3">7. Contact</h2>
+          <p class="text-slate-600 leading-relaxed">Pour toute question relative aux présentes CGU : <a href="mailto:contact@mindeon.ai" class="text-primary hover:underline">contact@mindeon.ai</a></p>
+        </div>
+
+      </div>
     </div>
   </section>
 </BaseLayout>

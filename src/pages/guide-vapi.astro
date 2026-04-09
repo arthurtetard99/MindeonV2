@@ -1,0 +1,514 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Guide Complet VAPI — Créez votre Agent Vocal IA en 15 minutes | Mindeon.ai"
+  description="Le guide ultime pour créer, configurer et déployer votre agent vocal intelligent avec VAPI. Gratuit, sans carte bancaire, en 15 minutes."
+  pathname="/guide-vapi/"
+>
+
+  <!-- Hero -->
+  <section class="bg-slate-900 pt-16 pb-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/ressources/" class="inline-flex items-center gap-2 text-slate-400 hover:text-white text-sm font-medium mb-10 transition-colors group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-0.5 transition-transform" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        Retour aux ressources
+      </a>
+      <span class="inline-block px-3 py-1 rounded-full bg-blue-900/50 text-blue-300 text-xs font-bold tracking-wider uppercase mb-5">Guide pratique</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.1] mb-5">
+        Guide Complet VAPI<br class="hidden md:block" /> Créez votre Agent Vocal IA
+      </h1>
+      <p class="text-slate-400 text-lg max-w-2xl mb-8">
+        Le guide ultime pour créer, configurer et déployer votre agent vocal intelligent avec VAPI — pas à pas, sans barrière technique.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <div class="flex items-center gap-2 bg-slate-800 px-4 py-2.5 rounded-xl text-sm text-slate-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          3 parties
+        </div>
+        <div class="flex items-center gap-2 bg-slate-800 px-4 py-2.5 rounded-xl text-sm text-slate-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ~15 minutes
+        </div>
+        <div class="flex items-center gap-2 bg-slate-800 px-4 py-2.5 rounded-xl text-sm text-slate-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          100% gratuit
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents -->
+  <section class="bg-slate-50 py-10 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-5">Sommaire</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="#partie-1" class="bg-white rounded-2xl border border-slate-100 p-5 hover:border-primary hover:shadow-sm transition-all group">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
+            <span class="text-xs text-slate-500 font-medium">10 min · Difficulté 1/5</span>
+          </div>
+          <p class="text-sm font-bold text-slate-900 group-hover:text-primary transition-colors">Créer et publier votre agent</p>
+          <p class="text-xs text-slate-500 mt-1">Étapes 1 → 5</p>
+        </a>
+        <a href="#partie-2" class="bg-white rounded-2xl border border-slate-100 p-5 hover:border-primary hover:shadow-sm transition-all group">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
+            <span class="text-xs text-slate-500 font-medium">5 min · Difficulté 2/5</span>
+          </div>
+          <p class="text-sm font-bold text-slate-900 group-hover:text-primary transition-colors">Déployer sur web ou téléphone</p>
+          <p class="text-xs text-slate-500 mt-1">Étapes 6 → 7</p>
+        </a>
+        <a href="#partie-3" class="bg-white rounded-2xl border border-slate-100 p-5 hover:border-primary hover:shadow-sm transition-all group">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-6 h-6 rounded-full bg-slate-300 text-slate-600 text-xs font-bold flex items-center justify-center shrink-0">3</span>
+            <span class="text-xs text-slate-500 font-medium">10 min · Optionnel</span>
+          </div>
+          <p class="text-sm font-bold text-slate-900 group-hover:text-primary transition-colors">Transfert vers un humain</p>
+          <p class="text-xs text-slate-500 mt-1">Étape 8</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="bg-slate-50 py-16">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <!-- PARTIE 1 -->
+      <div id="partie-1" class="mb-16">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="w-10 h-10 rounded-2xl bg-primary text-white text-lg font-extrabold flex items-center justify-center shrink-0">1</span>
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Créer et publier votre agent</h2>
+            <p class="text-slate-500 text-sm mt-0.5">10 min · Difficulté 1/5</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <!-- Étape 1 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">1</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Créer un compte VAPI</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">VAPI est la plateforme de référence pour créer des assistants vocaux IA. L'inscription est rapide, gratuite, et vous offre <strong>10 $ de crédits</strong> pour commencer à tester — suffisant pour plusieurs heures de conversations.</p>
+            <p class="action-step">Rendez-vous sur <strong>vapi.ai</strong> et cliquez sur <strong>Sign Up</strong> en haut à droite.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image4.png" alt="Page d'accueil vapi.ai" class="guide-img" loading="lazy" />
+              <figcaption>Page d'accueil vapi.ai</figcaption>
+            </figure>
+            <p class="action-step">Choisissez votre méthode d'authentification : <strong>Google</strong> (le plus rapide), <strong>GitHub</strong> (pour les développeurs) ou <strong>Email + mot de passe</strong>.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image7.png" alt="Options de connexion VAPI" class="guide-img guide-img-sm" loading="lazy" />
+            </figure>
+            <p class="text-slate-500 text-sm mt-4">Une fois connecté, vous arrivez sur le dashboard — votre point de contrôle central pour gérer tous vos assistants vocaux. Vos 10 $ de crédits sont visibles en haut à droite.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image11.png" alt="Dashboard VAPI après connexion" class="guide-img" loading="lazy" />
+              <figcaption>Le dashboard VAPI</figcaption>
+            </figure>
+          </div>
+
+          <!-- Étape 2 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">2</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Créer votre premier assistant</h3>
+            </div>
+            <p class="action-step">Dans le menu de gauche, cliquez sur <strong>Assistants</strong> puis sur <strong>Create Assistant</strong>.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image18.png" alt="Menu Assistants dans VAPI" class="guide-img" loading="lazy" />
+              <figcaption>Menu Assistants dans la sidebar</figcaption>
+            </figure>
+            <p class="action-step">Sélectionnez <strong>Blank Template</strong>, puis confirmez en cliquant sur <strong>Create</strong>.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image3.png" alt="Sélection du Blank Template" class="guide-img guide-img-xs" loading="lazy" />
+            </figure>
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-5 my-4">
+              <p class="text-sm font-bold text-blue-900 mb-2">Pourquoi Blank Template ?</p>
+              <p class="text-sm text-blue-700">Le modèle vide vous donne un contrôle total sur chaque aspect de votre assistant. C'est le choix idéal si vous avez utilisé <a href="/buildyourvoice/" class="underline font-semibold">BuildYourVoice</a> pour générer un prompt personnalisé adapté à votre secteur.</p>
+            </div>
+            <p class="text-slate-500 text-sm mt-4">Vous arrivez sur l'écran de configuration principal — c'est ici que se passe tout le paramétrage de votre agent.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image12.png" alt="Écran de configuration de l'assistant VAPI" class="guide-img" loading="lazy" />
+              <figcaption>L'écran principal de configuration</figcaption>
+            </figure>
+          </div>
+
+          <!-- Étape 3 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">3</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Configurer la voix</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">La voix est l'élément le plus important de votre assistant vocal. Une voix naturelle et agréable fait toute la différence dans l'expérience utilisateur.</p>
+            <p class="action-step">Ouvrez l'onglet <strong>Voice</strong> et remplacez le provider <strong>VAPI</strong> par <strong>11labs</strong> — c'est le leader mondial pour les voix IA ultra-réalistes.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image8.png" alt="Onglet Voice dans VAPI" class="guide-img" loading="lazy" />
+              <figcaption>Sélection du provider de voix</figcaption>
+            </figure>
+            <p class="action-step">Dans le champ de recherche, tapez <code class="bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono">fr-fr</code> pour n'afficher que les voix françaises.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image15.png" alt="Recherche de voix françaises dans VAPI" class="guide-img" loading="lazy" />
+              <figcaption>Résultats de recherche fr-fr dans la bibliothèque 11labs</figcaption>
+            </figure>
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4">
+              <p class="text-sm font-bold text-slate-700 mb-3">Voix françaises recommandées :</p>
+              <ul class="grid grid-cols-2 gap-1.5 text-sm text-slate-600 mb-4">
+                <li class="flex items-center gap-2"><span class="text-primary">•</span> Hugo from Paris</li>
+                <li class="flex items-center gap-2"><span class="text-primary">•</span> Pierre from Nice</li>
+                <li class="flex items-center gap-2"><span class="text-primary">•</span> Jennifer</li>
+                <li class="flex items-center gap-2"><span class="text-primary">•</span> Alain</li>
+                <li class="flex items-center gap-2"><span class="text-primary">•</span> Louise</li>
+              </ul>
+              <p class="text-sm text-slate-600"><strong>Conseil :</strong> prenez le temps de tester plusieurs voix. Choisissez en fonction du ton de votre marque (professionnel, amical, expert), de votre secteur (voix calme pour la santé, dynamique pour le commerce) et de votre audience cible.</p>
+            </div>
+          </div>
+
+          <!-- Étape 4 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">4</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Configurer la transcription</h3>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Le Transcriber convertit la voix de l'utilisateur en texte. C'est une étape souvent négligée — et pourtant critique. Voici comment fonctionne la chaîne complète :</p>
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4">
+              <ol class="space-y-2 text-sm text-slate-600">
+                <li class="flex items-start gap-2"><span class="text-primary font-bold shrink-0">1.</span> L'utilisateur parle → le <strong>Transcriber</strong> convertit l'audio en texte français</li>
+                <li class="flex items-start gap-2"><span class="text-primary font-bold shrink-0">2.</span> Le <strong>modèle IA</strong> comprend le texte et génère une réponse</li>
+                <li class="flex items-start gap-2"><span class="text-primary font-bold shrink-0">3.</span> La voix <strong>11labs</strong> convertit la réponse en audio</li>
+              </ol>
+            </div>
+            <p class="action-step">Faites défiler la configuration jusqu'à la section <strong>Transcriber</strong> et sélectionnez <strong>fr</strong> dans le champ Language.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image13.png" alt="Configuration du transcriber en français" class="guide-img" loading="lazy" />
+              <figcaption>Transcriber réglé sur le français</figcaption>
+            </figure>
+            <div class="bg-red-50 border border-red-100 rounded-2xl p-4 my-4">
+              <p class="text-sm font-bold text-red-900 mb-1">⚠ Erreur fréquente</p>
+              <p class="text-sm text-red-700">Si votre agent parle français mais que le Transcriber est en anglais (ou inversement), les conversations ne fonctionneront pas correctement. Les deux doivent être configurés dans la même langue.</p>
+            </div>
+          </div>
+
+          <!-- Étape 5 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">5</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Tester et publier</h3>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Avant tout déploiement, testez votre agent pour vous assurer que tout fonctionne parfaitement. VAPI intègre un outil de test en direct.</p>
+            <p class="action-step">Cliquez sur <strong>Talk to Assistant</strong> en haut à droite de l'écran de configuration.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image5.png" alt="Bouton Talk to Assistant" class="guide-img guide-img-sm" loading="lazy" />
+            </figure>
+            <p class="text-slate-500 text-sm mt-4 mb-4">Une session de test en direct se lance. Parlez directement à votre assistant (autorisez le micro si demandé). Testez différents scénarios de conversation et ajustez les paramètres en temps réel si nécessaire.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image9.png" alt="Interface de test de l'agent VAPI" class="guide-img" loading="lazy" />
+              <figcaption>L'interface de test en action</figcaption>
+            </figure>
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4">
+              <p class="text-sm font-bold text-slate-700 mb-3">Checklist avant publication :</p>
+              <ul class="space-y-1.5 text-sm text-slate-600">
+                <li class="flex items-center gap-2"><span class="text-green-500">✓</span> L'agent se présente correctement en début d'appel</li>
+                <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Il comprend bien vos questions en français</li>
+                <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Les réponses correspondent à votre prompt</li>
+                <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Le ton et la personnalité sont cohérents</li>
+                <li class="flex items-center gap-2"><span class="text-green-500">✓</span> L'agent sait gérer les silences et les incompréhensions</li>
+              </ul>
+            </div>
+            <p class="action-step">Tout est bon ? Cliquez sur <strong>Publish</strong> puis confirmez en cliquant à nouveau sur <strong>Publish</strong>.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image21.png" alt="Confirmation de publication de l'agent" class="guide-img" loading="lazy" />
+              <figcaption>L'agent est publié et actif</figcaption>
+            </figure>
+            <p class="text-slate-500 text-sm mt-4">Votre assistant vocal est maintenant publié et prêt à être déployé. Dans les étapes suivantes, nous allons l'intégrer sur votre site web et sur un numéro de téléphone.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PARTIE 2 -->
+      <div id="partie-2" class="mb-16">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="w-10 h-10 rounded-2xl bg-primary text-white text-lg font-extrabold flex items-center justify-center shrink-0">2</span>
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Déployer sur web ou téléphone</h2>
+            <p class="text-slate-500 text-sm mt-0.5">5 min · Difficulté 2/5</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <!-- Étape 6 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">6</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Déployer sur votre site web</h3>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Le widget vocal est un bouton flottant sur votre site qui permet à vos visiteurs de parler directement avec votre assistant — l'équivalent du live chat, mais en vocal.</p>
+            <p class="action-step">Dans le dashboard VAPI, allez dans la section <strong>Widgets</strong> du menu gauche, puis cliquez sur <strong>Create Widget</strong>.</p>
+            <p class="action-step">Sélectionnez le type <strong>Voice</strong>, puis localisez la section <strong>Embed Code</strong> et copiez le code généré.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image23.png" alt="Code d'intégration du widget VAPI" class="guide-img" loading="lazy" />
+              <figcaption>Le code embed à copier</figcaption>
+            </figure>
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4">
+              <p class="text-sm font-bold text-slate-700 mb-3">Comment intégrer selon votre site :</p>
+              <div class="space-y-3 text-sm text-slate-600">
+                <div>
+                  <p class="font-semibold text-slate-800 mb-0.5">WordPress</p>
+                  <p>Apparence → Éditeur de thème → <code class="bg-slate-100 px-1.5 py-0.5 rounded font-mono text-xs">footer.php</code> → collez avant <code class="bg-slate-100 px-1.5 py-0.5 rounded font-mono text-xs">&lt;/body&gt;</code></p>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-800 mb-0.5">HTML statique</p>
+                  <p>Collez dans le fichier principal avant <code class="bg-slate-100 px-1.5 py-0.5 rounded font-mono text-xs">&lt;/body&gt;</code></p>
+                </div>
+                <div>
+                  <p class="font-semibold text-slate-800 mb-0.5">React / Next.js</p>
+                  <p>Via composant Script de Next.js ou dans le layout principal</p>
+                </div>
+              </div>
+            </div>
+            <p class="action-step">Collez ce code dans votre site, juste avant la balise <code class="bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono">&lt;/body&gt;</code>.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image22.png" alt="Exemple d'intégration du code VAPI" class="guide-img" loading="lazy" />
+              <figcaption>Exemple d'intégration dans le code HTML</figcaption>
+            </figure>
+            <p class="text-slate-500 text-sm mt-4 mb-4">Une fois intégré, un bouton flottant apparaît sur votre site (en bas à droite par défaut). Vos visiteurs peuvent cliquer dessus pour lancer une conversation vocale.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image19.png" alt="Widget vocal VAPI flottant sur un site web" class="guide-img" loading="lazy" />
+              <figcaption>Le widget vocal sur un site en production</figcaption>
+            </figure>
+            <div class="bg-amber-50 border border-amber-100 rounded-2xl p-4 mt-4">
+              <p class="text-sm font-bold text-amber-900 mb-1">Permission micro</p>
+              <p class="text-sm text-amber-800">Au premier clic sur le widget, le navigateur demande l'accès au microphone. C'est normal et obligatoire. Assurez-vous d'autoriser cet accès pour que l'assistant puisse entendre l'utilisateur.</p>
+            </div>
+          </div>
+
+          <!-- Étape 7 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">7</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Déployer sur un numéro de téléphone</h3>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Au-delà du widget web, vous pouvez donner à votre assistant un vrai numéro de téléphone. Vos clients pourront l'appeler comme un service client traditionnel.</p>
+            <p class="action-step">Cliquez sur <strong>Phone Numbers</strong> dans le menu gauche, puis sur <strong>Create a Phone Number</strong>.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image24.png" alt="Interface de création d'un numéro VAPI" class="guide-img" loading="lazy" />
+              <figcaption>Création d'un numéro de téléphone dans VAPI</figcaption>
+            </figure>
+            <p class="action-step">Pour commencer gratuitement, saisissez un indicatif américain : <strong>984</strong>, <strong>415</strong>, <strong>212</strong> ou <strong>305</strong>. VAPI génère un numéro gratuit avec cet indicatif.</p>
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-5 my-4">
+              <p class="text-sm font-bold text-blue-900 mb-2">Appels vers les USA depuis la France</p>
+              <p class="text-sm text-blue-700">Avec certains forfaits français (Free, certains forfaits Bouygues, SFR, Orange), les appels vers les USA sont inclus gratuitement. Vérifiez votre forfait avant d'appeler.</p>
+            </div>
+            <p class="text-slate-500 text-sm mb-4">Le numéro s'active en environ 2 minutes.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image16.png" alt="Numéro en cours d'activation" class="guide-img" loading="lazy" />
+              <figcaption>Le numéro s'active en quelques secondes</figcaption>
+            </figure>
+            <p class="action-step">Dans la section <strong>Inbound Settings</strong>, sélectionnez votre assistant dans le menu déroulant <strong>Assistant</strong> et sauvegardez.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image20.png" alt="Numéro de téléphone actif dans VAPI" class="guide-img" loading="lazy" />
+              <figcaption>Numéro actif et associé à l'assistant</figcaption>
+            </figure>
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 mt-4">
+              <p class="text-sm font-bold text-slate-700 mb-2">Pour un numéro français / européen</p>
+              <p class="text-sm text-slate-600">Utilisez un opérateur tiers compatible SIP : <strong>Twilio</strong> (le plus populaire), <strong>Vonage</strong> ou <strong>OVH Telecom</strong>. Ces services s'intègrent nativement à VAPI via webhook.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PARTIE 3 -->
+      <div id="partie-3" class="mb-16">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="w-10 h-10 rounded-2xl bg-slate-300 text-slate-600 text-lg font-extrabold flex items-center justify-center shrink-0">3</span>
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <h2 class="text-2xl font-extrabold text-slate-900">Transfert vers un humain</h2>
+              <span class="px-2 py-0.5 rounded-full bg-slate-200 text-slate-500 text-xs font-semibold">Optionnel</span>
+            </div>
+            <p class="text-slate-500 text-sm mt-0.5">10 min · Difficulté 2/5</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <!-- Étape 8 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">8</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Configurer le transfert d'appel</h3>
+            </div>
+            <p class="text-slate-600 text-sm mb-3">Dans certains cas, votre assistant ne peut pas répondre seul. Configurer un transfert vers un agent humain est essentiel pour :</p>
+            <ul class="space-y-1.5 text-sm text-slate-600 mb-5">
+              <li class="flex items-start gap-2"><span class="text-primary shrink-0">•</span> Gérer les situations complexes que l'IA ne sait pas traiter</li>
+              <li class="flex items-start gap-2"><span class="text-primary shrink-0">•</span> Rassurer les clients qui préfèrent un interlocuteur humain</li>
+              <li class="flex items-start gap-2"><span class="text-primary shrink-0">•</span> Respecter certaines obligations légales (secteurs réglementés)</li>
+            </ul>
+            <p class="action-step">Allez dans la section <strong>Tools</strong> du menu gauche et cliquez sur <strong>Create a Tool</strong>.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image6.png" alt="Section Tools dans VAPI" class="guide-img guide-img-sm" loading="lazy" />
+              <figcaption>L'onglet Tools de l'assistant</figcaption>
+            </figure>
+            <p class="action-step">Sélectionnez <strong>Transfer Call</strong> dans la liste — cet outil permet à l'assistant de transférer l'appel en cours.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image10.png" alt="Sélection de l'outil Transfer Call" class="guide-img guide-img-xxs" loading="lazy" />
+              <figcaption>Sélection de Transfer Call</figcaption>
+            </figure>
+            <p class="action-step">Dans la section <strong>Destinations</strong>, renseignez le numéro de destination au format E.164.</p>
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4">
+              <p class="text-sm font-bold text-slate-700 mb-3">Format E.164 — exemples :</p>
+              <ul class="space-y-1.5 text-sm text-slate-600">
+                <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <code class="bg-slate-100 px-1.5 py-0.5 rounded font-mono text-xs">+33612345678</code> (mobile français)</li>
+                <li class="flex items-center gap-2"><span class="text-red-500">✗</span> <code class="bg-slate-100 px-1.5 py-0.5 rounded font-mono text-xs">06 12 34 56 78</code> (format incorrect)</li>
+                <li class="flex items-center gap-2"><span class="text-green-500">✓</span> <code class="bg-slate-100 px-1.5 py-0.5 rounded font-mono text-xs">+14155551234</code> (numéro américain)</li>
+              </ul>
+            </div>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image1.png" alt="Configuration des destinations de transfert" class="guide-img" loading="lazy" />
+              <figcaption>Configuration du numéro de destination</figcaption>
+            </figure>
+            <p class="action-step">Retournez dans la configuration de votre assistant, section <strong>Tools</strong>, et ajoutez l'outil <strong>transfer_call_tool</strong>.</p>
+            <figure class="my-5">
+              <img src="/images/guide-vapi/image17.png" alt="Ajout de l'outil Transfer Call à l'assistant" class="guide-img" loading="lazy" />
+              <figcaption>L'outil Transfer Call ajouté à l'assistant</figcaption>
+            </figure>
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4">
+              <p class="text-sm font-bold text-slate-700 mb-3">Exemples de déclencheurs de transfert :</p>
+              <ul class="space-y-1.5 text-sm text-slate-600">
+                <li class="flex items-start gap-2"><span class="text-primary shrink-0">•</span> Le client demande explicitement à parler à un humain</li>
+                <li class="flex items-start gap-2"><span class="text-primary shrink-0">•</span> La demande dépasse les capacités de l'agent</li>
+                <li class="flex items-start gap-2"><span class="text-primary shrink-0">•</span> Le client exprime une frustration ou une réclamation</li>
+                <li class="flex items-start gap-2"><span class="text-primary shrink-0">•</span> Une urgence est détectée</li>
+                <li class="flex items-start gap-2"><span class="text-primary shrink-0">•</span> Après 3 tentatives de compréhension infructueuses</li>
+                <li class="flex items-start gap-2"><span class="text-primary shrink-0">•</span> Le prospect est très qualifié et souhaite parler à un commercial</li>
+              </ul>
+            </div>
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-5 mt-4">
+              <p class="text-sm font-bold text-blue-900 mb-2">Si vous avez utilisé BuildYourVoice</p>
+              <p class="text-sm text-blue-700">Votre assistant sait déjà <em>quand</em> transférer grâce aux conditions définies dans votre prompt. Il utilisera automatiquement cet outil au bon moment.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Félicitations -->
+      <div class="step-card mb-16 text-center">
+        <div class="text-4xl mb-4">🎉</div>
+        <h3 class="text-xl font-extrabold text-slate-900 mb-5">Votre agent vocal est opérationnel !</h3>
+        <ul class="max-w-md mx-auto text-left space-y-2 text-sm text-slate-600 mb-2">
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Compte VAPI créé avec crédits gratuits</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Assistant configuré avec voix française 11labs</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Transcription en français configurée</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Agent testé et publié</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Déployé sur web et/ou téléphone</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Transfert humain configuré</li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-slate-900 rounded-3xl p-10 text-center">
+        <h3 class="text-2xl font-extrabold text-white mb-3">Vous voulez aller plus loin ?</h3>
+        <p class="text-slate-400 text-sm mb-6 max-w-lg mx-auto">
+          Utilisez notre générateur de prompt pour créer le system prompt parfait pour votre agent VAPI en 15 minutes.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+          <a href="/buildyourvoice/" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Générer mon prompt VAPI
+          </a>
+          <a href="/contact/" class="inline-flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+            Nous confier le déploiement →
+          </a>
+        </div>
+        <p class="text-slate-500 text-xs">Nous avons déployé des dizaines d'agents vocaux VAPI pour des PME françaises</p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ── Cards d'étape ── */
+  .step-card {
+    background: white;
+    border-radius: 1.5rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    padding: 2rem;
+  }
+  .step-num {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 1rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* ── Actions utilisateur ── */
+  .action-step {
+    position: relative;
+    background: #eff6ff;
+    border-left: 3px solid #2563eb;
+    border-radius: 0 0.75rem 0.75rem 0;
+    padding: 0.75rem 1rem 0.75rem 2.25rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: #1e3a5f;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  .action-step::before {
+    content: '→';
+    position: absolute;
+    left: 0.75rem;
+    top: 0.8rem;
+    color: #2563eb;
+    font-weight: 800;
+  }
+  .action-step strong {
+    color: #1d4ed8;
+  }
+  .action-step code {
+    background: #dbeafe;
+    color: #1d4ed8;
+  }
+
+  /* ── Images ── */
+  .guide-img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    display: block;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .guide-img:hover {
+    box-shadow: 0 0 0 1px rgba(37,99,235,0.4), 0 0 20px rgba(37,99,235,0.3), 0 0 50px rgba(37,99,235,0.15);
+    transform: translateY(-2px);
+  }
+  .guide-img-sm  { max-width: 520px; margin-left: auto; margin-right: auto; }
+  .guide-img-xs  { max-width: 340px; margin-left: auto; margin-right: auto; }
+  .guide-img-xxs { max-width: 280px; margin-left: auto; margin-right: auto; }
+  figure { margin: 1.5rem 0 0; }
+  figcaption {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

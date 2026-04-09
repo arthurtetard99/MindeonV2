@@ -1,0 +1,15 @@
+# Redirections 301 — migration WordPress → Astro
+
+# Pages obsolètes
+/projets/              /nos-projets/           301
+/david-manscour/       /equipe/                301
+/usecase-atmosphere/   /projet-pour-atmosphere-automatisation-des-flux-de-devis-et-de-fabrication-vers-un-crmaxonaut-trello/  301
+
+# Pages guides à recréer (temporaire → ressources)
+
+# Pages à venir (temporaire)
+/outils/               /nos-projets/           301
+
+# WordPress categories & tags
+/category/*            /articles/              301
+/tag/*                 /articles/              301

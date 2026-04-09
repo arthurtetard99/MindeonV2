@@ -1,76 +1,86 @@
 ---
-title: "Agent vocal IA — Automatisation des appels entrants"
-description: "Développement d’un standard téléphonique intelligent permettant de qualifier les appels, gérer les urgences et automatiser la prise de rendez-vous — une solution full-stack déployée pour la startup Agent Smart System."
+title: "Réceptionniste IA — Automatisation des prises de rendez-vous."
+description: "Développement d'un standard téléphonique intelligent permettant de qualifier les appels, gérer les urgences et automatiser la prise de rendez-vous — une solution full-stack déployée pour la startup Agent Smart System."
 date: 2026-04-03
 client: "Agent Smart System"
 tags: ["Voice AI", "Automatisation", "Téléphonie", "n8n", "SaaS"]
 featured: true
 results:
-  - "0 appel manqué"
-  - "+30 à 50% d’appels traités"
+  - "-77% d'appels manqués|"
+  - "+ de 3h d'appels | traités par semaine sans interventions humaines"
   - "Réduction du temps opérationnel"
-  - "Amélioration du taux de conversion"
 ---
 
 ## Contexte
 
-Agent Smart System développe une solution SaaS permettant d’automatiser la gestion des appels entrants pour les professionnels terrain.
+Agent Smart System développe une solution SaaS permettant d'automatiser la gestion des appels entrants pour les professionnels terrain — serruriers, plombiers, électriciens.
 
-Le besoin : capter 100% des appels, qualifier les demandes et déclencher la bonne action sans intervention humaine.
-
----
-
-## Solution : Agent vocal IA connecté aux outils métier
-
-### Qualification automatique des appels
-
-L’agent vocal IA répond aux appels en temps réel, comprend la demande du client et collecte les informations essentielles (adresse, type d’intervention, urgence).
-
-![Log d’appel et résumé généré par l’IA](/images/projets/voice-ai-call-log.webp)
+Le besoin : capter 100% des appels, qualifier les demandes et déclencher la bonne action sans intervention humaine, même en dehors des heures de bureau.
 
 ---
 
-### Gestion intelligente des urgences
+## VAPI comme cerveau vocal de la solution
 
-Les demandes critiques (porte claquée, urgence immédiate) sont automatiquement détectées.
+L'agent vocal est construit sur **VAPI**, une plateforme de Voice AI qui va bien au-delà de la simple synthèse vocale. Grâce à son **serveur MCP (Model Context Protocol)**, VAPI peut appeler des outils externes en temps réel pendant la conversation — sans rupture, sans délai perceptible pour l'appelant.
 
-Le système :
-- évite toute prise de rendez-vous  
-- envoie un email urgent  
-- permet un rappel en un clic  
+Concrètement, pendant un appel, l'agent peut :
+- Lire et écrire dans le CRM client
+- Consulter et créer des événements dans Google Calendar
+- Envoyer des emails et SMS via Brevo
+- Vérifier si un contact existe, et le créer à la volée si besoin
 
-![Email urgent avec bouton de rappel client](/images/projets/voice-ai-email-urgent.webp)
-
----
-
-### Prise de rendez-vous automatisée
-
-Pour les demandes standards :
-
-- recherche de créneaux disponibles  
-- validation en temps réel  
-- création automatique dans le calendrier  
-
-![Création automatique d’un rendez-vous dans le calendrier](/images/projets/voice-ai-booking.webp)
+![Workflow VAPI — 5 étapes du parcours d'appel](/images/projets/web-app-receptioniste-ia_vapi-workflow.svg)
 
 ---
 
-### Orchestration via workflow
+## Parcours d'un appel type
 
-Toute la logique métier est orchestrée via un système d’automatisation reliant IA, base de données et outils externes.
+Voici comment se déroule un appel entrant standard, de la première sonnerie à la confirmation du rendez-vous.
 
-![Workflow d’automatisation n8n](/images/projets/voice-ai-workflow.webp)
+### 1. Identification du contact
+
+Dès que l'appel est décroché, l'agent récupère le numéro de l'appelant et interroge le CRM en temps réel. Si le contact est connu, il est accueilli par son prénom. S'il est inconnu, l'agent collecte les informations essentielles (nom, adresse, type d'intervention) et crée automatiquement une fiche client.
+
+### 2. Qualification de la demande
+
+L'agent pose les bonnes questions pour comprendre la nature de l'intervention : type de problème, niveau d'urgence, localisation précise. Ces informations structurent la suite du traitement et permettent d'orienter vers la bonne action.
+
+![Log d'appel et résumé structuré généré par l'IA après qualification](/images/projets/web-app-receptioniste-ia_call-log.webp)
+
+### 3. Gestion des urgences
+
+Si la demande est critique (porte claquée, fuite d'eau, panne électrique), l'agent ne propose pas de rendez-vous — il déclenche immédiatement une alerte. Un email d'urgence est envoyé au professionnel avec toutes les informations de l'appelant et un bouton de rappel en un clic.
+
+![Email d'urgence avec bouton de rappel direct](/images/projets/web-app-receptioniste-ia_email-urgent.webp)
+
+### 4. Vérification des disponibilités et validation
+
+Pour les demandes standards, l'agent consulte en direct le Google Calendar du professionnel, propose des créneaux disponibles à l'appelant et confirme le choix retenu — le tout dans le fil naturel de la conversation.
+
+### 5. Création du rendez-vous et confirmations
+
+Une fois le créneau validé, l'agent crée simultanément l'événement dans le calendrier du serrurier et dans celui du client (si une adresse email a été fournie). Un SMS et un email de confirmation sont envoyés au client immédiatement.
+
+![Création automatique du rendez-vous dans Google Calendar](/images/projets/web-app-receptioniste-ia_booking.webp)
+
+---
+
+## Orchestration via workflow n8n
+
+L'ensemble de la logique métier — création de contact, envoi d'alertes, génération de rendez-vous, SMS et emails — est orchestré par un workflow n8n déclenché par les webhooks VAPI. Chaque action est tracée et vérifiable.
+
+![Workflow n8n orchestrant toutes les actions post-appel](/images/projets/web-app-receptioniste-ia_workflow.webp)
 
 ---
 
 ## Stack technique
 
-- **Automatisation** : n8n  
-- **Agent vocal** : Vapi  
-- **Base de données** : Supabase  
-- **Planning** : Google Calendar  
-- **Email** : Brevo  
-- **Téléphonie** : Twilio  
+- **Agent vocal** : VAPI + MCP Server
+- **Orchestration** : n8n
+- **CRM** : Supabase
+- **Planning** : Google Calendar API
+- **Email & SMS** : Brevo
+- **Téléphonie** : Twilio
 
 ---
 
@@ -78,9 +88,9 @@ Toute la logique métier est orchestrée via un système d’automatisation reli
 
 La solution permet :
 
-- de traiter 100% des appels entrants  
-- d’éliminer les appels manqués  
-- d’améliorer la réactivité client  
-- d’augmenter le taux de conversion  
+- de traiter 100% des appels entrants, y compris la nuit et le week-end
+- d'éliminer les appels manqués et les rendez-vous oubliés
+- de réduire le temps de traitement administratif de plus de 3h par semaine
+- d'améliorer la réactivité client et le taux de conversion
 
-👉 L’agent IA agit comme un standard téléphonique autonome.
+L'agent IA agit comme un standard téléphonique autonome, capable de gérer l'intégralité du parcours client sans intervention humaine.

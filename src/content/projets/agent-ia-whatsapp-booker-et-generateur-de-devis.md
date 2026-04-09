@@ -23,37 +23,37 @@ Un **agent IA conversationnel** déployé sur **WhatsApp Business API**, orchest
 
 L'agent répond instantanément aux demandes entrantes, pose les bonnes questions pour qualifier le besoin et guide le client étape par étape — exactement comme le ferait un conseiller humain, mais 24h/24.
 
-![Conversation WhatsApp avec l'agent IA — qualification et collecte des informations](/images/projets/agent-ia-whatsapp-booker-et-generateur-de-devis_whatsapp.png)
+![Conversation WhatsApp avec l'agent IA — qualification et collecte des informations](/images/projets/agent-ia-whatsapp-booker-et-generateur-de-devis_whatsapp.webp)
 
 ### Connexion Meta Business
 
 L'agent est connecté à l'API officielle WhatsApp Business via Meta. Cette intégration garantit la fiabilité des envois, la conformité RGPD et la gestion des statuts de messages (livré, lu).
 
-![Configuration de l'intégration Meta Business pour WhatsApp](/images/projets/agent-ia-whatsapp-booker-et-generateur-de-devis_meta.png)
+![Configuration de l'intégration Meta Business pour WhatsApp](/images/projets/agent-ia-whatsapp-booker-et-generateur-de-devis_meta.webp)
 
 ### Workflow d'orchestration
 
 Toute la logique métier est orchestrée via n8n : récupération des disponibilités, calcul du devis, génération du PDF et envoi des confirmations. Chaque étape est traçable et modifiable sans toucher au code.
 
-![Workflow n8n — orchestration complète du parcours client](/images/projets/agent-ia-whatsapp-booker-et-generateur-de-devis_worfklow.png)
+![Workflow n8n — orchestration complète du parcours client](/images/projets/agent-ia-whatsapp-booker-et-generateur-de-devis_worfklow.webp)
 
 ### Prise de rendez-vous
 
 L'agent consulte les disponibilités en temps réel dans Google Calendar, propose des créneaux au client et confirme la réservation directement dans la conversation. Un rappel est automatiquement envoyé 24h avant l'intervention.
 
-![Synchronisation des créneaux disponibles dans Google Calendar](/images/projets/agent-ia-whatsapp-booker-et-generateur-de-devis_calendar.png)
+![Synchronisation des créneaux disponibles dans Google Calendar](/images/projets/agent-ia-whatsapp-booker-et-generateur-de-devis_calendar.webp)
 
 ### Génération du devis PDF
 
 Une fois les informations collectées, un devis personnalisé est généré en quelques secondes et envoyé directement dans la conversation WhatsApp — sans aucune intervention humaine.
 
-![Devis PDF généré et envoyé automatiquement dans WhatsApp](/images/projets/agent-ia-whatsapp-booker-et-generateur-de-devis_devis.png)
+![Devis PDF généré et envoyé automatiquement dans WhatsApp](/images/projets/agent-ia-whatsapp-booker-et-generateur-de-devis_devis.webp)
 
 ### Confirmation par email
 
 En parallèle du message WhatsApp, le client reçoit un email récapitulatif avec le devis en pièce jointe, les détails du rendez-vous et les informations de contact.
 
-![Email de confirmation envoyé automatiquement au client](/images/projets/agent-ia-whatsapp-booker-et-generateur-de-devis_mail.png)
+![Email de confirmation envoyé automatiquement au client](/images/projets/agent-ia-whatsapp-booker-et-generateur-de-devis_mail.webp)
 
 ## Stack technique
 

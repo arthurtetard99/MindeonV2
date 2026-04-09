@@ -26,9 +26,9 @@ L'agent engage la conversation, collecte les besoins du prospect (volume, budget
 
 <div class="img-row">
 
-![Configuration de l'agent vocal dans Retell AI — étape de qualification](/images/projets/voicebot-retell-ai-multi-workflow-pour-parcours-client-creation-de-devis_Setting-Retell1.png)
+![Configuration de l'agent vocal dans Retell AI — étape de qualification](/images/projets/voicebot-retell-ai-multi-workflow-pour-parcours-client-creation-de-devis_Setting-Retell1.webp)
 
-![Configuration du workflow de génération de devis dans Retell AI](/images/projets/voicebot-retell-ai-multi-workflow-pour-parcours-client-creation-de-devis_Setting-Retell2.png)
+![Configuration du workflow de génération de devis dans Retell AI](/images/projets/voicebot-retell-ai-multi-workflow-pour-parcours-client-creation-de-devis_Setting-Retell2.webp)
 
 </div>
 
@@ -48,4 +48,4 @@ L'équipe commerciale reçoit une alerte avec le résumé de l'appel et le devis
 
 Le système a traité **847 appels entrants** en 30 jours, avec un taux de succès de 91%. Les commerciaux ont pu se concentrer exclusivement sur les clients chauds, augmentant leur taux de closing de 20%.
 
-![Tableau de bord des résultats dans Retell AI — appels traités et taux de succès](/images/projets/voicebot-retell-ai-multi-workflow-pour-parcours-client-creation-de-devis_Resultat_Retell.png)
+![Tableau de bord des résultats dans Retell AI — appels traités et taux de succès](/images/projets/voicebot-retell-ai-multi-workflow-pour-parcours-client-creation-de-devis_Resultat_Retell.webp)

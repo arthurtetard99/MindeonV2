@@ -20,7 +20,7 @@ Les avantages sont multiples :
 - **Réduction des erreurs :** Les structures testées évitent les bugs logiques fréquents.
 - **Évolutivité :** Facile à modifier pour répondre aux besoins changeants de votre entreprise.
 
-Pour une vision d'ensemble des capacités de l'outil, n'hésitez pas à consulter notre [guide ultime n8n](/guide-ultime-n8n/).
+Pour une vision d'ensemble des capacités de l'outil, n'hésitez pas à consulter notre [guide ultime n8n](/n8n-guide-ultime-automatisation-open-source/).
 
 ## Les 15 workflows incontournables
 
@@ -42,7 +42,7 @@ Voici une sélection de processus critiques pour structurer votre activité :
 14. **Nettoyage :** Suppression des doublons dans vos bases de données.
 15. **Satisfaction :** Envoi automatique de sondages NPS après une livraison.
 
-Pour voir comment ces processus s'articulent concrètement dans un environnement métier, découvrez nos [10 workflows PME](/10-workflows-pme/) les plus populaires.
+Pour voir comment ces processus s'articulent concrètement dans un environnement métier, découvrez nos [workflows n8n prêts à l'emploi pour PME](/workflows-n8n-prets-emploi-pme/).
 
 ## Limites et points de vigilance
 

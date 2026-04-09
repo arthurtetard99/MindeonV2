@@ -15,14 +15,14 @@ Le prompt engineering pour agents IA est devenu la compétence indispensable pou
 
 Un agent IA ne se contente pas de prédire du texte ; il interagit avec des APIs, accède à des bases de données et prend des décisions basées sur des instructions système. Si ces instructions sont floues, l'agent devient imprévisible. Les bénéfices d'un prompt engineering bien maîtrisé sont directs : réduction des hallucinations, augmentation de la précision opérationnelle et optimisation du coût des tokens.
 
-Pour aller plus loin dans la mise en œuvre technique, consultez nos [guides techniques](/guides-techniques/).
+Pour aller plus loin dans la mise en œuvre technique, consultez nos [ressources](/ressources/).
 
 ## Les 7 techniques incontournables pour vos agents
 
 1. **Role Prompting :** Assignez une identité précise à l'agent (ex: "Tu es un expert en support client niveau 2"). Cela définit immédiatement le ton et les limites de son expertise.
 2. **Few-Shot Prompting :** Donnez des exemples concrets d'entrées et de sorties attendues. Cela aide l'agent à comprendre le format et le raisonnement requis.
 3. **Chain-of-Thought (CoT) :** Forcez l'agent à "réfléchir étape par étape" avant de donner une réponse finale. Cette méthode réduit drastiquement les erreurs de logique.
-4. **Instruction de sortie structurée :** Demandez explicitement à l'agent de répondre en JSON ou Markdown. C'est essentiel pour toute intégration avec nos [solutions agents](/solutions-agents/).
+4. **Instruction de sortie structurée :** Demandez explicitement à l'agent de répondre en JSON ou Markdown. C'est essentiel pour toute intégration dans un pipeline de production — voir nos [projets déployés](/nos-projets/) pour des exemples concrets.
 5. **Gestion du contexte (RAG) :** Ne demandez pas à l'agent de tout savoir. Donnez-lui accès à une base de connaissances externe pour limiter les réponses aux faits réels.
 6. **Contraintes négatives :** Précisez clairement ce que l'agent ne doit *pas* faire (ex: "Ne jamais inventer d'informations").
 7. **Décomposition de tâches :** Pour les workflows complexes, créez plusieurs agents spécialisés plutôt qu'un seul agent omniscient.

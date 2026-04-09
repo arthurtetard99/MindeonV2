@@ -15,7 +15,7 @@ L'agent conversationnel IA représente aujourd'hui une transformation majeure da
 
 Un agent conversationnel IA est une interface intelligente capable de simuler une conversation humaine fluide. Là où le chatbot traditionnel se limite à un arbre de décision linéaire, l'agent IA utilise le traitement du langage naturel (NLP) pour interpréter les nuances de vos interlocuteurs.
 
-Il existe une distinction importante à comprendre entre les différentes technologies disponibles : pour approfondir ces nuances, consultez notre dossier sur le [chatbot vs voice bot](/solutions/). Cette compréhension est essentielle pour choisir l'outil adapté à votre canal de communication principal.
+Il existe une distinction importante à comprendre entre les différentes technologies disponibles : pour approfondir ces nuances, consultez notre article [chatbot WhatsApp vs voice bot](/chatbot-whatsapp-entreprise-guide-2026/). Cette compréhension est essentielle pour choisir l'outil adapté à votre canal de communication principal.
 
 ## Les cas d'usage concrets en entreprise
 
@@ -33,7 +33,7 @@ En automatisant ces interactions, les entreprises observent une réduction signi
 Le déploiement d'une solution d'IA ne se résume pas à l'installation d'un logiciel. Pour garantir un ROI positif, il est impératif de suivre une méthodologie structurée :
 
 1.  **Audit des processus :** Identifier les points de friction dans votre parcours client actuel.
-2.  **Sélection des solutions :** Explorer nos [Solutions Agents](/solutions/) pour identifier les briques technologiques adaptées à votre infrastructure.
+2.  **Sélection des solutions :** Explorer nos [projets réalisés](/nos-projets/) pour identifier les briques technologiques adaptées à votre infrastructure.
 3.  **Entraînement et personnalisation :** Connecter l'agent à vos données métier pour garantir la pertinence des réponses.
 4.  **Tests et itération :** Lancer une phase pilote pour ajuster les comportements de l'IA avant un déploiement massif.
 

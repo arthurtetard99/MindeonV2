@@ -9,7 +9,7 @@ image: "/images/articles/voicebot-entreprise-cas-usage-deploiement.jpg"
 
 ## Introduction
 
-Le voicebot en entreprise s'impose aujourd'hui comme un levier majeur de productivité et de satisfaction client. Un voicebot est un agent conversationnel capable de traiter des appels entrants ou sortants de manière autonome grâce à l'intelligence artificielle. En automatisant vos interactions vocales, vous libérez vos équipes des tâches répétitives tout en assurant une disponibilité 24/7. Pour comprendre comment intégrer cette technologie, consultez notre [guide voice bot IA](/guide-voice-bot-ia/).
+Le voicebot en entreprise s'impose aujourd'hui comme un levier majeur de productivité et de satisfaction client. Un voicebot est un agent conversationnel capable de traiter des appels entrants ou sortants de manière autonome grâce à l'intelligence artificielle. En automatisant vos interactions vocales, vous libérez vos équipes des tâches répétitives tout en assurant une disponibilité 24/7. Pour comprendre comment intégrer cette technologie, consultez notre [guide voice bot IA](/voice-bot-ia-guide-complet/).
 
 ## 6 cas d'usage concrets pour votre entreprise
 
@@ -22,7 +22,7 @@ L'intégration d'un assistant vocal ne se limite pas à la simple gestion d'appe
 5. **Prise de rendez-vous :** Synchronisation directe avec votre agenda pour planifier des réunions de manière autonome.
 6. **Sondages et enquêtes :** Recueil de feedbacks clients post-interaction pour mesurer la satisfaction en temps réel.
 
-Chacun de ces cas d'usage permet de réduire drastiquement le temps de traitement tout en conservant une qualité de service constante. Pour moderniser votre infrastructure actuelle, explorez notre [standard téléphonique IA](/standard-telephonique-ia/).
+Chacun de ces cas d'usage permet de réduire drastiquement le temps de traitement tout en conservant une qualité de service constante. Pour moderniser votre infrastructure actuelle, explorez nos [projets voicebot déployés](/nos-projets/).
 
 ## Comment réussir le déploiement de votre voicebot
 

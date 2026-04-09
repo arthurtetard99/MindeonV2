@@ -18,7 +18,7 @@ En résumé, un chatbot WhatsApp performant permet de réduire les coûts de sup
 Contrairement aux formulaires de contact classiques ou aux emails, WhatsApp bénéficie d'un taux d'ouverture dépassant les 95 %. L'implémentation d'un agent conversationnel apporte des avantages concrets :
 
 - **Disponibilité immédiate :** Fini l'attente pour le client ; le chatbot répond instantanément aux questions récurrentes (FAQ).
-- **Gestion des flux :** Automatisez la qualification de prospects et la prise de rendez-vous via notre [Agent WhatsApp RDV/devis](/solutions/).
+- **Gestion des flux :** Automatisez la qualification de prospects et la prise de rendez-vous — comme nous l'avons fait dans notre [projet Agent IA WhatsApp](/agent-ia-whatsapp-booker-et-generateur-de-devis/).
 - **Personnalisation :** Grâce aux modèles LLM, vos agents IA comprennent le contexte et s'adaptent au ton de votre marque.
 - **Centralisation :** Connectez votre WhatsApp à votre CRM pour synchroniser toutes vos données en temps réel.
 
@@ -29,7 +29,7 @@ La mise en place d'une solution d'automatisation suit un processus rigoureux pou
 1. **Choix de l'API :** Optez pour l'API WhatsApp Business officielle afin de garantir la stabilité et la sécurité de vos échanges.
 2. **Définition des cas d'usage :** Ne cherchez pas à tout automatiser. Commencez par le support de niveau 1 ou le parcours de prise de commande.
 3. **Conception du flow conversationnel :** Dessinez le parcours utilisateur en intégrant des points de sortie vers un agent humain si l'IA ne peut répondre.
-4. **Intégration et test :** Connectez votre bot à vos outils métier existants via nos [Solutions Agents](/solutions/) pour assurer une continuité de service.
+4. **Intégration et test :** Connectez votre bot à vos outils métier existants — découvrez nos [projets déployés](/nos-projets/) pour voir des exemples concrets.
 
 ## Les limites et points de vigilance
 

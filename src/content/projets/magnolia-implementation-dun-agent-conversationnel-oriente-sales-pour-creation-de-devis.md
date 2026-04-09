@@ -27,13 +27,13 @@ Nous avons développé un agent Claude intégré en widget sur le site, formé s
 
 L'agent apparaît directement sur les pages produits de Magnolia. Le visiteur peut configurer son besoin en quelques échanges, sans quitter la page ni attendre un rappel commercial.
 
-![Widget de l'agent conversationnel intégré sur le site Magnolia](/images/projets/magnolia-implementation-dun-agent-conversationnel-oriente-sales-pour-creation-de-devis_web.png)
+![Widget de l'agent conversationnel intégré sur le site Magnolia](/images/projets/magnolia-implementation-dun-agent-conversationnel-oriente-sales-pour-creation-de-devis_web.webp)
 
 ### Interface de l'agent IA
 
 Côté back-office, l'agent IA dispose d'une interface de supervision permettant de suivre les conversations, ajuster les réponses et enrichir la base de connaissance produit au fil du temps.
 
-![Interface de configuration et de supervision de l'agent IA](/images/projets/magnolia-implementation-dun-agent-conversationnel-oriente-sales-pour-creation-de-devis_agentIA.png)
+![Interface de configuration et de supervision de l'agent IA](/images/projets/magnolia-implementation-dun-agent-conversationnel-oriente-sales-pour-creation-de-devis_agentIA.webp)
 
 ### Fonctionnement
 
@@ -53,7 +53,7 @@ L'agent guide le prospect comme le ferait un commercial expérimenté :
 
 L'ensemble de ces intégrations est orchestré via un workflow n8n qui centralise les données collectées et déclenche les bonnes actions selon le profil du prospect.
 
-![Workflow n8n orchestrant les intégrations CRM, email et prise de RDV](/images/projets/magnolia-implementation-dun-agent-conversationnel-oriente-sales-pour-creation-de-devis_workflow.png)
+![Workflow n8n orchestrant les intégrations CRM, email et prise de RDV](/images/projets/magnolia-implementation-dun-agent-conversationnel-oriente-sales-pour-creation-de-devis_workflow.webp)
 
 ## ROI
 

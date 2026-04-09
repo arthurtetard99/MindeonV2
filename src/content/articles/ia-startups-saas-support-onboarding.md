@@ -43,7 +43,7 @@ Si le ROI est évident, il faut toutefois anticiper les coûts et les contrainte
 
 Le choix entre une solution clé en main et un développement sur mesure dépend de votre maturité technologique. Pour les structures agiles, privilégier des outils intégrant des capacités d'automatisation permet une mise en production rapide.
 
-Pour approfondir vos connaissances sur le sujet, consultez notre guide sur les [agents IA](/solutions/) ou découvrez comment optimiser vos processus via notre expertise en [automatisation](/solutions/).
+Pour approfondir vos connaissances sur le sujet, consultez notre guide sur les [agents conversationnels IA](/agent-conversationnel-ia-guide-entreprise/) ou découvrez [par où commencer pour automatiser vos processus](/automatisation-ia-par-ou-commencer-pme/).
 
 ## Conclusion
 

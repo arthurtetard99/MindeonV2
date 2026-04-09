@@ -20,7 +20,7 @@ n8n est un outil d'automatisation de workflow (workflow automation) qui se disti
 - **Transparence :** Vous gardez le contrôle total sur vos données.
 - **Économies :** Un modèle tarifaire souvent plus avantageux pour les gros volumes d'opérations.
 
-En résumé, n8n est l'outil idéal pour les entreprises cherchant à scaler sans explosion des coûts de licence. Pour aller plus loin, consultez notre [guide ultime n8n](/guide-ultime-n8n/) pour maîtriser les concepts avancés.
+En résumé, n8n est l'outil idéal pour les entreprises cherchant à scaler sans explosion des coûts de licence. Pour aller plus loin, consultez notre [guide ultime n8n](/n8n-guide-ultime-automatisation-open-source/) pour maîtriser les concepts avancés.
 
 ## Comment installer et démarrer avec n8n
 
@@ -40,7 +40,7 @@ L'automatisation ne se limite pas à des tâches techniques. Voici quelques exem
 - **Support Client :** Créer un ticket automatique dans un outil de gestion dès la réception d'un email de réclamation.
 - **Gestion de contenu :** Publier automatiquement des mises à jour sur vos réseaux sociaux à partir d'une base de données Notion.
 
-Si vous souhaitez voir comment ces briques s'assemblent pour votre entreprise, explorez nos différentes [solutions n8n](/solutions-n8n/) adaptées à vos besoins métier.
+Si vous souhaitez voir comment ces briques s'assemblent pour votre entreprise, explorez nos [réalisations clients](/nos-projets/) pour voir comment ces automatisations s'appliquent concrètement.
 
 ## Limites et points d'attention
 

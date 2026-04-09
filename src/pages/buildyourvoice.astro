@@ -1,0 +1,768 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="BuildYourVoice — Générateur de prompt VAPI | Mindeon.ai"
+  description="Créez gratuitement votre prompt d'agent vocal VAPI en 15 minutes. Configurez identité, personnalité et règles de votre voice bot."
+  pathname="/buildyourvoice/"
+>
+
+  <!-- Hero -->
+  <section class="bg-slate-900 pt-16 pb-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <a href="/" class="inline-flex items-center gap-2 text-slate-400 hover:text-white text-sm font-medium mb-10 transition-colors group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-0.5 transition-transform" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        Retour à l'accueil
+      </a>
+      <span class="inline-block px-3 py-1 rounded-full bg-green-900/50 text-green-300 text-xs font-bold tracking-wider uppercase mb-5">Outil gratuit</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.1] mb-5">
+        Créez votre agent vocal VAPI<br class="hidden md:block" /> en 15 minutes
+      </h1>
+      <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-8">
+        Configurez pas à pas votre voice bot et obtenez un prompt système prêt à déployer sur VAPI.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400">
+        <span class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          100% gratuit
+        </span>
+        <span class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Aucune inscription
+        </span>
+        <span class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Environ 15 minutes
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Persona Selection -->
+  <section class="bg-slate-50 py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-extrabold text-slate-900 mb-3">Choisissez un point de départ</h2>
+        <p class="text-slate-500 text-sm">Sélectionnez un persona préconfiguré ou partez de zéro — vous pourrez tout modifier ensuite</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3" id="persona-grid">
+        <button type="button" class="persona-card flex flex-col items-center gap-3 p-4 bg-white rounded-2xl border-2 border-slate-200 hover:border-primary transition-all" data-persona="blank">
+          <span class="text-3xl">✨</span>
+          <div class="text-center">
+            <div class="font-bold text-slate-900 text-sm">Vide</div>
+            <div class="text-xs text-slate-500 mt-0.5">Partir de zéro</div>
+          </div>
+        </button>
+        <button type="button" class="persona-card flex flex-col items-center gap-3 p-4 bg-white rounded-2xl border-2 border-slate-200 hover:border-primary transition-all" data-persona="emma">
+          <span class="text-3xl">👋</span>
+          <div class="text-center">
+            <div class="font-bold text-slate-900 text-sm">Emma</div>
+            <div class="text-xs text-slate-500 mt-0.5">Accueil</div>
+          </div>
+        </button>
+        <button type="button" class="persona-card flex flex-col items-center gap-3 p-4 bg-white rounded-2xl border-2 border-slate-200 hover:border-primary transition-all" data-persona="will">
+          <span class="text-3xl">💼</span>
+          <div class="text-center">
+            <div class="font-bold text-slate-900 text-sm">Will</div>
+            <div class="text-xs text-slate-500 mt-0.5">Commercial</div>
+          </div>
+        </button>
+        <button type="button" class="persona-card flex flex-col items-center gap-3 p-4 bg-white rounded-2xl border-2 border-slate-200 hover:border-primary transition-all" data-persona="leo">
+          <span class="text-3xl">🎧</span>
+          <div class="text-center">
+            <div class="font-bold text-slate-900 text-sm">Léo</div>
+            <div class="text-xs text-slate-500 mt-0.5">Support</div>
+          </div>
+        </button>
+        <button type="button" class="persona-card flex flex-col items-center gap-3 p-4 bg-white rounded-2xl border-2 border-slate-200 hover:border-primary transition-all" data-persona="sophie">
+          <span class="text-3xl">🔍</span>
+          <div class="text-center">
+            <div class="font-bold text-slate-900 text-sm">Sophie</div>
+            <div class="text-xs text-slate-500 mt-0.5">Qualification</div>
+          </div>
+        </button>
+        <button type="button" class="persona-card flex flex-col items-center gap-3 p-4 bg-white rounded-2xl border-2 border-slate-200 hover:border-primary transition-all" data-persona="alex">
+          <span class="text-3xl">📅</span>
+          <div class="text-center">
+            <div class="font-bold text-slate-900 text-sm">Alex</div>
+            <div class="text-xs text-slate-500 mt-0.5">Rendez-vous</div>
+          </div>
+        </button>
+        <button type="button" class="persona-card flex flex-col items-center gap-3 p-4 bg-white rounded-2xl border-2 border-slate-200 hover:border-primary transition-all" data-persona="marie">
+          <span class="text-3xl">💛</span>
+          <div class="text-center">
+            <div class="font-bold text-slate-900 text-sm">Marie</div>
+            <div class="text-xs text-slate-500 mt-0.5">Rétention</div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="bg-white py-16" id="form-section">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <!-- Section 1: Identité -->
+      <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 mb-6">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">1</span>
+          <h2 class="text-xl font-extrabold text-slate-900">Identité & Informations générales</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label for="byv-name" class="block text-sm font-semibold text-slate-700 mb-2">Nom de l'agent <span class="text-red-400">*</span></label>
+            <input type="text" id="byv-name" placeholder="Emma, Will, Assistant..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors" />
+          </div>
+          <div>
+            <label for="byv-role" class="block text-sm font-semibold text-slate-700 mb-2">Rôle / Titre <span class="text-red-400">*</span></label>
+            <input type="text" id="byv-role" placeholder="Assistante commerciale, Agent support..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors" />
+          </div>
+          <div>
+            <label for="byv-company" class="block text-sm font-semibold text-slate-700 mb-2">Entreprise</label>
+            <input type="text" id="byv-company" placeholder="Nom de votre entreprise" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors" />
+          </div>
+          <div>
+            <label for="byv-industry" class="block text-sm font-semibold text-slate-700 mb-2">Secteur d'activité</label>
+            <input type="text" id="byv-industry" placeholder="Immobilier, SaaS, E-commerce..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors" />
+          </div>
+          <div class="sm:col-span-2">
+            <label for="byv-signature" class="block text-sm font-semibold text-slate-700 mb-2">Phrase signature <span class="text-slate-400 font-normal">(optionnel)</span></label>
+            <input type="text" id="byv-signature" placeholder="Ex : Passez une excellente journée !" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors" />
+            <p class="text-xs text-slate-400 mt-1.5">Phrase que l'agent utilise systématiquement en fin d'appel</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Personnalité -->
+      <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 mb-6">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">2</span>
+          <h2 class="text-xl font-extrabold text-slate-900">Personnalité & Style de communication</h2>
+        </div>
+        <div class="mb-6">
+          <label class="block text-sm font-semibold text-slate-700 mb-3">Ton principal</label>
+          <div class="flex flex-wrap gap-2" id="tone-chips"></div>
+        </div>
+        <div class="mb-6">
+          <label class="block text-sm font-semibold text-slate-700 mb-3">Traits de caractère <span class="text-slate-400 font-normal">(plusieurs possibles)</span></label>
+          <div class="flex flex-wrap gap-2" id="traits-chips"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-3">Niveau d'humour</label>
+            <div class="flex flex-wrap gap-2" id="humor-chips"></div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-3">Style de réponse</label>
+            <div class="flex flex-wrap gap-2" id="style-chips"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Fonctionnalités -->
+      <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 mb-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">3</span>
+          <h2 class="text-xl font-extrabold text-slate-900">Fonctionnalités clés</h2>
+        </div>
+        <p class="text-slate-500 text-sm mb-4">Sélectionnez ce que votre agent doit être capable de faire</p>
+        <div class="flex flex-wrap gap-2" id="features-chips"></div>
+      </div>
+
+      <!-- Section 4: Objectifs -->
+      <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 mb-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">4</span>
+          <h2 class="text-xl font-extrabold text-slate-900">Objectifs principaux</h2>
+        </div>
+        <p class="text-slate-500 text-sm mb-4">Définissez jusqu'à 5 objectifs prioritaires de votre agent</p>
+        <div id="objectives-list" class="space-y-3 mb-4"></div>
+        <button type="button" id="add-objective-btn" class="flex items-center gap-2 text-sm text-primary font-semibold hover:underline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Ajouter un objectif
+        </button>
+      </div>
+
+      <!-- Section 5: Données à collecter -->
+      <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 mb-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">5</span>
+          <h2 class="text-xl font-extrabold text-slate-900">Données à collecter</h2>
+        </div>
+        <p class="text-slate-500 text-sm mb-4">Quelles informations votre agent doit-il obtenir de l'appelant ?</p>
+        <div class="flex flex-wrap gap-2" id="data-chips"></div>
+      </div>
+
+      <!-- Section 6: Transfert humain -->
+      <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 mb-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">6</span>
+          <h2 class="text-xl font-extrabold text-slate-900">Transfert vers un humain</h2>
+        </div>
+        <div class="flex items-center gap-3 mb-5">
+          <button type="button" id="transfer-toggle" role="switch" aria-checked="false" class="relative w-11 h-6 rounded-full bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/30 shrink-0">
+            <span id="transfer-knob" class="absolute left-1 top-1 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200"></span>
+          </button>
+          <span class="text-sm text-slate-700 font-medium">Activer le transfert vers un agent humain</span>
+        </div>
+        <div id="transfer-fields" class="hidden space-y-4">
+          <div>
+            <label for="byv-transfer-condition" class="block text-sm font-semibold text-slate-700 mb-2">Conditions de transfert</label>
+            <input type="text" id="byv-transfer-condition" placeholder="Ex : Réclamation, question complexe, demande de remboursement..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors" />
+          </div>
+          <div>
+            <label for="byv-transfer-message" class="block text-sm font-semibold text-slate-700 mb-2">Message de transition</label>
+            <input type="text" id="byv-transfer-message" placeholder="Ex : Je vous transfère vers un conseiller disponible." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 7: Règles -->
+      <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 mb-6">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">7</span>
+          <h2 class="text-xl font-extrabold text-slate-900">Règles & Contraintes</h2>
+        </div>
+        <div class="space-y-5">
+          <div>
+            <label for="byv-must-do" class="block text-sm font-semibold text-slate-700 mb-2">
+              <span class="text-green-600 mr-1">✓</span>À toujours faire
+            </label>
+            <textarea id="byv-must-do" rows="4" placeholder="Ex : Se présenter en début d'appel&#10;Confirmer les informations avant de raccrocher&#10;Parler lentement et distinctement" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors resize-none"></textarea>
+            <p class="text-xs text-slate-400 mt-1.5">Une règle par ligne</p>
+          </div>
+          <div>
+            <label for="byv-must-not" class="block text-sm font-semibold text-slate-700 mb-2">
+              <span class="text-red-500 mr-1">✗</span>À ne jamais faire
+            </label>
+            <textarea id="byv-must-not" rows="4" placeholder="Ex : Inventer des informations&#10;Promettre des délais non confirmés&#10;Divulguer des données confidentielles" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors resize-none"></textarea>
+            <p class="text-xs text-slate-400 mt-1.5">Une règle par ligne</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 8: Base de connaissance -->
+      <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 mb-6">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-8 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center shrink-0">8</span>
+          <h2 class="text-xl font-extrabold text-slate-900">Base de connaissance</h2>
+        </div>
+        <div class="space-y-5">
+          <div>
+            <label for="byv-knowledge-products" class="block text-sm font-semibold text-slate-700 mb-2">Produits / Services</label>
+            <textarea id="byv-knowledge-products" rows="5" placeholder="Décrivez vos offres, tarifs, caractéristiques clés que l'agent doit connaître..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors resize-none"></textarea>
+          </div>
+          <div>
+            <label for="byv-knowledge-faq" class="block text-sm font-semibold text-slate-700 mb-2">FAQ <span class="text-slate-400 font-normal">(optionnel)</span></label>
+            <textarea id="byv-knowledge-faq" rows="5" placeholder="Q: Quels sont vos horaires ?&#10;R: Nous sommes ouverts du lundi au vendredi de 9h à 18h.&#10;&#10;Q: Comment annuler un rendez-vous ?&#10;R: ..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors resize-none"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 9: Outils (optionnel) -->
+      <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 mb-8">
+        <div class="flex items-center justify-between mb-1">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-slate-200 text-slate-600 text-sm font-bold flex items-center justify-center shrink-0">9</span>
+            <h2 class="text-xl font-extrabold text-slate-900">Outils & Intégrations</h2>
+            <span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 text-xs font-semibold">Optionnel</span>
+          </div>
+          <button type="button" id="tools-toggle-btn" class="text-sm text-primary font-semibold hover:underline shrink-0">Afficher</button>
+        </div>
+        <p class="text-slate-500 text-sm mb-4 ml-11">APIs et outils externes que l'agent peut déclencher</p>
+        <div id="tools-section" class="hidden">
+          <div id="tools-list" class="space-y-4 mb-4"></div>
+          <button type="button" id="add-tool-btn" class="flex items-center gap-2 text-sm text-primary font-semibold hover:underline">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Ajouter un outil
+          </button>
+        </div>
+      </div>
+
+      <!-- Generate -->
+      <button type="button" id="generate-btn" class="w-full bg-primary hover:bg-primary-dark text-white font-extrabold text-lg px-8 py-5 rounded-2xl transition-colors duration-200 flex items-center justify-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Générer mon prompt VAPI
+      </button>
+
+    </div>
+  </section>
+
+  <!-- Output Section -->
+  <section id="output-section" class="hidden bg-slate-900 py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-8">
+        <span class="inline-block px-3 py-1 rounded-full bg-green-900/50 text-green-300 text-xs font-bold tracking-wider uppercase mb-4">Prompt généré</span>
+        <h2 class="text-3xl font-extrabold text-white mb-3">Votre prompt VAPI est prêt !</h2>
+        <p class="text-slate-400 text-sm">Copiez ce prompt et collez-le dans le champ "System Prompt" de votre agent VAPI</p>
+      </div>
+      <div class="relative mb-6">
+        <pre id="output-prompt" class="bg-slate-800 border border-slate-700 rounded-2xl p-6 text-slate-300 text-sm leading-relaxed overflow-x-auto whitespace-pre-wrap font-mono"></pre>
+        <button type="button" id="copy-btn" class="absolute top-4 right-4 flex items-center gap-2 bg-slate-700 hover:bg-primary text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors">
+          <svg id="copy-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          <span id="copy-label">Copier</span>
+        </button>
+      </div>
+      <div class="bg-slate-800 rounded-2xl border border-slate-700 p-8 text-center">
+        <h3 class="text-xl font-extrabold text-white mb-3">Besoin d'aide pour déployer votre agent ?</h3>
+        <p class="text-slate-400 text-sm mb-6 max-w-md mx-auto">Notre équipe peut vous accompagner de la configuration VAPI jusqu'au déploiement en production, avec tests et optimisation inclus.</p>
+        <a href="/contact/" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+          Prendre rendez-vous →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    const TONES = [
+      { id: 'professional', label: 'Professionnel' },
+      { id: 'friendly', label: 'Amical' },
+      { id: 'empathetic', label: 'Empathique' },
+      { id: 'dynamic', label: 'Dynamique' },
+      { id: 'formal', label: 'Formel' },
+      { id: 'casual', label: 'Décontracté' },
+      { id: 'reassuring', label: 'Rassurant' },
+    ];
+    const TRAITS = [
+      { id: 'patient', label: 'Patient(e)' },
+      { id: 'attentive', label: 'Attentif/ve' },
+      { id: 'assertive', label: 'Assertif/ve' },
+      { id: 'calm', label: 'Calme' },
+      { id: 'curious', label: 'Curieux/se' },
+      { id: 'precise', label: 'Précis(e)' },
+      { id: 'proactive', label: 'Proactif/ve' },
+      { id: 'persuasive', label: 'Persuasif/ve' },
+    ];
+    const HUMORS = [
+      { id: 'none', label: 'Aucun' },
+      { id: 'subtle', label: 'Subtil' },
+      { id: 'moderate', label: 'Modéré' },
+    ];
+    const STYLES = [
+      { id: 'concise', label: 'Concis' },
+      { id: 'balanced', label: 'Équilibré' },
+      { id: 'detailed', label: 'Détaillé' },
+    ];
+    const FEATURES = [
+      { id: 'sell', label: 'Vendre / Convaincre' },
+      { id: 'inform', label: 'Informer' },
+      { id: 'qualify', label: 'Qualifier les leads' },
+      { id: 'objections', label: 'Gérer les objections' },
+      { id: 'retention', label: 'Fidéliser' },
+      { id: 'appoint', label: 'Prise de RDV' },
+      { id: 'upsell', label: 'Upsell / Cross-sell' },
+      { id: 'support', label: 'Support technique' },
+    ];
+    const DATA_FIELDS = [
+      { id: 'name', label: 'Nom & Prénom' },
+      { id: 'email', label: 'Email' },
+      { id: 'phone', label: 'Téléphone' },
+      { id: 'company', label: 'Entreprise' },
+      { id: 'needs', label: 'Besoins / Problème' },
+      { id: 'budget', label: 'Budget' },
+      { id: 'timeline', label: 'Délai / Urgence' },
+      { id: 'reason', label: "Motif d'appel" },
+    ];
+    const PERSONAS = {
+      blank: {
+        name: '', role: '', company: '', industry: '', signature: '',
+        tones: [], traits: [], humor: 'none', style: 'concise',
+        features: [], objectives: ['', ''],
+        dataFields: [], transfer: false, transferCondition: '', transferMessage: '',
+        mustDo: '', mustNot: '', products: '', faq: '',
+      },
+      emma: {
+        name: 'Emma', role: "Assistante d'accueil virtuelle", company: '', industry: 'Services', signature: 'Passez une excellente journée !',
+        tones: ['professional'], traits: ['patient', 'attentive', 'calm'], humor: 'subtle', style: 'balanced',
+        features: ['inform', 'qualify', 'appoint'],
+        objectives: ["Accueillir et orienter les appelants", "Répondre aux questions fréquentes", "Planifier des rendez-vous"],
+        dataFields: ['name', 'reason', 'phone'],
+        transfer: true, transferCondition: 'Demande complexe ou réclamation', transferMessage: 'Je vous transfère vers un conseiller disponible, veuillez patienter.',
+        mustDo: "Se présenter clairement en début d'appel\nParler lentement et articuler\nConfirmer les informations avant de raccrocher",
+        mustNot: "Inventer des informations sur les produits ou services\nPromettre des délais non confirmés",
+        products: '', faq: '',
+      },
+      will: {
+        name: 'Will', role: 'Agent commercial', company: '', industry: 'B2B', signature: 'À très vite pour concrétiser ensemble !',
+        tones: ['dynamic'], traits: ['assertive', 'persuasive', 'proactive'], humor: 'subtle', style: 'balanced',
+        features: ['sell', 'qualify', 'objections', 'upsell'],
+        objectives: ["Qualifier le potentiel du prospect", "Présenter les offres clés", "Conclure ou planifier une démo", "Gérer les objections de prix ou timing"],
+        dataFields: ['name', 'company', 'needs', 'budget', 'timeline'],
+        transfer: true, transferCondition: 'Prospect très qualifié demandant à parler à un commercial senior', transferMessage: "Je vous mets en relation avec l'un de nos experts disponible.",
+        mustDo: "Toujours identifier le besoin avant de pitcher\nRester positif face aux objections\nProposer une suite concrète (démo, devis, rappel)",
+        mustNot: "Dénigrer la concurrence\nAccorder des remises non autorisées\nFaire pression de manière agressive",
+        products: '', faq: '',
+      },
+      leo: {
+        name: 'Léo', role: 'Agent support client', company: '', industry: 'Tech / SaaS', signature: 'Votre satisfaction est notre priorité.',
+        tones: ['empathetic'], traits: ['patient', 'calm', 'precise'], humor: 'none', style: 'detailed',
+        features: ['support', 'inform', 'objections'],
+        objectives: ["Identifier et comprendre le problème", "Apporter une solution ou escalader", "S'assurer de la satisfaction du client"],
+        dataFields: ['name', 'email', 'needs', 'reason'],
+        transfer: true, transferCondition: 'Problème technique complexe ou client très insatisfait', transferMessage: 'Je vous transfère à notre équipe technique niveau 2.',
+        mustDo: "Reformuler le problème pour montrer que vous avez compris\nS'excuser si le client a eu une mauvaise expérience\nConclure en vérifiant que le problème est résolu",
+        mustNot: "Minimiser un problème signalé par le client\nDonner des informations techniques incorrectes\nRaccrocher sans solution ou plan d'action",
+        products: '', faq: '',
+      },
+      sophie: {
+        name: 'Sophie', role: 'Agente de qualification leads', company: '', industry: 'Marketing / Agence', signature: 'À bientôt !',
+        tones: ['friendly'], traits: ['curious', 'proactive', 'attentive'], humor: 'subtle', style: 'concise',
+        features: ['qualify', 'inform', 'appoint'],
+        objectives: ["Qualifier le niveau d'intérêt du prospect", "Collecter les informations de profil", "Planifier un appel de découverte"],
+        dataFields: ['name', 'company', 'needs', 'budget', 'timeline', 'email'],
+        transfer: false, transferCondition: '', transferMessage: '',
+        mustDo: "Poser des questions ouvertes\nÉcouter activement et rebondir sur les réponses\nToujours proposer une prochaine étape",
+        mustNot: "Forcer la prise de RDV\nParler plus que le prospect",
+        products: '', faq: '',
+      },
+      alex: {
+        name: 'Alex', role: 'Agent de prise de rendez-vous', company: '', industry: 'Services professionnels', signature: 'À très vite !',
+        tones: ['professional'], traits: ['precise', 'proactive', 'calm'], humor: 'none', style: 'concise',
+        features: ['appoint', 'qualify', 'inform'],
+        objectives: ["Confirmer l'identité et le motif", "Proposer des créneaux disponibles", "Confirmer et récapituler le RDV"],
+        dataFields: ['name', 'phone', 'email', 'reason'],
+        transfer: false, transferCondition: '', transferMessage: '',
+        mustDo: "Confirmer le créneau choisi clairement\nVérifier le numéro de téléphone de rappel\nRécapituler le RDV en fin d'appel",
+        mustNot: "Proposer des créneaux déjà pris\nOublier de récapituler le RDV en fin d'appel",
+        products: '', faq: '',
+      },
+      marie: {
+        name: 'Marie', role: 'Agente rétention & SAV', company: '', industry: 'E-commerce / Services', signature: 'Merci pour votre fidélité.',
+        tones: ['empathetic'], traits: ['patient', 'calm', 'attentive'], humor: 'subtle', style: 'balanced',
+        features: ['retention', 'objections', 'inform', 'support'],
+        objectives: ["Comprendre la raison de l'insatisfaction", "Proposer une solution ou compensation adaptée", "Fidéliser et maintenir la relation client"],
+        dataFields: ['name', 'email', 'reason', 'needs'],
+        transfer: true, transferCondition: "Client souhaitant résilier malgré une offre de rétention", transferMessage: 'Je vous transfère vers notre service spécialisé.',
+        mustDo: "Remercier le client pour sa fidélité\nRechercher la cause profonde de l'insatisfaction\nProposer une offre ou solution concrète",
+        mustNot: "Laisser le client raccrocher sans avoir tenté une rétention\nInventer une offre non approuvée",
+        products: '', faq: '',
+      },
+    };
+
+    const state = {
+      selectedTone: '',
+      selectedTraits: [],
+      selectedHumor: 'none',
+      selectedStyle: 'concise',
+      selectedFeatures: [],
+      selectedDataFields: [],
+      transferEnabled: false,
+      tools: [],
+      objectives: ['', ''],
+    };
+
+    function chipClass(active) {
+      return active
+        ? 'byv-chip px-4 py-2 rounded-full text-sm font-medium border border-primary bg-primary/10 text-primary transition-colors'
+        : 'byv-chip px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-600 hover:border-primary hover:text-primary transition-colors';
+    }
+
+    function renderChips(containerId, items, type) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      container.innerHTML = '';
+      items.forEach(item => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.dataset.type = type;
+        btn.dataset.value = item.id;
+        btn.textContent = item.label;
+        btn.className = chipClass(false);
+        btn.addEventListener('click', () => handleChipClick(btn, type));
+        container.appendChild(btn);
+      });
+    }
+
+    function handleChipClick(btn, type) {
+      const value = btn.dataset.value;
+      const isSingle = type === 'tone' || type === 'humor' || type === 'style';
+
+      if (isSingle) {
+        document.querySelectorAll('[data-type="' + type + '"]').forEach(b => { b.className = chipClass(false); });
+        btn.className = chipClass(true);
+        if (type === 'tone') state.selectedTone = value;
+        else if (type === 'humor') state.selectedHumor = value;
+        else if (type === 'style') state.selectedStyle = value;
+      } else {
+        const isActive = btn.className.includes('bg-primary');
+        btn.className = chipClass(!isActive);
+        const arr = type === 'traits' ? state.selectedTraits : type === 'features' ? state.selectedFeatures : state.selectedDataFields;
+        if (isActive) {
+          const idx = arr.indexOf(value);
+          if (idx > -1) arr.splice(idx, 1);
+        } else {
+          arr.push(value);
+        }
+      }
+    }
+
+    function activateChips(containerId, values) {
+      const valArray = Array.isArray(values) ? values : [values];
+      document.querySelectorAll('#' + containerId + ' .byv-chip').forEach(btn => {
+        btn.className = chipClass(valArray.includes(btn.dataset.value));
+      });
+    }
+
+    function renderObjectives() {
+      const list = document.getElementById('objectives-list');
+      if (!list) return;
+      list.innerHTML = '';
+      state.objectives.forEach((val, i) => {
+        const row = document.createElement('div');
+        row.className = 'flex items-center gap-2';
+        const numSpan = document.createElement('span');
+        numSpan.className = 'w-6 h-6 rounded-full bg-slate-100 text-slate-500 text-xs font-bold flex items-center justify-center shrink-0';
+        numSpan.textContent = String(i + 1);
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.value = val;
+        input.placeholder = 'Ex : Qualifier les prospects entrants...';
+        input.className = 'flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors';
+        input.addEventListener('input', () => { state.objectives[i] = input.value; });
+        row.appendChild(numSpan);
+        row.appendChild(input);
+        if (state.objectives.length > 1) {
+          const del = document.createElement('button');
+          del.type = 'button';
+          del.className = 'text-slate-400 hover:text-red-500 transition-colors p-1 shrink-0';
+          del.setAttribute('aria-label', 'Supprimer');
+          del.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+          del.addEventListener('click', () => { state.objectives.splice(i, 1); renderObjectives(); });
+          row.appendChild(del);
+        }
+        list.appendChild(row);
+      });
+      const addBtn = document.getElementById('add-objective-btn');
+      if (addBtn) addBtn.style.display = state.objectives.length >= 5 ? 'none' : 'flex';
+    }
+
+    function renderTools() {
+      const list = document.getElementById('tools-list');
+      if (!list) return;
+      list.innerHTML = '';
+      state.tools.forEach((tool, i) => {
+        const row = document.createElement('div');
+        row.className = 'bg-slate-50 rounded-xl p-4 border border-slate-200';
+        const header = document.createElement('div');
+        header.className = 'flex items-center justify-between mb-3';
+        header.innerHTML = '<span class="text-sm font-semibold text-slate-700">Outil ' + (i + 1) + '</span>';
+        const del = document.createElement('button');
+        del.type = 'button';
+        del.className = 'text-slate-400 hover:text-red-500 transition-colors text-xs';
+        del.textContent = 'Supprimer';
+        del.addEventListener('click', () => { state.tools.splice(i, 1); renderTools(); });
+        header.appendChild(del);
+        const grid = document.createElement('div');
+        grid.className = 'grid grid-cols-1 sm:grid-cols-2 gap-3';
+        const nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.value = tool.name;
+        nameInput.placeholder = 'Nom (ex: CalendlyAPI)';
+        nameInput.className = 'bg-white border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-primary transition-colors';
+        nameInput.addEventListener('input', () => { state.tools[i].name = nameInput.value; });
+        const trigInput = document.createElement('input');
+        trigInput.type = 'text';
+        trigInput.value = tool.trigger;
+        trigInput.placeholder = 'Déclencheur (ex: Quand le prospect veut un RDV)';
+        trigInput.className = 'bg-white border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-900 focus:outline-none focus:border-primary transition-colors';
+        trigInput.addEventListener('input', () => { state.tools[i].trigger = trigInput.value; });
+        grid.appendChild(nameInput);
+        grid.appendChild(trigInput);
+        row.appendChild(header);
+        row.appendChild(grid);
+        list.appendChild(row);
+      });
+    }
+
+    function setTransferUI(enabled) {
+      state.transferEnabled = enabled;
+      const toggle = document.getElementById('transfer-toggle');
+      const knob = document.getElementById('transfer-knob');
+      const fields = document.getElementById('transfer-fields');
+      toggle.setAttribute('aria-checked', enabled ? 'true' : 'false');
+      if (enabled) {
+        toggle.classList.remove('bg-slate-200');
+        toggle.classList.add('bg-primary');
+        knob.classList.add('translate-x-5');
+      } else {
+        toggle.classList.add('bg-slate-200');
+        toggle.classList.remove('bg-primary');
+        knob.classList.remove('translate-x-5');
+      }
+      fields.classList.toggle('hidden', !enabled);
+    }
+
+    function applyPersona(key) {
+      const p = PERSONAS[key];
+      if (!p) return;
+      document.getElementById('byv-name').value = p.name;
+      document.getElementById('byv-role').value = p.role;
+      document.getElementById('byv-company').value = p.company;
+      document.getElementById('byv-industry').value = p.industry;
+      document.getElementById('byv-signature').value = p.signature;
+      state.selectedTone = p.tones[0] || '';
+      state.selectedTraits = [...p.traits];
+      state.selectedHumor = p.humor;
+      state.selectedStyle = p.style;
+      state.selectedFeatures = [...p.features];
+      state.selectedDataFields = [...p.dataFields];
+      state.objectives = [...p.objectives];
+      activateChips('tone-chips', p.tones[0] || '');
+      activateChips('traits-chips', p.traits);
+      activateChips('humor-chips', p.humor);
+      activateChips('style-chips', p.style);
+      activateChips('features-chips', p.features);
+      activateChips('data-chips', p.dataFields);
+      renderObjectives();
+      setTransferUI(p.transfer);
+      document.getElementById('byv-transfer-condition').value = p.transferCondition;
+      document.getElementById('byv-transfer-message').value = p.transferMessage;
+      document.getElementById('byv-must-do').value = p.mustDo;
+      document.getElementById('byv-must-not').value = p.mustNot;
+      document.getElementById('byv-knowledge-products').value = p.products;
+      document.getElementById('byv-knowledge-faq').value = p.faq;
+      document.querySelectorAll('.persona-card').forEach(card => {
+        const isSelected = card.dataset.persona === key;
+        card.classList.toggle('border-primary', isSelected);
+        card.classList.toggle('border-slate-200', !isSelected);
+      });
+      document.getElementById('form-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function generatePrompt() {
+      const name = document.getElementById('byv-name').value.trim() || 'Assistant';
+      const role = document.getElementById('byv-role').value.trim() || 'Agent vocal';
+      const company = document.getElementById('byv-company').value.trim();
+      const industry = document.getElementById('byv-industry').value.trim();
+      const signature = document.getElementById('byv-signature').value.trim();
+      const toneLabel = TONES.find(t => t.id === state.selectedTone) ? TONES.find(t => t.id === state.selectedTone).label : '';
+      const traitLabels = state.selectedTraits.map(t => { const f = TRAITS.find(tr => tr.id === t); return f ? f.label : t; });
+      const humorLabel = HUMORS.find(h => h.id === state.selectedHumor) ? HUMORS.find(h => h.id === state.selectedHumor).label : '';
+      const styleLabel = STYLES.find(s => s.id === state.selectedStyle) ? STYLES.find(s => s.id === state.selectedStyle).label : '';
+      const featureLabels = state.selectedFeatures.map(f => { const fe = FEATURES.find(x => x.id === f); return fe ? fe.label : f; });
+      const dataLabels = state.selectedDataFields.map(d => { const df = DATA_FIELDS.find(x => x.id === d); return df ? df.label : d; });
+      const objectives = state.objectives.filter(o => o.trim());
+      const mustDo = document.getElementById('byv-must-do').value.trim().split('\n').filter(l => l.trim());
+      const mustNot = document.getElementById('byv-must-not').value.trim().split('\n').filter(l => l.trim());
+      const products = document.getElementById('byv-knowledge-products').value.trim();
+      const faq = document.getElementById('byv-knowledge-faq').value.trim();
+      const transferCondition = document.getElementById('byv-transfer-condition').value.trim();
+      const transferMessage = document.getElementById('byv-transfer-message').value.trim();
+      const tools = state.tools.filter(t => t.name.trim());
+
+      let prompt = '# PROMPT SYSTÈME — ' + name.toUpperCase() + '\n';
+      prompt += '# Généré par Mindeon.ai BuildYourVoice\n\n';
+      prompt += '---\n\n';
+      prompt += '## IDENTITÉ\n';
+      prompt += 'Tu t\'appelles ' + name + '. Tu es ' + role;
+      if (company) prompt += ' pour ' + company;
+      if (industry) prompt += ', dans le secteur ' + industry;
+      prompt += '.\n';
+      if (signature) prompt += '\nEn fin d\'appel, tu utilises systématiquement ta phrase signature :\n"' + signature + '"\n';
+      prompt += '\n---\n\n';
+      prompt += '## PERSONNALITÉ & STYLE DE COMMUNICATION\n';
+      if (toneLabel) prompt += 'Ton principal : ' + toneLabel + '\n';
+      if (traitLabels.length) prompt += 'Traits de caractère : ' + traitLabels.join(', ') + '\n';
+      if (humorLabel) prompt += 'Humour : ' + humorLabel + '\n';
+      if (styleLabel) prompt += 'Style de réponse : ' + styleLabel + '\n';
+      prompt += '\n---\n';
+      if (featureLabels.length) {
+        prompt += '\n## FONCTIONNALITÉS\nTu es capable de :\n';
+        featureLabels.forEach(f => { prompt += '- ' + f + '\n'; });
+        prompt += '\n---\n';
+      }
+      if (objectives.length) {
+        prompt += '\n## OBJECTIFS PRINCIPAUX\n';
+        objectives.forEach((o, i) => { prompt += (i + 1) + '. ' + o + '\n'; });
+        prompt += '\n---\n';
+      }
+      if (dataLabels.length) {
+        prompt += '\n## DONNÉES À COLLECTER\nTu dois impérativement collecter les informations suivantes au cours de l\'appel :\n';
+        dataLabels.forEach(d => { prompt += '- ' + d + '\n'; });
+        prompt += '\n---\n';
+      }
+      if (state.transferEnabled && transferCondition) {
+        prompt += '\n## TRANSFERT HUMAIN\n';
+        prompt += 'Conditions de transfert : ' + transferCondition + '\n';
+        if (transferMessage) prompt += 'Message de transition : "' + transferMessage + '"\n';
+        prompt += '\n---\n';
+      }
+      if (mustDo.length) {
+        prompt += '\n## RÈGLES — CE QUE TU DOIS TOUJOURS FAIRE\n';
+        mustDo.forEach(r => { prompt += '- ' + r + '\n'; });
+        prompt += '\n---\n';
+      }
+      if (mustNot.length) {
+        prompt += '\n## RÈGLES — CE QUE TU NE DOIS JAMAIS FAIRE\n';
+        mustNot.forEach(r => { prompt += '- ' + r + '\n'; });
+        prompt += '\n---\n';
+      }
+      if (products || faq) {
+        prompt += '\n## BASE DE CONNAISSANCE\n';
+        if (products) prompt += '### Produits & Services\n' + products + '\n\n';
+        if (faq) prompt += '### FAQ\n' + faq + '\n\n';
+        prompt += '---\n';
+      }
+      if (tools.length) {
+        prompt += '\n## OUTILS & INTÉGRATIONS\nTu as accès aux outils suivants :\n';
+        tools.forEach(t => { prompt += '- ' + t.name + (t.trigger ? ' → ' + t.trigger : '') + '\n'; });
+        prompt += '\n---\n';
+      }
+      prompt += '\n# FIN DU PROMPT — ' + name.toUpperCase();
+
+      document.getElementById('output-prompt').textContent = prompt;
+      const out = document.getElementById('output-section');
+      out.classList.remove('hidden');
+      out.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      renderChips('tone-chips', TONES, 'tone');
+      renderChips('traits-chips', TRAITS, 'traits');
+      renderChips('humor-chips', HUMORS, 'humor');
+      renderChips('style-chips', STYLES, 'style');
+      renderChips('features-chips', FEATURES, 'features');
+      renderChips('data-chips', DATA_FIELDS, 'data');
+      renderObjectives();
+
+      document.getElementById('transfer-toggle').addEventListener('click', function () {
+        setTransferUI(!state.transferEnabled);
+      });
+
+      document.getElementById('add-objective-btn').addEventListener('click', function () {
+        if (state.objectives.length < 5) { state.objectives.push(''); renderObjectives(); }
+      });
+
+      document.getElementById('tools-toggle-btn').addEventListener('click', function () {
+        const section = document.getElementById('tools-section');
+        const hidden = section.classList.toggle('hidden');
+        this.textContent = hidden ? 'Afficher' : 'Masquer';
+      });
+
+      document.getElementById('add-tool-btn').addEventListener('click', function () {
+        if (state.tools.length < 5) { state.tools.push({ name: '', trigger: '' }); renderTools(); }
+      });
+
+      document.querySelectorAll('.persona-card').forEach(function (card) {
+        card.addEventListener('click', function () { applyPersona(card.dataset.persona); });
+      });
+
+      document.getElementById('generate-btn').addEventListener('click', generatePrompt);
+
+      document.getElementById('copy-btn').addEventListener('click', function () {
+        const text = document.getElementById('output-prompt').textContent;
+        navigator.clipboard.writeText(text).then(function () {
+          document.getElementById('copy-label').textContent = '✓ Copié !';
+          document.getElementById('copy-btn').classList.add('bg-green-600');
+          setTimeout(function () {
+            document.getElementById('copy-label').textContent = 'Copier';
+            document.getElementById('copy-btn').classList.remove('bg-green-600');
+          }, 2000);
+        });
+      });
+    });
+  </script>
+
+</BaseLayout>
