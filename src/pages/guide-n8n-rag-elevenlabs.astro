@@ -1,0 +1,787 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Voice Bot RAG avec n8n, ElevenLabs et Qdrant — Guide Complet | Mindeon.ai"
+  description="Créez un agent vocal intelligent qui répond depuis vos propres documents. Guide pas à pas : ElevenLabs + n8n + Qdrant + OpenAI. Aucune ligne de code."
+  pathname="/guide-n8n-rag-elevenlabs/"
+>
+
+<style>
+  .step-card {
+    background: white;
+    border-radius: 1.5rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    padding: 2rem;
+  }
+  .step-num {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 1rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .action-step {
+    position: relative;
+    background: #eff6ff;
+    border-left: 3px solid #2563eb;
+    border-radius: 0 0.75rem 0.75rem 0;
+    padding: 0.75rem 1rem 0.75rem 2.25rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: #1e3a5f;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  .action-step::before {
+    content: '→';
+    position: absolute;
+    left: 0.75rem;
+    top: 0.8rem;
+    color: #2563eb;
+    font-weight: 800;
+  }
+  .node-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #334155;
+    font-family: ui-monospace, monospace;
+  }
+  .code-block {
+    background: #0f172a;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    font-size: 0.8rem;
+    font-family: ui-monospace, monospace;
+    color: #e2e8f0;
+    overflow-x: auto;
+    margin: 1rem 0;
+    line-height: 1.7;
+  }
+  .code-block pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .cb-comment { color: #64748b; }
+  .cb-key { color: #7dd3fc; }
+  .cb-val { color: #86efac; }
+  .arch-node-green { border-color: #22c55e; color: #86efac; }
+  .arch-node-violet { border-color: #a78bfa; color: #c4b5fd; }
+  .arch-flow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    background: #0f172a;
+    border-radius: 1rem;
+    margin: 1rem 0;
+  }
+  .arch-node {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.875rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    white-space: nowrap;
+  }
+  .arch-arrow {
+    color: #2563eb;
+    font-weight: 800;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+</style>
+
+  <!-- Hero -->
+  <section class="bg-slate-900 pt-16 pb-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <a href="/guides/" class="inline-flex items-center gap-2 text-slate-400 hover:text-white text-sm font-medium mb-10 transition-colors group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-0.5 transition-transform" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        Retour aux guides
+      </a>
+      <div class="flex flex-wrap gap-2 mb-5">
+        <span class="inline-block px-3 py-1 rounded-full bg-blue-900/50 text-blue-300 text-xs font-bold tracking-wider uppercase">n8n</span>
+        <span class="inline-block px-3 py-1 rounded-full bg-violet-900/50 text-violet-300 text-xs font-bold tracking-wider uppercase">ElevenLabs</span>
+        <span class="inline-block px-3 py-1 rounded-full bg-emerald-900/50 text-emerald-300 text-xs font-bold tracking-wider uppercase">Qdrant</span>
+        <span class="inline-block px-3 py-1 rounded-full bg-orange-900/50 text-orange-300 text-xs font-bold tracking-wider uppercase">RAG</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.1] mb-5">
+        Voice Bot RAG avec<br class="hidden md:block" /> n8n + ElevenLabs + Qdrant
+      </h1>
+      <p class="text-slate-400 text-lg max-w-2xl mb-8">
+        Créez un agent vocal qui répond depuis vos propres documents — FAQ, menu, catalogue produit, base de connaissances — sans écrire une seule ligne de code.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <div class="flex items-center gap-2 bg-slate-800 px-4 py-2.5 rounded-xl text-sm text-slate-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          5 parties · 7 étapes
+        </div>
+        <div class="flex items-center gap-2 bg-slate-800 px-4 py-2.5 rounded-xl text-sm text-slate-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ~35 minutes
+        </div>
+        <div class="flex items-center gap-2 bg-slate-800 px-4 py-2.5 rounded-xl text-sm text-slate-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Niveau intermédiaire
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you'll build -->
+  <section class="bg-slate-800 py-10 border-b border-slate-700">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Ce que vous allez construire</h2>
+      <p class="text-slate-300 text-sm mb-5">Un agent vocal disponible 24h/24 sur votre site, capable de répondre à toutes les questions sur votre activité en puisant dans vos documents Google Drive.</p>
+      <div class="space-y-3">
+        <div>
+          <p class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Pipeline d'ingestion (1 fois)</p>
+          <div class="arch-flow">
+            <span class="arch-node">Google Drive</span>
+            <span class="arch-arrow">→</span>
+            <span class="arch-node">n8n</span>
+            <span class="arch-arrow">→</span>
+            <span class="arch-node">Découpage texte</span>
+            <span class="arch-arrow">→</span>
+            <span class="arch-node">OpenAI Embeddings</span>
+            <span class="arch-arrow">→</span>
+            <span class="arch-node arch-node-green">Qdrant</span>
+          </div>
+        </div>
+        <div>
+          <p class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">Pipeline de conversation (temps réel)</p>
+          <div class="arch-flow">
+            <span class="arch-node arch-node-violet">Utilisateur parle</span>
+            <span class="arch-arrow">→</span>
+            <span class="arch-node arch-node-violet">ElevenLabs</span>
+            <span class="arch-arrow">→</span>
+            <span class="arch-node">Webhook n8n</span>
+            <span class="arch-arrow">→</span>
+            <span class="arch-node">AI Agent</span>
+            <span class="arch-arrow">→</span>
+            <span class="arch-node arch-node-green">Qdrant (recherche)</span>
+            <span class="arch-arrow">→</span>
+            <span class="arch-node">OpenAI GPT-4o</span>
+            <span class="arch-arrow">→</span>
+            <span class="arch-node arch-node-violet">ElevenLabs (voix)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prerequisites -->
+  <section class="bg-slate-50 py-10 border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-5">Prérequis</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {[
+          { name: 'n8n', detail: 'Cloud ou self-hosted', color: 'bg-orange-50 border-orange-100 text-orange-800' },
+          { name: 'ElevenLabs', detail: 'Plan Creator ou +', color: 'bg-violet-50 border-violet-100 text-violet-800' },
+          { name: 'Qdrant Cloud', detail: 'Gratuit disponible', color: 'bg-emerald-50 border-emerald-100 text-emerald-800' },
+          { name: 'OpenAI API', detail: 'Clé API nécessaire', color: 'bg-slate-100 border-slate-200 text-slate-800' },
+        ].map(item => (
+          <div class={`rounded-2xl border p-4 ${item.color}`}>
+            <p class="font-bold text-sm">{item.name}</p>
+            <p class="text-xs mt-0.5 opacity-70">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-slate-500 text-xs mt-4">Vous aurez aussi besoin d'un dossier <strong>Google Drive</strong> contenant vos documents (PDF, Google Docs, fichiers texte).</p>
+    </div>
+  </section>
+
+  <!-- Table of Contents -->
+  <section class="bg-white py-10 border-b border-slate-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-5">Sommaire</h2>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+        {[
+          { num: '1', title: 'Agent ElevenLabs', steps: 'Étapes 1 → 2', time: '10 min', color: 'bg-violet-50 border-violet-100' },
+          { num: '2', title: 'Collection Qdrant', steps: 'Étape 3', time: '5 min', color: 'bg-emerald-50 border-emerald-100' },
+          { num: '3', title: 'Ingestion docs', steps: 'Étapes 4 → 5', time: '10 min', color: 'bg-orange-50 border-orange-100' },
+          { num: '4', title: 'Agent RAG n8n', steps: 'Étape 6', time: '10 min', color: 'bg-blue-50 border-blue-100' },
+          { num: '5', title: 'Widget & test', steps: 'Étape 7', time: '5 min', color: 'bg-slate-50 border-slate-200' },
+        ].map(part => (
+          <a href={`#partie-${part.num}`} class={`rounded-2xl border p-4 hover:shadow-sm transition-all group ${part.color}`}>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-5 h-5 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">{part.num}</span>
+              <span class="text-xs text-slate-500">{part.time}</span>
+            </div>
+            <p class="text-sm font-bold text-slate-900 group-hover:text-primary transition-colors leading-tight">{part.title}</p>
+            <p class="text-xs text-slate-500 mt-1">{part.steps}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="bg-slate-50 py-16">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <!-- PARTIE 1 -->
+      <div id="partie-1" class="mb-16">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="w-10 h-10 rounded-2xl bg-violet-600 text-white text-lg font-extrabold flex items-center justify-center shrink-0">1</span>
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Créer l'agent ElevenLabs</h2>
+            <p class="text-slate-500 text-sm mt-0.5">10 min · Étapes 1 → 2</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <!-- Étape 1 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">1</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Créer l'agent sur ElevenLabs</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">ElevenLabs est la plateforme de référence pour les voix IA. Son module <strong>Conversational AI</strong> permet de créer des agents vocaux capables d'appeler des webhooks externes — c'est le pont entre la voix de l'utilisateur et votre workflow n8n.</p>
+
+            <p class="action-step">Connectez-vous sur <strong>elevenlabs.io</strong>, puis naviguez vers <strong>Products → Conversational AI → Agents</strong> et cliquez sur <strong>Create Agent</strong>.</p>
+            <p class="action-step">Sélectionnez <strong>Blank Agent</strong> pour partir d'une configuration vide.</p>
+            <p class="action-step">Donnez un nom à votre agent (ex. : <code class="bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono">assistant-entreprise</code>), puis dans le champ <strong>First Message</strong>, entrez le message d'accueil que l'agent dira au démarrage de chaque conversation.</p>
+
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4">
+              <p class="text-sm font-bold text-slate-700 mb-2">Exemple de First Message :</p>
+              <p class="text-sm text-slate-600 italic">"Bonjour, je suis l'assistant de [Votre Entreprise]. Comment puis-je vous aider aujourd'hui ?"</p>
+            </div>
+
+            <p class="action-step">Dans le champ <strong>System Prompt</strong>, décrivez le rôle et le comportement de l'agent. Précisez qu'il doit utiliser son outil webhook pour toutes les questions métier.</p>
+
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4">
+              <p class="text-sm font-bold text-slate-700 mb-2">Exemple de System Prompt :</p>
+              <div class="code-block"><pre><span class="cb-comment">// Adaptez ce prompt à votre activité</span>
+Vous êtes l'assistant virtuel de [Nom de l'entreprise].
+Pour toute question sur nos produits, services, horaires
+ou informations pratiques, utilisez l'outil "assistant_rag".
+Répondez de manière claire, concise et professionnelle.
+Restez toujours dans le périmètre de votre base de connaissances.</pre></div>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-100 rounded-2xl p-4 my-4">
+              <p class="text-sm font-bold text-amber-900 mb-1">Conseil</p>
+              <p class="text-sm text-amber-800">Soyez précis dans le System Prompt sur quand utiliser le webhook. Plus l'instruction est claire, plus l'agent sera fiable pour déclencher le bon outil au bon moment.</p>
+            </div>
+          </div>
+
+          <!-- Étape 2 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">2</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Configurer le webhook ElevenLabs → n8n</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">C'est le maillon clé : chaque fois que l'agent ElevenLabs veut répondre à une question, il appelle ce webhook n8n qui exécute la recherche RAG et lui renvoie la réponse.</p>
+
+            <p class="action-step">Dans la configuration de votre agent, faites défiler jusqu'à la section <strong>Tools</strong> et cliquez sur <strong>Add Tool</strong>, puis choisissez <strong>Webhook</strong>.</p>
+            <p class="action-step">Configurez le webhook avec ces paramètres :</p>
+
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4 space-y-3">
+              <div class="grid grid-cols-3 gap-2 text-sm">
+                <span class="text-slate-500 font-medium">Name</span>
+                <span class="col-span-2 font-mono bg-white border border-slate-200 rounded px-2 py-0.5 text-slate-800">assistant_rag</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-sm">
+                <span class="text-slate-500 font-medium">Description</span>
+                <span class="col-span-2 text-slate-700 italic">"Répond aux questions sur l'entreprise. Stocke la question dans le champ question."</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-sm">
+                <span class="text-slate-500 font-medium">Method</span>
+                <span class="col-span-2 font-mono bg-white border border-slate-200 rounded px-2 py-0.5 text-slate-800">POST</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-sm">
+                <span class="text-slate-500 font-medium">URL</span>
+                <span class="col-span-2 text-slate-500 italic">À renseigner à l'étape 6 (URL du webhook n8n)</span>
+              </div>
+            </div>
+
+            <p class="action-step">Activez <strong>Body Parameters</strong> et ajoutez un paramètre avec ces valeurs :</p>
+
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4 space-y-3">
+              <div class="grid grid-cols-3 gap-2 text-sm">
+                <span class="text-slate-500 font-medium">Name</span>
+                <span class="col-span-2 font-mono bg-white border border-slate-200 rounded px-2 py-0.5 text-slate-800">question</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-sm">
+                <span class="text-slate-500 font-medium">Data Type</span>
+                <span class="col-span-2 font-mono bg-white border border-slate-200 rounded px-2 py-0.5 text-slate-800">string</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-sm">
+                <span class="text-slate-500 font-medium">Value Type</span>
+                <span class="col-span-2 font-mono bg-white border border-slate-200 rounded px-2 py-0.5 text-slate-800">LLM Prompt</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-sm">
+                <span class="text-slate-500 font-medium">Description</span>
+                <span class="col-span-2 text-slate-700 italic">"La question posée par l'utilisateur"</span>
+              </div>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4 my-4">
+              <p class="text-sm font-bold text-blue-900 mb-1">Comment ça fonctionne</p>
+              <p class="text-sm text-blue-700">ElevenLabs intercepte la question de l'utilisateur, la place dans le champ <code class="bg-blue-100 px-1 rounded font-mono">question</code>, et envoie un POST à n8n. n8n renvoie la réponse, et ElevenLabs la vocalise instantanément.</p>
+            </div>
+
+            <p class="action-step">Récupérez l'<strong>Agent ID</strong> de votre agent (visible dans l'URL ou les paramètres) — vous en aurez besoin à l'étape 7.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PARTIE 2 -->
+      <div id="partie-2" class="mb-16">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="w-10 h-10 rounded-2xl bg-emerald-600 text-white text-lg font-extrabold flex items-center justify-center shrink-0">2</span>
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Configurer Qdrant</h2>
+            <p class="text-slate-500 text-sm mt-0.5">5 min · Étape 3</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <!-- Étape 3 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">3</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Créer votre base vectorielle Qdrant</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">Qdrant est une base de données vectorielle open source. Elle stocke vos documents sous forme de vecteurs numériques et permet des recherches sémantiques ultra-rapides — la colonne vertébrale de tout système RAG.</p>
+
+            <p class="action-step">Créez un compte gratuit sur <strong>cloud.qdrant.io</strong>, puis créez un nouveau cluster en choisissant la région la plus proche (pour minimiser la latence).</p>
+            <p class="action-step">Une fois le cluster créé, récupérez deux informations essentielles dans les paramètres de votre cluster :</p>
+
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4 space-y-3">
+              <div class="flex items-start gap-3">
+                <span class="text-primary font-bold text-sm shrink-0 mt-0.5">①</span>
+                <div>
+                  <p class="text-sm font-bold text-slate-800">URL du cluster</p>
+                  <p class="text-xs text-slate-500 mt-0.5">Format : <code class="bg-slate-100 px-1 rounded font-mono">https://xxxx-xxxx.eu-central.aws.cloud.qdrant.io</code></p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-primary font-bold text-sm shrink-0 mt-0.5">②</span>
+                <div>
+                  <p class="text-sm font-bold text-slate-800">API Key</p>
+                  <p class="text-xs text-slate-500 mt-0.5">Générée dans <strong>Access → API Keys</strong> de votre dashboard Qdrant</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="action-step">Dans n8n, créez une <strong>credential</strong> de type <strong>HTTP Header Auth</strong> avec : Header Name = <code class="bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono">api-key</code>, Value = votre clé API Qdrant. Vous l'utiliserez dans les nodes HTTP Request des étapes suivantes.</p>
+
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4 my-4">
+              <p class="text-sm font-bold text-blue-900 mb-1">Pourquoi Qdrant plutôt que Pinecone ou Supabase ?</p>
+              <p class="text-sm text-blue-700">Qdrant est open source, très performant et dispose d'un plan cloud gratuit généreux. n8n intègre un node natif <code class="bg-blue-100 px-1 rounded font-mono">Qdrant Vector Store</code> qui simplifie considérablement la configuration.</p>
+            </div>
+
+            <p class="action-step">Choisissez un nom pour votre collection (ex. : <code class="bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono">knowledge-base</code>) et notez-le — vous l'utiliserez à chaque étape suivante à la place de <code class="bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono">COLLECTION</code>.</p>
+
+            <div class="bg-amber-50 border border-amber-100 rounded-2xl p-4 my-4">
+              <p class="text-sm font-bold text-amber-900 mb-1">La collection est créée automatiquement</p>
+              <p class="text-sm text-amber-800">Vous n'avez pas besoin de créer la collection manuellement dans Qdrant. Le workflow n8n inclut un node HTTP Request dédié qui la crée lors du premier lancement.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PARTIE 3 -->
+      <div id="partie-3" class="mb-16">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="w-10 h-10 rounded-2xl bg-orange-500 text-white text-lg font-extrabold flex items-center justify-center shrink-0">3</span>
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Vectoriser vos documents</h2>
+            <p class="text-slate-500 text-sm mt-0.5">10 min · Étapes 4 → 5</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <!-- Étape 4 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">4</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Préparer vos documents sur Google Drive</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">Le workflow lit les documents directement depuis un dossier Google Drive. C'est l'approche la plus flexible : modifiez vos documents, relancez le workflow, votre agent se met à jour automatiquement.</p>
+
+            <p class="action-step">Créez un dossier dédié sur votre Google Drive (ex. : <code class="bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono">knowledge-base-agent</code>) et déposez-y vos documents.</p>
+
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4">
+              <p class="text-sm font-bold text-slate-700 mb-3">Formats acceptés :</p>
+              <div class="grid grid-cols-2 gap-2 text-sm text-slate-600">
+                <div class="flex items-center gap-2"><span class="text-primary">✓</span> Google Docs (converti en texte)</div>
+                <div class="flex items-center gap-2"><span class="text-primary">✓</span> PDF</div>
+                <div class="flex items-center gap-2"><span class="text-primary">✓</span> Fichiers .txt</div>
+                <div class="flex items-center gap-2"><span class="text-primary">✓</span> Google Sheets</div>
+              </div>
+              <p class="text-xs text-slate-500 mt-3"><strong>Conseil :</strong> structurez vos documents en sections claires avec des titres. Le RAG sera plus précis si les informations sont bien organisées.</p>
+            </div>
+
+            <p class="action-step">Notez l'<strong>ID du dossier</strong> Google Drive (visible dans l'URL : <code class="bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono">drive.google.com/drive/folders/<strong>[ID]</strong></code>). Vous le renseignerez dans le node <span class="node-badge">Get folder</span> à l'étape suivante.</p>
+          </div>
+
+          <!-- Étape 5 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">5</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Configurer le workflow d'ingestion dans n8n</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">Ce workflow (déclenché manuellement) lit tous vos documents Drive, les découpe en petits morceaux, les convertit en vecteurs OpenAI, et les stocke dans Qdrant. À relancer à chaque mise à jour de vos documents.</p>
+
+            <p class="action-step">Importez le workflow JSON fourni dans n8n via <strong>Workflows → Import from file</strong>.</p>
+
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">Voici les nodes à configurer, dans l'ordre :</p>
+
+            <div class="space-y-4 my-4">
+
+              <div class="bg-slate-50 rounded-xl border border-slate-100 p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="node-badge">Create collection</span>
+                  <span class="text-xs text-slate-400">+ </span>
+                  <span class="node-badge">Refresh collection</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-2">Ces deux nodes HTTP Request créent la collection Qdrant et suppriment les anciens vecteurs avant d'insérer les nouveaux. Remplacez dans les deux nodes :</p>
+                <ul class="space-y-1 text-sm text-slate-600">
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> <code class="bg-slate-100 px-1.5 rounded font-mono">QDRANTURL</code> par l'URL de votre cluster Qdrant</li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> <code class="bg-slate-100 px-1.5 rounded font-mono">COLLECTION</code> par le nom de votre collection</li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Sélectionnez la credential <strong>HTTP Header Auth</strong> créée à l'étape 3</li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-50 rounded-xl border border-slate-100 p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="node-badge">Get folder</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-2">Liste les fichiers de votre dossier Google Drive. Configurez :</p>
+                <ul class="space-y-1 text-sm text-slate-600">
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Connectez votre compte Google Drive via OAuth</li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Dans <strong>Folder ID</strong>, entrez l'ID du dossier noté à l'étape 4</li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-50 rounded-xl border border-slate-100 p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="node-badge">Download Files</span>
+                </div>
+                <p class="text-sm text-slate-600">Ce node télécharge chaque fichier. Le champ <strong>File ID</strong> est déjà configuré avec <code class="bg-slate-100 px-1.5 rounded font-mono">{'={{ $json.id }}'}</code> pour prendre l'ID dynamiquement depuis <span class="node-badge">Get folder</span>. Les Google Docs sont automatiquement convertis en texte brut.</p>
+              </div>
+
+              <div class="bg-slate-50 rounded-xl border border-slate-100 p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="node-badge">Qdrant Vector Store1</span>
+                  <span class="text-xs text-slate-400">+</span>
+                  <span class="node-badge">Embeddings OpenAI1</span>
+                  <span class="text-xs text-slate-400">+</span>
+                  <span class="node-badge">Default Data Loader</span>
+                  <span class="text-xs text-slate-400">+</span>
+                  <span class="node-badge">Token Splitter</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-2">Ce groupe de nodes gère la vectorisation et le stockage :</p>
+                <ul class="space-y-1 text-sm text-slate-600">
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Dans <span class="node-badge">Qdrant Vector Store1</span> : mode <strong>Insert</strong>, collection = votre nom de collection, credentials Qdrant</li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Dans <span class="node-badge">Embeddings OpenAI1</span> : connectez votre clé API OpenAI (modèle <code class="bg-slate-100 px-1.5 rounded font-mono">text-embedding-ada-002</code> par défaut)</li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> <span class="node-badge">Token Splitter</span> : chunk size = <strong>300</strong>, overlap = <strong>30</strong> (paramètres optimaux pour la plupart des cas)</li>
+                </ul>
+              </div>
+
+            </div>
+
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4 my-4">
+              <p class="text-sm font-bold text-blue-900 mb-2">Le découpage en chunks (Token Splitter)</p>
+              <p class="text-sm text-blue-700">Vos documents sont découpés en morceaux de 300 tokens (~225 mots) avec un chevauchement de 30 tokens. Le chevauchement évite de perdre du contexte entre deux chunks. Chaque chunk est ensuite converti en un vecteur de 1536 dimensions par OpenAI Embeddings.</p>
+            </div>
+
+            <p class="action-step">Une fois tous les nodes configurés, cliquez sur <strong>Test workflow</strong> (bouton en bas de l'éditeur). Vérifiez dans votre dashboard Qdrant que la collection contient bien des points (vecteurs) après l'exécution.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PARTIE 4 -->
+      <div id="partie-4" class="mb-16">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="w-10 h-10 rounded-2xl bg-primary text-white text-lg font-extrabold flex items-center justify-center shrink-0">4</span>
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Configurer l'agent RAG dans n8n</h2>
+            <p class="text-slate-500 text-sm mt-0.5">10 min · Étape 6</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <!-- Étape 6 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">6</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Assembler le workflow RAG</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">Ce workflow s'exécute en temps réel à chaque question d'un utilisateur. Il reçoit la question via webhook, interroge Qdrant, génère une réponse avec GPT-4o, et la renvoie à ElevenLabs en quelques secondes.</p>
+
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4">
+              <p class="text-sm font-bold text-slate-700 mb-3">Architecture du workflow RAG :</p>
+              <div class="space-y-2 text-sm text-slate-600">
+                <div class="flex items-start gap-2">
+                  <span class="text-primary font-bold shrink-0">①</span>
+                  <span><span class="node-badge">Listen</span> — reçoit le POST d'ElevenLabs avec <code class="bg-slate-100 px-1.5 rounded font-mono">{'{ "question": "..." }'}</code></span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-primary font-bold shrink-0">②</span>
+                  <span><span class="node-badge">AI Agent</span> — orchestre la réponse en utilisant ses sous-nodes</span>
+                </div>
+                <div class="flex items-start gap-2 ml-5">
+                  <span class="text-slate-400 font-bold shrink-0">↳</span>
+                  <span><span class="node-badge">OpenAI</span> — le LLM principal (GPT-4o) qui formule la réponse</span>
+                </div>
+                <div class="flex items-start gap-2 ml-5">
+                  <span class="text-slate-400 font-bold shrink-0">↳</span>
+                  <span><span class="node-badge">Window Buffer Memory</span> — mémorise les N derniers échanges pour une conversation cohérente</span>
+                </div>
+                <div class="flex items-start gap-2 ml-5">
+                  <span class="text-slate-400 font-bold shrink-0">↳</span>
+                  <span><span class="node-badge">Vector Store Tool</span> — outil de recherche dans Qdrant, lui-même alimenté par :</span>
+                </div>
+                <div class="flex items-start gap-2 ml-10">
+                  <span class="text-slate-300 font-bold shrink-0">↳</span>
+                  <span><span class="node-badge">Qdrant Vector Store</span> (mode retrieve) + <span class="node-badge">Embeddings OpenAI</span> + <span class="node-badge">OpenAI Chat Model</span></span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-primary font-bold shrink-0">③</span>
+                  <span><span class="node-badge">Respond to ElevenLabs</span> — renvoie la réponse au webhook ElevenLabs</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">Configurez chaque node dans l'ordre :</p>
+
+            <div class="space-y-4 my-4">
+
+              <div class="bg-slate-50 rounded-xl border border-slate-100 p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="node-badge">Listen</span>
+                  <span class="text-xs text-slate-500">Webhook trigger</span>
+                </div>
+                <ul class="space-y-1 text-sm text-slate-600">
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> HTTP Method : <strong>POST</strong></li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Path : <code class="bg-slate-100 px-1.5 rounded font-mono">test_voice_message_elevenlabs</code> (ou le nom de votre choix)</li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Respond : <strong>Using Respond to Webhook Node</strong></li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Copiez l'URL webhook générée — vous en aurez besoin pour l'étape 2 (outil ElevenLabs)</li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-50 rounded-xl border border-slate-100 p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="node-badge">AI Agent</span>
+                </div>
+                <ul class="space-y-1 text-sm text-slate-600">
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Prompt Type : <strong>Define</strong></li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Text : <code class="bg-slate-100 px-1.5 rounded font-mono">{'={{ $json.body.question }}'}</code></li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-50 rounded-xl border border-slate-100 p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="node-badge">OpenAI</span>
+                  <span class="text-xs text-slate-500">LLM principal de l'AI Agent</span>
+                </div>
+                <ul class="space-y-1 text-sm text-slate-600">
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Connectez votre clé API OpenAI</li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Modèle recommandé : <code class="bg-slate-100 px-1.5 rounded font-mono">gpt-4o</code> (meilleur rapport qualité/vitesse)</li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-50 rounded-xl border border-slate-100 p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="node-badge">Vector Store Tool</span>
+                </div>
+                <ul class="space-y-1 text-sm text-slate-600">
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Name : <code class="bg-slate-100 px-1.5 rounded font-mono">company</code> (ou un nom descriptif)</li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Description : <em>"Répond aux questions relatives à l'entreprise"</em> — plus c'est précis, mieux l'agent sait quand utiliser cet outil</li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-50 rounded-xl border border-slate-100 p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="node-badge">Qdrant Vector Store</span>
+                  <span class="text-xs text-slate-500">Mode retrieval</span>
+                </div>
+                <ul class="space-y-1 text-sm text-slate-600">
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Mode : <strong>Retrieve</strong></li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Collection : votre nom de collection</li>
+                  <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Credentials : votre credential Qdrant</li>
+                </ul>
+              </div>
+
+              <div class="bg-slate-50 rounded-xl border border-slate-100 p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="node-badge">Embeddings OpenAI</span>
+                  <span class="text-xs text-slate-500">Connecté à Qdrant Vector Store (retrieval)</span>
+                </div>
+                <p class="text-sm text-slate-600">Connectez la même clé API OpenAI. Ce node convertit la question de l'utilisateur en vecteur pour la recherche dans Qdrant.</p>
+              </div>
+
+              <div class="bg-slate-50 rounded-xl border border-slate-100 p-4">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="node-badge">OpenAI Chat Model</span>
+                  <span class="text-xs text-slate-500">Connecté à Vector Store Tool</span>
+                </div>
+                <p class="text-sm text-slate-600">Deuxième instance OpenAI, dédiée au traitement interne du Vector Store Tool. Modèle : <code class="bg-slate-100 px-1.5 rounded font-mono">gpt-4o-mini</code> (moins coûteux pour cette tâche intermédiaire).</p>
+              </div>
+
+            </div>
+
+            <div class="bg-red-50 border border-red-100 rounded-2xl p-4 my-4">
+              <p class="text-sm font-bold text-red-900 mb-1">⚠ Deux instances OpenAI distinctes</p>
+              <p class="text-sm text-red-700">Le workflow utilise intentionnellement deux nodes OpenAI séparés : <span class="node-badge">OpenAI</span> pour le raisonnement principal de l'AI Agent, et <span class="node-badge">OpenAI Chat Model</span> pour le traitement interne du Vector Store Tool. Les deux doivent être configurés.</p>
+            </div>
+
+            <p class="action-step">Retournez dans ElevenLabs (étape 2) et renseignez maintenant l'URL du webhook <span class="node-badge">Listen</span> dans la configuration de votre outil.</p>
+            <p class="action-step">Dans n8n, activez le workflow avec le toggle en haut à droite. Le webhook est maintenant en écoute permanente.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PARTIE 5 -->
+      <div id="partie-5" class="mb-16">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="w-10 h-10 rounded-2xl bg-slate-700 text-white text-lg font-extrabold flex items-center justify-center shrink-0">5</span>
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Déployer sur votre site</h2>
+            <p class="text-slate-500 text-sm mt-0.5">5 min · Étape 7</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <!-- Étape 7 -->
+          <div class="step-card">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="step-num">7</span>
+              <h3 class="text-lg font-extrabold text-slate-900">Tester et intégrer le widget</h3>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-4">Avant d'intégrer le widget sur votre site, testez le système de bout en bout depuis l'interface ElevenLabs.</p>
+
+            <p class="action-step">Dans votre agent ElevenLabs, cliquez sur <strong>Test Agent</strong> (bouton en haut à droite). Posez une question qui devrait se trouver dans vos documents et vérifiez que la réponse est correcte.</p>
+
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4">
+              <p class="text-sm font-bold text-slate-700 mb-3">Checklist avant mise en production :</p>
+              <ul class="space-y-1.5 text-sm text-slate-600">
+                <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> L'agent répond au message d'accueil correctement</li>
+                <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Les questions sur vos documents reçoivent des réponses précises</li>
+                <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> L'agent dit qu'il ne sait pas pour les questions hors périmètre</li>
+                <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> La latence est acceptable (&lt; 3 secondes)</li>
+                <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Le workflow n8n est bien activé (toggle ON)</li>
+              </ul>
+            </div>
+
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">Une fois les tests validés, ajoutez le widget ElevenLabs sur votre site en collant ce code HTML avant la balise <code class="bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono">&lt;/body&gt;</code> :</p>
+
+            <div class="code-block"><pre><span class="cb-comment">&lt;!-- Remplacez AGENT_ID par votre ID ElevenLabs --&gt;</span>
+
+&lt;<span class="cb-key">elevenlabs-convai</span>
+  <span class="cb-key">agent-id</span>=<span class="cb-val">"AGENT_ID"</span>&gt;
+&lt;/<span class="cb-key">elevenlabs-convai</span>&gt;
+
+&lt;<span class="cb-key">script</span>
+  src=<span class="cb-val">"https://elevenlabs.io/convai-widget/index.js"</span>
+  async type=<span class="cb-val">"text/javascript"</span>&gt;
+&lt;/<span class="cb-key">script</span>&gt;</pre></div>
+
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4 my-4">
+              <p class="text-sm font-bold text-blue-900 mb-1">Trouver votre Agent ID</p>
+              <p class="text-sm text-blue-700">L'Agent ID se trouve dans l'URL de votre agent ElevenLabs : <code class="bg-blue-100 px-1 rounded font-mono">elevenlabs.io/app/conversational-ai/<strong>[AGENT_ID]</strong></code>, ou dans <strong>Settings → Agent ID</strong> de la configuration de l'agent.</p>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 my-4">
+              <p class="text-sm font-bold text-slate-700 mb-3">Personnalisation du widget :</p>
+              <ul class="space-y-1.5 text-sm text-slate-600">
+                <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Couleurs et position : configurables depuis le dashboard ElevenLabs → <strong>Widget</strong></li>
+                <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Il apparaît comme un bouton flottant en bas à droite de votre page</li>
+                <li class="flex items-start gap-2"><span class="text-primary shrink-0">→</span> Compatible avec tous les CMS : WordPress, Webflow, Shopify, Wix, etc.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Félicitations -->
+      <div class="bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-8 text-white text-center mb-8">
+        <p class="text-3xl mb-3">🎉</p>
+        <h2 class="text-2xl font-extrabold mb-2">Votre voice bot RAG est en ligne !</h2>
+        <p class="text-blue-100 text-sm max-w-xl mx-auto">Vous avez mis en place une architecture RAG complète : vos documents sont vectorisés dans Qdrant, votre agent ElevenLabs appelle n8n en temps réel, et GPT-4o génère des réponses précises depuis votre base de connaissances.</p>
+      </div>
+
+      <!-- Aller plus loin -->
+      <div class="bg-white rounded-3xl border border-slate-100 p-8">
+        <h2 class="text-lg font-extrabold text-slate-900 mb-4">Aller plus loin</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-600">
+          <div class="flex items-start gap-3">
+            <span class="text-primary font-bold shrink-0 mt-0.5">→</span>
+            <div>
+              <p class="font-semibold text-slate-800">Mise à jour automatique des documents</p>
+              <p class="text-slate-500 mt-0.5">Ajoutez un trigger Google Drive pour relancer l'ingestion automatiquement à chaque modification de vos fichiers.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-primary font-bold shrink-0 mt-0.5">→</span>
+            <div>
+              <p class="font-semibold text-slate-800">Plusieurs bases de connaissances</p>
+              <p class="text-slate-500 mt-0.5">Créez plusieurs collections Qdrant et plusieurs Vector Store Tools pour séparer produits, FAQ et support technique.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-primary font-bold shrink-0 mt-0.5">→</span>
+            <div>
+              <p class="font-semibold text-slate-800">Logging des conversations</p>
+              <p class="text-slate-500 mt-0.5">Ajoutez un node Google Sheets ou Airtable après l'AI Agent pour enregistrer chaque question et réponse.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-primary font-bold shrink-0 mt-0.5">→</span>
+            <div>
+              <p class="font-semibold text-slate-800">Escalade vers un humain</p>
+              <p class="text-slate-500 mt-0.5">Configurez un transfert vers un agent humain ou un envoi d'email/Slack quand l'agent ne peut pas répondre.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-slate-900 py-16">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2 class="text-2xl font-extrabold text-white mb-3">Vous voulez qu'on le construise pour vous ?</h2>
+      <p class="text-slate-400 text-sm mb-8">Mindeon.ai conçoit et déploie des agents vocaux RAG sur mesure — connectés à vos outils, formés sur vos données, opérationnels en quelques jours.</p>
+      <a href="/contact/" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3.5 rounded-full transition-all duration-200 hover:scale-[1.02] active:scale-95">
+        Parlons de votre projet
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -81,7 +81,7 @@ const appPack = {
   ],
   results: [
     { stat: '100%', label: 'propriétaire du produit' },
-    { stat: '8 sem.', label: 'livraison moyenne' },
+    { stat: '3 sem.', label: 'livraison moyenne' },
     { stat: '0€', label: 'de licence logicielle' },
   ],
 };
@@ -207,50 +207,47 @@ const faqSchema = {
               </div>
             )}
 
-            <div class="p-8 md:p-10 flex flex-col flex-1">
+            <div class="p-6 md:p-8 flex flex-col flex-1">
 
               <!-- Icon + title -->
-              <div class="mb-8">
-                <div class="text-primary mb-5">
+              <div class="mb-5">
+                <div class="text-primary mb-3">
                   <Fragment set:html={pack.icon} />
                 </div>
-                <h3 class="text-2xl font-extrabold text-slate-900 mb-2 tracking-tight">{pack.title}</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">{pack.tagline}</p>
+                <h3 class="text-xl font-extrabold text-slate-900 mb-1 tracking-tight">{pack.title}</h3>
+                <p class="text-slate-500 text-xs leading-relaxed">{pack.tagline}</p>
               </div>
 
               <!-- Features -->
-              <ul class="space-y-5 mb-8 flex-1">
+              <ul class="space-y-3 mb-5 flex-1">
                 {pack.features.map((f) => (
-                  <li class="flex items-start gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary shrink-0 mt-0.5" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    <div>
-                      <p class="text-sm font-semibold text-slate-800">{f.text}</p>
-                      <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">{f.detail}</p>
-                    </div>
+                  <li class="flex items-start gap-2.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary shrink-0 mt-0.5" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <p class="text-sm font-semibold text-slate-800">{f.text}</p>
                   </li>
                 ))}
               </ul>
 
               <!-- Results -->
-              <div class="grid grid-cols-2 gap-3 mb-8 p-4 bg-slate-50 rounded-2xl">
+              <div class="grid grid-cols-2 gap-2 mb-5 p-3 bg-slate-50 rounded-2xl">
                 {pack.results.map((r) => (
                   <div class="text-center">
-                    <p class="text-xl font-black text-primary">{r.stat}</p>
-                    <p class="text-[11px] text-slate-500 leading-tight mt-0.5">{r.label}</p>
+                    <p class="text-lg font-black text-primary">{r.stat}</p>
+                    <p class="text-[10px] text-slate-500 leading-tight mt-0.5">{r.label}</p>
                   </div>
                 ))}
               </div>
 
               <!-- Price + CTA -->
-              <div class="pt-8 border-t border-slate-100">
-                <div class="flex items-baseline gap-2 mb-6">
+              <div class="pt-5 border-t border-slate-100">
+                <div class="flex items-baseline gap-2 mb-4">
                   <span class="text-xs text-slate-500 font-medium">À partir de</span>
-                  <span class="text-4xl font-black text-primary">{pack.price}€</span>
+                  <span class="text-3xl font-black text-primary">{pack.price}€</span>
                   <span class="text-slate-500 text-sm">HT</span>
                 </div>
                 <a
                   href="/contact/"
-                  class={`flex items-center justify-center gap-2 w-full py-4 min-h-[52px] rounded-2xl font-bold text-sm transition-all duration-200 ${
+                  class={`flex items-center justify-center gap-2 w-full py-3 min-h-[44px] rounded-2xl font-bold text-sm transition-all duration-200 ${
                     pack.popular
                       ? 'bg-primary text-white shadow-[0_4px_20px_rgba(37,99,235,0.35)] hover:bg-blue-700 hover:scale-[1.02] active:scale-95'
                       : 'bg-slate-100 text-slate-800 group-hover:bg-primary group-hover:text-white'
