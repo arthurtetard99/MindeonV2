@@ -4,7 +4,7 @@ description: "Le RAG permet à votre IA de répondre à partir de VOS documents.
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["RAG", "LLM", "Agents IA", "Automatisation"]
-image: "/images/articles/rag-retrieval-augmented-generation-explique.jpg"
+image: "/images/articles/rag-retrieval-augmented-generation-explique.webp"
 ---
 
 ## Introduction

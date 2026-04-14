@@ -4,7 +4,7 @@ description: "Vous êtes dirigeant de PME et l'IA vous semble floue ? Voici un p
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Automatisation", "PME", "Stratégie IA", "No-code"]
-image: "/images/articles/automatisation-ia-par-ou-commencer-pme.jpg"
+image: "/images/articles/automatisation-ia-par-ou-commencer-pme.webp"
 ---
 
 ## Introduction

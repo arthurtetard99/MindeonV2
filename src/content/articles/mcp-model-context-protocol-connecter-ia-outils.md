@@ -4,7 +4,7 @@ description: "Le MCP expliqué simplement : comment ce protocole permet à l'IA 
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Agents IA", "LLM", "Intégrations", "Automatisation"]
-image: "/images/articles/mcp-model-context-protocol-connecter-ia-outils.jpg"
+image: "/images/articles/mcp-model-context-protocol-connecter-ia-outils.webp"
 ---
 
 ## Introduction

@@ -4,7 +4,7 @@ description: "Réduisez vos tickets de -70% et accélérez l'onboarding avec un 
 date: 2026-04-03
 author: "Arthur Tetard"
 tags: ["Automatisation", "Agents IA", "LLM", "ROI", "Stratégie IA"]
-image: "/images/articles/ia-startups-saas-support-onboarding.jpg"
+image: "/images/articles/ia-startups-saas-support-onboarding.webp"
 ---
 
 ## Introduction

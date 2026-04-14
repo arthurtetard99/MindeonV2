@@ -4,7 +4,7 @@ description: "Différences entre chatbot, agent conversationnel et voice bot. Co
 date: 2026-04-06
 author: "Arthur Tetard"
 tags: ["Automatisation", "Agents IA", "LLM", "Stratégie IA"]
-image: "/images/articles/agent-conversationnel-ia-guide-entreprise.jpg"
+image: "/images/articles/agent-conversationnel-ia-guide-entreprise.webp"
 ---
 
 ## Introduction

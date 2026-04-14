@@ -4,7 +4,7 @@ description: "Le guide n8n en français pour débutants : installer, créer son 
 date: 2026-04-03
 author: "Arthur Tetard"
 tags: ["Automatisation", "n8n", "No-code", "Intégrations"]
-image: "/images/articles/n8n-guide-francais-debutant.jpg"
+image: "/images/articles/n8n-guide-francais-debutant.webp"
 ---
 
 ## Introduction

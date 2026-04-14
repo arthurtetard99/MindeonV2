@@ -4,7 +4,7 @@ description: "15 templates de workflows n8n prêts à importer : prospection, CR
 date: 2026-04-03
 author: "Arthur Tetard"
 tags: ["n8n", "Automatisation", "No-code", "PME", "Intégrations"]
-image: "/images/articles/templates-workflow-n8n-telecharger.jpg"
+image: "/images/articles/templates-workflow-n8n-telecharger.webp"
 ---
 
 ## Introduction

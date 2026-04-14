@@ -4,7 +4,7 @@ description: "Les agents IA autonomes font le buzz, mais que peuvent-ils vraimen
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Agents IA", "Automatisation", "Stratégie IA", "ROI"]
-image: "/images/articles/agents-ia-autonomes-2026-etat-des-lieux.jpg"
+image: "/images/articles/agents-ia-autonomes-2026-etat-des-lieux.webp"
 ---
 
 ## Introduction

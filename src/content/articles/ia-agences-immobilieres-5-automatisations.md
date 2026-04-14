@@ -4,7 +4,7 @@ description: "Qualification de leads, visites virtuelles, estimation automatique
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Automatisation", "Voice Bot", "Lead Generation", "Agents IA"]
-image: "/images/articles/ia-agences-immobilieres-5-automatisations.jpg"
+image: "/images/articles/ia-agences-immobilieres-5-automatisations.webp"
 ---
 
 ## Introduction

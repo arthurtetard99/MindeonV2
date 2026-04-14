@@ -4,7 +4,7 @@ description: "Découvrez comment l'IA pour l'événementiel transforme votre pro
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Automatisation", "Agents IA", "Lead Generation", "ROI"]
-image: "/images/articles/ia-evenementiel-premier-contact-devis.jpg"
+image: "/images/articles/ia-evenementiel-premier-contact-devis.webp"
 ---
 
 ## Introduction

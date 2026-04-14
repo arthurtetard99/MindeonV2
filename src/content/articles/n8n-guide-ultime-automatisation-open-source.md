@@ -4,7 +4,7 @@ description: "Découvrez n8n, l'outil d'automatisation open-source leader en 202
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Automatisation", "n8n", "No-code", "Agents IA", "Intégrations"]
-image: "/images/articles/n8n-guide-ultime-automatisation-open-source.jpg"
+image: "/images/articles/n8n-guide-ultime-automatisation-open-source.webp"
 ---
 
 ## Introduction

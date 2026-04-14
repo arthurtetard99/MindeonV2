@@ -4,7 +4,7 @@ description: "Vous êtes plombier, électricien ou boulanger ? Voici 3 automatis
 date: 2026-04-03
 author: "Arthur Tetard"
 tags: ["Automatisation", "No-code", "PME", "ROI", "Stratégie IA"]
-image: "/images/articles/ia-artisans-tpe-3-automatisations.jpg"
+image: "/images/articles/ia-artisans-tpe-3-automatisations.webp"
 ---
 
 ## Introduction

@@ -4,7 +4,7 @@ description: "Les 7 techniques de prompt engineering essentielles pour créer de
 date: 2026-04-03
 author: "Arthur Tetard"
 tags: ["Agents IA", "Automatisation", "LLM", "No-code"]
-image: "/images/articles/prompt-engineering-agents-ia-techniques.jpg"
+image: "/images/articles/prompt-engineering-agents-ia-techniques.webp"
 ---
 
 ## Introduction

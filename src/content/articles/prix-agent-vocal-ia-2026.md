@@ -4,7 +4,7 @@ description: "Vous cherchez à estimer le budget d'un agent vocal IA en 2026 ? D
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Agents IA", "Voice Bot", "ROI", "Automatisation"]
-image: "/images/articles/prix-agent-vocal-ia-2026.jpg"
+image: "/images/articles/prix-agent-vocal-ia-2026.webp"
 ---
 
 ## Introduction

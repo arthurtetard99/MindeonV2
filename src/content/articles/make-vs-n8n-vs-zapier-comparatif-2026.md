@@ -4,7 +4,7 @@ description: "Prix, fonctionnalités, limites : le comparatif définitif des 3 o
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Comparatif", "n8n", "No-code", "Automatisation"]
-image: "/images/articles/make-vs-n8n-vs-zapier-comparatif-2026.jpg"
+image: "/images/articles/make-vs-n8n-vs-zapier-comparatif-2026.webp"
 ---
 
 ## Introduction

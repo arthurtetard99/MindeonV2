@@ -4,7 +4,7 @@ description: "Découvrez comment créer un voice bot de qualification de leads p
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Voice Bot", "Lead Generation", "Automatisation", "No-code"]
-image: "/images/articles/creer-voice-bot-qualification-leads.jpg"
+image: "/images/articles/creer-voice-bot-qualification-leads.webp"
 ---
 
 ## Introduction

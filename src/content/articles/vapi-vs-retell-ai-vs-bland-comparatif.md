@@ -4,7 +4,7 @@ description: "Vous cherchez le meilleur outil pour un agent vocal ? Découvrez n
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Voice Bot", "Agents IA", "Automatisation", "Comparatif"]
-image: "/images/articles/vapi-vs-retell-ai-vs-bland-comparatif.jpg"
+image: "/images/articles/vapi-vs-retell-ai-vs-bland-comparatif.webp"
 ---
 
 ## Introduction

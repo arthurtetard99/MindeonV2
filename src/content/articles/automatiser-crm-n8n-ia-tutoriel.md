@@ -4,7 +4,7 @@ description: "Enrichissement de contacts, scoring automatique, relances IA : aut
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Automatisation", "n8n", "No-code", "Intégrations"]
-image: "/images/articles/automatiser-crm-n8n-ia-tutoriel.jpg"
+image: "/images/articles/automatiser-crm-n8n-ia-tutoriel.webp"
 ---
 
 ## Introduction

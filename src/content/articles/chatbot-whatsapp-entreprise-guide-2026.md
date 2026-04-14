@@ -4,7 +4,7 @@ description: "Découvrez comment créer un chatbot WhatsApp pour entreprise pour
 date: 2026-04-03
 author: "Arthur Tetard"
 tags: ["Chatbot", "Automatisation", "Agents IA", "Lead Generation", "PME"]
-image: "/images/articles/chatbot-whatsapp-entreprise-guide-2026.jpg"
+image: "/images/articles/chatbot-whatsapp-entreprise-guide-2026.webp"
 ---
 
 ## Introduction

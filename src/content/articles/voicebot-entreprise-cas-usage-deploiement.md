@@ -4,7 +4,7 @@ description: "Les 6 cas d'usage d'un voicebot en entreprise : accueil, qualifica
 date: 2026-04-06
 author: "Arthur Tetard"
 tags: ["Voice Bot", "Automatisation", "Agents IA", "ROI", "Stratégie IA"]
-image: "/images/articles/voicebot-entreprise-cas-usage-deploiement.jpg"
+image: "/images/articles/voicebot-entreprise-cas-usage-deploiement.webp"
 ---
 
 ## Introduction

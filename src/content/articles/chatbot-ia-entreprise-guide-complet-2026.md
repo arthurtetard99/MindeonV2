@@ -4,7 +4,7 @@ description: "Tout ce qu'il faut savoir pour déployer un chatbot IA dans votre 
 date: 2026-04-14
 author: "Arthur Tetard"
 tags: ["Chatbot", "Automatisation", "Intégrations", "ROI", "Stratégie IA"]
-image: "/images/articles/chatbot-ia-entreprise-guide-complet-2026.jpg"
+image: "/images/articles/chatbot-ia-entreprise-guide-complet-2026.webp"
 ---
 
 ## Introduction

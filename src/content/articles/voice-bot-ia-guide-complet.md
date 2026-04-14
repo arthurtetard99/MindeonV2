@@ -4,7 +4,7 @@ description: "Découvrez comment le voice bot IA transforme la relation client e
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Voice Bot", "Automatisation", "Agents IA", "LLM"]
-image: "/images/articles/voice-bot-ia-guide-complet.jpg"
+image: "/images/articles/voice-bot-ia-guide-complet.webp"
 ---
 
 ## Introduction

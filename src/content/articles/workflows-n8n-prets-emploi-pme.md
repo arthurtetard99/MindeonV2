@@ -4,7 +4,7 @@ description: "10 workflows n8n que vous pouvez copier-coller dès aujourd'hui po
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Automatisation", "n8n", "No-code", "PME", "Intégrations"]
-image: "/images/articles/workflows-n8n-prets-emploi-pme.jpg"
+image: "/images/articles/workflows-n8n-prets-emploi-pme.webp"
 ---
 
 ## Introduction

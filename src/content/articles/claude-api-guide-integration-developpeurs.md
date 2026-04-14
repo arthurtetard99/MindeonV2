@@ -4,7 +4,7 @@ description: "Premiers pas avec l'API Claude : authentification, prompt engineer
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["LLM", "Intégrations", "Développement", "Agents IA"]
-image: "/images/articles/claude-api-guide-integration-developpeurs.jpg"
+image: "/images/articles/claude-api-guide-integration-developpeurs.webp"
 ---
 
 ## Introduction

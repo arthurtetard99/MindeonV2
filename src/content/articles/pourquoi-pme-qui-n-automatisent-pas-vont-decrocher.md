@@ -4,7 +4,7 @@ description: "En 2026, l'automatisation IA n'est plus un luxe. Les PME qui retar
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Automatisation", "PME", "ROI", "Stratégie IA"]
-image: "/images/articles/pourquoi-pme-qui-n-automatisent-pas-vont-decrocher.jpg"
+image: "/images/articles/pourquoi-pme-qui-n-automatisent-pas-vont-decrocher.webp"
 ---
 
 ## Introduction

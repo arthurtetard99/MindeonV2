@@ -4,7 +4,7 @@ description: "Après 15+ projets d'automatisation, voici ce qu'on observe vraime
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Automatisation", "Stratégie IA", "ROI", "PME"]
-image: "/images/articles/ia-remplace-emplois-terrain.jpg"
+image: "/images/articles/ia-remplace-emplois-terrain.webp"
 ---
 
 ## Introduction

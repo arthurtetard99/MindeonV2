@@ -4,7 +4,7 @@ description: "Benchmark des 3 principaux LLM sur 8 critères : coût, latence, q
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["LLM", "Comparatif", "Stratégie IA", "Agents IA"]
-image: "/images/articles/mistral-vs-claude-vs-gpt-comparatif-llm-2026.jpg"
+image: "/images/articles/mistral-vs-claude-vs-gpt-comparatif-llm-2026.webp"
 ---
 
 ## Introduction

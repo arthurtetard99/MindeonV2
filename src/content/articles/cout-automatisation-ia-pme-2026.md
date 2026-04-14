@@ -4,7 +4,7 @@ description: "De 2 000 à 30 000 euros selon le périmètre. Découvrez les budg
 date: 2026-04-02
 author: "Arthur Tetard"
 tags: ["Stratégie IA", "Automatisation", "PME", "ROI"]
-image: "/images/articles/cout-automatisation-ia-pme-2026.jpg"
+image: "/images/articles/cout-automatisation-ia-pme-2026.webp"
 ---
 
 ## Introduction

@@ -4,7 +4,7 @@ description: "Un callbot IA peut passer 500 appels par jour sans humain. Guide c
 date: 2026-04-06
 author: "Arthur Tetard"
 tags: ["Automatisation", "Voice Bot", "Agents IA", "Lead Generation", "ROI"]
-image: "/images/articles/callbot-ia-automatiser-appels-sortants.jpg"
+image: "/images/articles/callbot-ia-automatiser-appels-sortants.webp"
 ---
 
 ## Introduction

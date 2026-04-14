@@ -4,7 +4,7 @@ description: "L'IA va-t-elle supprimer des emplois ? Les données réelles en 20
 date: 2026-04-14
 author: "Arthur Tetard"
 tags: ["Automatisation", "PME", "ROI", "Stratégie IA"]
-image: "/images/articles/ia-remplace-emplois-2026-realite.jpg"
+image: "/images/articles/ia-remplace-emplois-2026-realite.webp"
 ---
 
 ## Introduction
