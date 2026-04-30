@@ -34,7 +34,7 @@ Il comprend mieux les formulations variées, reformule une demande et peut orien
 - Le chatbot IA conversationnel : plus souple, plus naturel, plus utile sur des requêtes ouvertes.
 - Le chatbot connecté aux outils métier : capable de qualifier, créer un ticket, récupérer une commande ou lancer un workflow.
 
-Pour comparer les formats et choisir la bonne approche, consultez aussi notre page [Voice bot vs chatbot](/voice-bot-vs-chatbot/).
+Pour comparer les formats et choisir la bonne approche, consultez aussi notre page [Voice bot vs chatbot](/voice-bot-ia-guide-complet/).
 
 ## Cas d’usage les plus fréquents en B2B
 
@@ -141,7 +141,7 @@ Le bon outil dépend moins de l’effet de mode que de votre contexte.
 - Peut-on piloter le ton, les réponses et les règles métier ?
 - Peut-on mesurer son impact réel ?
 
-Si votre projet implique plusieurs outils et workflows, explorez aussi nos [Solutions](/solutions/).
+Si votre projet implique plusieurs outils et workflows, explorez aussi nos [Solutions](/nos-projets/).
 
 ### No-code, low-code ou développement sur mesure ?
 

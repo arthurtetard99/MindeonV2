@@ -38,7 +38,7 @@ Cela change profondément la manière de travailler, mais cela ne remplace pas a
 
 Autrement dit, l’IA remplace surtout des morceaux de travail, pas l’ensemble d’une fonction dans la majorité des cas.
 
-Pour aller plus loin sur cette distinction, vous pouvez lire [L'IA remplace-t-elle vraiment des emplois](https://example.com/min-38).
+Pour aller plus loin sur cette distinction, vous pouvez lire [L'IA remplace-t-elle vraiment des emplois ?](/ia-remplace-emplois-terrain/).
 
 ## Ce que l’IA automatise réellement
 
@@ -56,7 +56,7 @@ Le plus souvent, l’IA prend en charge les tâches les plus répétitives et le
 
 Cette automatisation apporte un gain clair quand le volume est élevé, que les règles sont stables et que le coût d’erreur reste maîtrisable.
 
-C’est particulièrement vrai dans les environnements où l’on peut connecter plusieurs outils entre eux, par exemple avec des solutions d’automatisation et d’intégration. Dans ce cadre, [Solutions](https://example.com/solutions/) permet d’industrialiser des flux sans repartir de zéro à chaque usage.
+C’est particulièrement vrai dans les environnements où l’on peut connecter plusieurs outils entre eux, par exemple avec des solutions d’automatisation et d’intégration. Dans ce cadre, [nos solutions](/nos-projets/) permet d’industrialiser des flux sans repartir de zéro à chaque usage.
 
 ## Les métiers les plus exposés
 
@@ -116,7 +116,7 @@ Les demandes sont traitées plus vite, ce qui améliore l’expérience client e
 
 Pour une PME, cela peut représenter un avantage décisif : mieux servir sans alourdir les effectifs de façon mécanique.
 
-Si vous n’avez pas encore structuré cette réflexion, l’article [PME qui n’automatisent pas](https://example.com/pme-qui-n-automatisent-pas) illustre bien le coût d’inaction.
+Si vous n’avez pas encore structuré cette réflexion, l’article [PME qui n’automatisent pas](/pourquoi-pme-qui-n-automatisent-pas-vont-decrocher/) illustre bien le coût d’inaction.
 
 ## Limites et risques à ne pas ignorer
 
@@ -191,4 +191,4 @@ L’IA et emplois en 2026 : ce que les données disent vraiment, c’est que la 
 
 Celles qui structurent vite leurs usages gagneront en efficacité, en qualité et en capacité d’absorption. Celles qui attendent risquent de voir leurs coûts et leurs délais devenir moins compétitifs.
 
-Si vous voulez identifier les meilleurs cas d’usage IA pour votre activité et cadrer un plan concret, [parlons de votre projet](https://example.com/contact/).
+Si vous voulez identifier les meilleurs cas d’usage IA pour votre activité et cadrer un plan concret, [parlons de votre projet](/contact/).

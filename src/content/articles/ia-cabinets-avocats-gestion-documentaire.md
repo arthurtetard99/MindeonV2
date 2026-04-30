@@ -19,11 +19,11 @@ L'intégration de l'intelligence artificielle ne se limite pas à la simple réd
 - **Synthèse de dossiers** : Résumé intelligent de pièces de procédure ou de dossiers complexes pour une préparation d'audience accélérée.
 - **Génération de documents** : Création assistée de courriers types, conclusions ou contrats basés sur les données spécifiques du client.
 
-En couplant ces outils avec des solutions pour [IA avocats automatiser](/ia-avocats-automatiser/), vous assurez une cohérence parfaite entre vos documents et votre base de données client. Ces technologies permettent de passer d'une gestion manuelle fastidieuse à un pilotage stratégique de vos dossiers.
+En couplant ces outils avec des solutions pour [IA avocats automatiser](/ia-cabinets-avocats-gestion-documentaire/), vous assurez une cohérence parfaite entre vos documents et votre base de données client. Ces technologies permettent de passer d'une gestion manuelle fastidieuse à un pilotage stratégique de vos dossiers.
 
 ## Pourquoi adopter ces solutions dès maintenant ?
 
-Le bénéfice immédiat est le gain de productivité, mais le ROI s'étend également à la qualité du conseil. Moins de temps passé sur la forme permet de se concentrer sur le fond juridique. En explorant nos [Solutions](/solutions/), vous découvrirez comment structurer ces flux de travail sans compromettre la confidentialité ni la sécurité des données.
+Le bénéfice immédiat est le gain de productivité, mais le ROI s'étend également à la qualité du conseil. Moins de temps passé sur la forme permet de se concentrer sur le fond juridique. En explorant nos [Solutions](/nos-projets/), vous découvrirez comment structurer ces flux de travail sans compromettre la confidentialité ni la sécurité des données.
 
 ### Limites et points de vigilance
 

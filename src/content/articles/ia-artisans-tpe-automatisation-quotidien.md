@@ -36,7 +36,7 @@ Le suivi des devis est souvent la tâche la plus négligée. L'automatisation pe
 
 ## Limites et points de vigilance
 
-Si les bénéfices sont réels, l'automatisation ne remplace pas votre expertise métier. Il est essentiel de vérifier la compatibilité de vos outils actuels et de ne pas automatiser des processus mal définis. Une automatisation efficace repose sur des procédures claires. Nous détaillons ces aspects dans nos différentes [Solutions](/solutions/) pour vous accompagner sans complexité.
+Si les bénéfices sont réels, l'automatisation ne remplace pas votre expertise métier. Il est essentiel de vérifier la compatibilité de vos outils actuels et de ne pas automatiser des processus mal définis. Une automatisation efficace repose sur des procédures claires. Nous détaillons ces aspects dans nos différentes [Solutions](/nos-projets/) pour vous accompagner sans complexité.
 
 ## Passer à l'action sans compétences tech
 

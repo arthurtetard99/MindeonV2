@@ -13,7 +13,7 @@ L'intégration d'un agent IA e-commerce est devenue le levier de croissance prio
 
 ## Pourquoi adopter un agent IA pour votre boutique ?
 
-Le principal bénéfice d'un [agent IA e-commerce (existant MIN-31)](/agent-ia-e-commerce/) réside dans sa capacité à traiter des volumes massifs de données en temps réel. Contrairement à un chatbot classique basé sur des scénarios rigides, l'agent IA comprend l'intention de l'utilisateur et apporte des réponses précises.
+Le principal bénéfice d'un [agent IA e-commerce (existant MIN-31)](/agent-ia-e-commerce-support-recommandations/) réside dans sa capacité à traiter des volumes massifs de données en temps réel. Contrairement à un chatbot classique basé sur des scénarios rigides, l'agent IA comprend l'intention de l'utilisateur et apporte des réponses précises.
 
 Les bénéfices clés sont les suivants :
 - **Disponibilité totale :** Réponse immédiate aux questions sur les commandes ou les stocks, sans intervention humaine.
@@ -25,7 +25,7 @@ En somme, l'IA transforme chaque interaction en opportunité commerciale tout en
 
 ## Cas d'usage concrets en e-commerce
 
-L'automatisation ne se limite pas au simple support. Voici comment déployer efficacement ces technologies via nos [Solutions](/solutions/) :
+L'automatisation ne se limite pas au simple support. Voici comment déployer efficacement ces technologies via nos [Solutions](/nos-projets/) :
 
 ### Assistance avant-vente et recommandation
 L'agent IA agit comme un vendeur virtuel. En analysant les préférences, il suggère des produits complémentaires (cross-selling) ou supérieurs (up-selling), augmentant ainsi le panier moyen.
